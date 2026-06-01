@@ -3,17 +3,17 @@ project:
   
   authors:
     - id: student
-      name: student without a name yet
+      name: Valentijn Leeaners
       affiliations:
         - tud
 
   contributors:
     - id: supervisor-1
-      name: prof. dr. John Doe
+      name: prof. dr. Gary Steele
       affiliations:
         - tud
     - id: committee-1
-      name: Prof. Dr. C. Examiner
+      name: Postdoc Thomas Clark
       affiliations:
         - tud
     - id: committee-2
