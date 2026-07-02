@@ -5,3 +5,6 @@ _build
 # Local writing reference (not for publication)
 content/Writing_Guide.md
 content/Roadmap.md
+
+# Local Cursor rules (not for publication)
+.cursor/

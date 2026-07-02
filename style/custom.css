@@ -92,7 +92,7 @@ body {
 
 /* Superscript numeric citations (IEEE / biblatex supercite style) */
 .article.content .cite-group {
-  margin-left: -0.2em;
+  margin-left: 0em;
   vertical-align: super;
   font-size: 0.75em;
   line-height: 0;
