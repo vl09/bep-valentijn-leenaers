@@ -1,0 +1,26 @@
+version: 1
+project:
+  
+  authors:
+    - id: student
+      name: Valentijn Leenaers
+      affiliations:
+        - tud
+
+  contributors:
+    - id: supervisor-1
+      name: prof. dr. Gary Steele
+      affiliations:
+        - tud
+    - id: committee-1
+      name: Postdoc Thomas Clark
+      affiliations:
+        - tud
+    - id: committee-2
+      name: Dr. C.F.J. Pols
+      affiliations:
+        - tud
+
+  affiliations:
+    - id: tud
+      institution: Delft University of Technology

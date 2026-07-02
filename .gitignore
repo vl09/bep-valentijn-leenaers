@@ -1,0 +1,7 @@
+# MyST build outputs
+_build
+*.pdf
+
+# Local writing reference (not for publication)
+content/Writing_Guide.md
+content/Roadmap.md

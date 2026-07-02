@@ -1,0 +1,12 @@
+version: 1
+project:
+  options:
+
+    thesis_degree: Bachelor of Science
+    thesis_program: Applied Physics
+    thesis_track: Physics for Instrumentation
+    thesis_faculty: Faculty of Applied Sciences
+    thesis_institution: Delft University of Technology
+    thesis_defense_date: Thursday July 24, 2026
+
+    # isbn: 000-00-0000-000-0
