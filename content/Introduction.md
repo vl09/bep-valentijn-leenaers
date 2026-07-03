@@ -5,7 +5,7 @@ abstract: |
 
 # Introduction
 
-Modern quantum research explores the behaviour of massive, macroscopic quantum superpositions by combining superconducting microwave circuits with mechanical resonators[@steeleLabResearch]. In cavity optomechanics, microwave photons trapped in such circuits at millikelvin temperatures are coupled to high-quality-factor mechanical modes, and realising these optomechanical systems requires overcoming several challenges, including mitigating noise[@vanSoest2025].
+Optomechanics is a technique that uses light trapped in a cavity to probe and control the motion of a mechanical resonator at the quantum level[@steeleLabResearch]. In microwave optomechanics, superconducting devices cooled to millikelvin temperatures trap microwave photons and couple them to high-quality-factor mechanical resonators. These experiments require overcoming several challenges, including mitigating noise[@vanSoest2025].
 
 Dry cryostats cooled by a pulse-tube cryocooler are widely used to reach these temperatures. The cryocooler induces mechanical vibrations with a fundamental component near 1.4 Hz and low-frequency harmonics[@maisonobe2018]. The periodic pumping of helium-4 within the pulse tube produces a distinct narrow-band mechanical ticking at this frequency[@wilkinson2025]. In the Bluefors cryostat used in Steele Lab, a remote motor drives these helium-pump strokes, exciting the cryostat structure. For optomechanical devices mounted inside the cryostat, the vibration environment at successive stages of the mechanical stack, from the pulse tube through the vibration isolation platform to the tuned mass damper at the experimental platform, determines the residual noise floor.
 
