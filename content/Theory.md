@@ -31,5 +31,5 @@ $$ (eq-static-stiffness)
 Measuring $\Delta L$ therefore provides an independent estimate of $k$, and equivalently 
 
 $$
-f_0 = \frac{1}{2\pi}\sqrt{g/\Delta L}
+f_0 = \frac{1}{2\pi}\sqrt{\frac{g}{\Delta L}}
 $$.
