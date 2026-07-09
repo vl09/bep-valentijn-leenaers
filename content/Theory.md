@@ -1,5 +1,4 @@
 # Theory
-
 ## The undamped mass-spring oscillator
 
 Consider a mass $m$ attached to a spring with stiffness $k$. When the displacement $x$ from equilibrium is small, Hooke's law gives a restoring force $F = -kx$. Then Newton's second law can be used to yield the equation of motion
@@ -33,3 +32,19 @@ Measuring $\Delta L$ for a specific mass $m$ therefore provides an independent e
 $$
 f_0 = \frac{1}{2\pi}\sqrt{\frac{g}{\Delta L}}
 $$.
+
+This ideal scenario described above does not account for friction or other mechanical energy losses. In real life, however, energy losses are adamant and need to be accounted for. 
+
+## Damped motion
+### Equation of motion
+To describe how the oscillation decays, a dissipative force proportional to velocity is added to the model. This viscous damping force points opposite to the motion and reads
+
+$$
+F_d = -c\dot{x},
+$$ 
+
+with damping coefficient $c$ in Ns/m. Combining the spring and damping forces with Newton's second law gives
+
+$$
+m\ddot{x} + c\dot{x} + kx = 0.
+$$ (eq-damped-eom)
