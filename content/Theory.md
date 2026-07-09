@@ -28,7 +28,7 @@ $$
 k = \frac{mg}{\Delta L}.
 $$ (eq-static-stiffness)
 
-Measuring $\Delta L$ therefore provides an independent estimate of $k$, and equivalently 
+Measuring $\Delta L$ for a specific mass $m$ therefore provides an independent estimate of $k$, and equivalently 
 
 $$
 f_0 = \frac{1}{2\pi}\sqrt{\frac{g}{\Delta L}}
