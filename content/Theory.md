@@ -11,8 +11,7 @@ which describes a simple harmonic oscillator. The general solution reads
 
 $$
 x(t) = A\cos(\omega_0 t + \varphi),
-$$ (eq-undamped-solution)
-
+$$ 
 where $A$ is the oscillation amplitude, $\varphi$ is a phase set by the initial conditions, and
 
 $$
@@ -25,7 +24,7 @@ When the mass hangs from a vertical spring, its weight stretches the spring unti
 
 $$
 k = \frac{mg}{\Delta L}.
-$$ (eq-static-stiffness)
+$$ 
 
 Measuring $\Delta L$ for a specific mass $m$ therefore provides an independent estimate of $k$, and equivalently 
 
