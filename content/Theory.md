@@ -22,10 +22,14 @@ $$ (eq-natural-frequency)
 
 is the natural angular frequency. Or otherwise, $f_0 = \frac{\omega_0}{2\pi}$. 
 
-When the mass hangs from a vertical spring, its weight stretches the spring until the upward spring force balances gravity. Let $\Delta L$ denote how much longer the spring is at this equilibrium position than when it is unloaded. Force balance then gives $k\Delta L = mg$, so
+When the mass hangs from a vertical spring, its weight stretches the spring until the upward spring force balances gravity. Let $\Delta L$ denote how much longer the spring is at this equilibrium position than when it is unloaded. Force balance then gives $k\Delta L = mg$, where $g$ is the gravitational acceleration. Then the spring constant can be obtained using
 
 $$
 k = \frac{mg}{\Delta L}.
 $$ (eq-static-stiffness)
 
-Measuring $\Delta L$ therefore provides an independent estimate of $k$, and equivalently $f_0 = \frac{1}{2\pi}\sqrt{g/\Delta L}$.
+Measuring $\Delta L$ therefore provides an independent estimate of $k$, and equivalently 
+
+$$
+f_0 = \frac{1}{2\pi}\sqrt{g/\Delta L}
+$$.
