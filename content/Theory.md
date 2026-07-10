@@ -97,7 +97,7 @@ $$
 m\ddot{x} + c\dot{x} + kx = F_0 \cos(\omega t).
 $$ (eq-driven-eom)
 
-The resulting displacement amplitude as a function of drive frequency is
+The resulting displacement amplitude as a function of drive frequency is[@fowles2005]
 
 $$
 X(\omega) = \frac{F_0}{k - m\omega^2 + ic\omega}.
