@@ -60,7 +60,7 @@ $$
 \ddot{x} + \Gamma_m \dot{x} + \omega_0^2 x = 0.
 $$ (eq-damped-normalised)
 
-For the lightly damped regime relevant to the cryostat structures ($\Gamma_m \leq 2\omega_0$), the solution is an exponentially decaying sinusoid:
+For the lightly damped regime relevant to the cryostat structures ($\Gamma_m \lt 2\omega_0$), the solution is an exponentially decaying sinusoid:
 
 $$
 x(t) = Ae^{-\Gamma_m t/2}\cos(\tilde{\omega}_0 t + \varphi),
@@ -72,7 +72,7 @@ $$
 \tilde{\omega}_0 = \omega_0 \sqrt{1 - \left(\frac{\Gamma_m}{2\omega_0}\right)^2}.
 $$ (eq-damped-frequency)
 
-When $\Gamma_m \leq 2\omega_0$, the oscillation frequency remains close to $\omega_0$ and the envelope $A(t) = A_0 e^{-\Gamma_m t/2}$ decays exponentially in time.
+When $\Gamma_m \lt 2\omega_0$, the oscillation frequency remains close to $\omega_0$ and the envelope $A(t) = A_0 e^{-\Gamma_m t/2}$ decays exponentially in time.
 
 ### Ringdown protocol
 
