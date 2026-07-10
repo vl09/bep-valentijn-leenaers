@@ -137,3 +137,10 @@ measures how many radians of oscillation occur before the energy decays apprecia
 
 The acceleration spectral density (ASD), defined as $\sqrt{S_{aa}(f)}$, is often used when comparing vibration measurements to sensor noise floors quoted by manufacturers. Both representations carry the same resonance frequency $f_0$ and linewidth $\Delta f$.
 
+## Relating time-domain and frequency-domain estimates of $\Gamma_m$
+
+The damping rate $\Gamma_m$ can therefore be extracted in two independent ways from the same ringdown recording. In the time domain, $\Gamma_m$ follows from fitting the exponential envelope in [](#eq-envelope-fit). In the frequency domain, the resonance peak in the PSD is fitted with [](#eq-lorentzian), and $\Gamma_m$ follows from [](#eq-gamma-fwhm) using the fitted FWHM.
+
+For a linear, time-invariant oscillator and consistent processing (band-pass filtering around $f_0$, sufficient data time-wise, and removal of transients from manual excitation), the two estimates should agree within experimental uncertainty. Wilkinson[@wilkinson2025] reported agreement to within roughly $23\%$ between ringdown and PSD linewidth fits for the single mass-spring reference system. Differences can arise from finite record length, non-ideal band-pass filtering, sensor noise near the ADXL354 noise floor, and weak nonlinearities such as amplitude-dependent friction. 
+
+In this thesis, the ringdown analysis applies will be analyzing the results of the two previously described methos. First, the Hilbert envelope yields $\Gamma_m$ from the decaying time series. Second, a Lorentzian fit to the periodogram near $f_0 \approx 0.9\,\mathrm{Hz}$ yields $\Gamma_m$ from the spectral linewidth. Agreement between the two values validates the measurement chain before it is used to characterise vibrations on the pulse tube, the vibration isolation platform, and the tuned mass damper inside the Bluefors cryostat.
