@@ -1,3 +1,7 @@
 # Experimental Method
+In this chapter, the measurement chain and the procedures used to characterise vibrations are described. A static gravity-flip test first validates the ADXL354 accelerometer and the voltage-to-acceleration conversion. A mass-spring ringdown and cryostat-mounted noise spectroscopy then apply the calibrated chain to the systems introduced in the Introduction.
 
-To be written.
+## Measurement setup
+The three-axis accelerometer is an ADXL354 (Analog Devices), configured for the $\pm 2\,\mathrm{g}$ full-scale range. Each analog output is ratiometric to the on-chip $1.8\,\mathrm{V}$ analog supply $\mathrm{V1P8ANA}$: the zero-$g$ bias is nominally $\mathrm{V1P8ANA}/2 = 0.9\,\mathrm{V}$, and the datasheet quotes a typical sensitivity of $400\,\mathrm{mV/g}$ at this range[@adxl354_datasheet].
+
+For benchtop validation, the $x$, $y$, and $z$ outputs are connected to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope. The scope is controlled over Ethernet via PyVISA, and waveforms are transferred to a Python analysis environment. During static and ringdown recordings the scope operates in high-resolution acquisition mode with DC coupling. Channel offsets of $-0.9\,\mathrm{V}$ place the zero-$g$ bias at the centre of the oscilloscope grid, matching the $\mathrm{V1P8ANA}/2$ reference. A vertical scale of $0.1\,\mathrm{V/div}$ is used on all three channels. Recordings are saved as time series of voltage in `.npz` format for offline analysis; the acquisition and flip-analysis notebooks are listed in [](#appendix-code).
