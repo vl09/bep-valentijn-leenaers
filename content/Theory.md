@@ -42,8 +42,34 @@ $$
 F_d = -c\dot{x},
 $$ 
 
-with damping coefficient $c$ in $\[Ns/m\]$. Combining the spring and damping forces with Newton's second law gives
+with damping coefficient $c$ in $[Ns/m]$. Combining the spring and damping forces with Newton's second law gives
 
 $$
 m\ddot{x} + c\dot{x} + kx = 0.
 $$ (eq-damped-eom)
+
+It is convenient to write this in terms of the mass-normalised damping rate
+
+$$
+\Gamma_m = \frac{c}{m},
+$$ (eq-gamma-definition)
+
+where $\Gamma_m$ has units of $Hz$. Substituting [](#eq-gamma-definition) into [](#eq-damped-eom) yields
+
+$$
+\ddot{x} + \Gamma_m \dot{x} + \omega_0^2 x = 0.
+$$ (eq-damped-normalised)
+
+For the lightly damped regime relevant to the cryostat structures ($\Gamma_m \leq 2\omega_0$), the solution is an exponentially decaying sinusoid:
+
+$$
+x(t) = Ae^{-\Gamma_m t/2}\cos(\tilde{\omega}_0 t + \varphi),
+$$ (eq-ringdown-solution)
+
+with damped angular frequency
+
+$$
+\tilde{\omega}_0 = \omega_0 \sqrt{1 - \left(\frac{\Gamma_m}{2\omega_0}\right)^2}.
+$$ (eq-damped-frequency)
+
+When $\Gamma_m \leq 2\omega_0$, the oscillation frequency remains close to $\omega_0$ and the envelope $A(t) = A_0 e^{-\Gamma_m t/2}$ decays exponentially in time.
