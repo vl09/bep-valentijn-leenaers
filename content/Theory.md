@@ -135,7 +135,7 @@ $$ (eq-quality-factor)
 
 measures how many radians of oscillation occur before the energy decays appreciably. Large $Q$ (small $\Gamma_m$) corresponds to a tall, narrow resonance peak; small $Q$ corresponds to a broad, low peak.
 
-The acceleration spectral density (ASD), defined as $\sqrt{S_{aa}(f)}$, is often used when comparing vibration measurements to sensor noise floors quoted by manufacturers. Both representations carry the same resonance frequency $f_0$ and linewidth $\Delta f$.
+The Amplitude Spectral Density (ASD), defined as $\sqrt{S_{aa}(f)}$, is often used when comparing vibration measurements to sensor noise floors quoted by manufacturers. Both representations carry the same resonance frequency $f_0$ and linewidth $\Delta f$.
 
 ## Relating time-domain and frequency-domain estimates of $\Gamma_m$
 
