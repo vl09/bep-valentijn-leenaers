@@ -133,7 +133,28 @@ Literature on dry cryostats reports a narrow-band mechanical component near $1.4
 ## The ADXL354 accelerometer
 Low-frequency vibration measurements require an accelerometer with a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400\,\mathrm{mV/g}$ at the $\pm 2\,\mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8\,\mathrm{V}$ supply $\mathrm{V1P8ANA}$, with a zero-$g$ bias nominally at $\mathrm{V1P8ANA}/2$.
 
-The sensor does not respond uniformly at all frequencies. Analog Devices publishes measured transfer functions for each axis, showing the magnitude of acceleration output in units of $g$ per $g$ of input as a function of frequency. These curves include the effect of the on-chip anti-aliasing filter and show an internal mechanical resonance near $2.5\,\mathrm{kHz}$. Features in measured spectra near that frequency must therefore be interpreted with the sensor response in mind, not only as properties of the structure under test.
+The sensor does not respond uniformly at all frequencies. Analog Devices publishes measured transfer functions for each axis[@adxl354_datasheet], reproduced in [](#fig-adxl354-x-response), [](#fig-adxl354-y-response), and [](#fig-adxl354-z-response). Each curve shows relative output in units of $g$ per $g$ of input acceleration as a function of frequency, including the effect of the on-chip anti-aliasing filter. Below roughly $1\,\mathrm{kHz}$ the response is flat near unity, so the nominal sensitivity applies across the low-frequency band of interest. Above this band an internal mechanical resonance appears near $2.5\,\mathrm{kHz}$ on all three axes. The peak height is axis-dependent: the $x$- and $y$-channels show the largest gain, whereas the $z$-channel resonance is weaker. Peaks in measured spectra near this resonance may therefore reflect the sensor transfer function as much as the cryostat structure, and should be interpreted accordingly.
+
+```{figure} figures/ADXL354_transfer_fuction_x-axis.png
+:label: fig-adxl354-x-response
+:alt: ADXL354 x-axis frequency response from the datasheet
+
+Caption: ADXL354 frequency response for the $x$-axis (datasheet Figure 8)[@adxl354_datasheet]. Relative output is flat near $1\,\mathrm{g/g}$ below $\sim 1\,\mathrm{kHz}$ and rises to a mechanical resonance near $2.5\,\mathrm{kHz}$.
+```
+
+```{figure} figures/ADXL354_transfer_fuction_y-axis.png
+:label: fig-adxl354-y-response
+:alt: ADXL354 y-axis frequency response from the datasheet
+
+Caption: ADXL354 frequency response for the $y$-axis (datasheet Figure 9)[@adxl354_datasheet]. The resonance near $2.5\,\mathrm{kHz}$ matches that on the $x$-axis.
+```
+
+```{figure} figures/ADXL354_transfer_fuction_z-axis.png
+:label: fig-adxl354-z-response
+:alt: ADXL354 z-axis frequency response from the datasheet
+
+Caption: ADXL354 frequency response for the $z$-axis (datasheet Figure 10)[@adxl354_datasheet]. The mechanical resonance near $2.5\,\mathrm{kHz}$ is present on all axes but with lower peak gain than on $x$ and $y$.
+```
 
 The datasheet specifies a typical noise density of order $22.5\,\mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At the $\pm 2\,\mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\,\mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
 
