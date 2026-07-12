@@ -106,6 +106,19 @@ Manufacturers often quote accelerometer noise floors in ASD units, typically $\m
 
 Welch's method estimates $S_{aa}(f)$ by averaging periodograms computed on overlapping time segments. The segment length sets a trade-off between frequency resolution and the smearing of narrow-band lines. A long segment resolves closely spaced peaks but leaves a sharp periodic drive, such as a cryocooler fundamental near $1.4\,\mathrm{Hz}$[@maisonobe2018], visible as a comb of lines. A shorter segment broadens those lines and exposes the broader mechanical structure underneath.
 
+### Sampling and the Nyquist limit
+Digital acquisition records a continuous acceleration signal at discrete times separated by $\Delta t = 1/f_s$, where $f_s$ is the sampling rate. The highest frequency that can be represented unambiguously from such samples is the Nyquist frequency[@shannon1949communication]
+
+$$
+f_N = \frac{f_s}{2}.
+$$ (eq-nyquist)
+
+According to the Nyquist–Shannon sampling theorem, all frequency content in a band-limited signal below $f_N$ can in principle be recovered from the sampled values. Conversely, spectral components above $f_N$ are not captured at their true frequency. They fold back into the interval $[0, f_N]$, a process known as aliasing, and can be mistaken for low-frequency vibration.
+
+Aliasing is suppressed in practice by band-limiting the signal before digitisation. The ADXL354 includes an on-chip anti-aliasing filter as part of its analogue front end[@adxl354_datasheet]. The oscilloscope and analysis chain impose a further upper limit set by $f_s$. Welch estimates of $S_{aa}(f)$ are therefore only meaningful for frequencies below $f_N$; at higher frequencies the discrete spectrum does not reflect the true mechanical content.
+
+For vibration measurements aimed at cryocooler fundamentals and low-order harmonics, $f_s$ is typically chosen well above the frequencies of interest so that $f_N$ leaves margin for higher harmonics and structural resonances. When $f_N$ lies near a sensor resonance or within the plotted frequency range, features close to that limit may reflect the acquisition and sensor transfer function as much as the structure under test.
+
 ### Driven oscillator and harmonic content
 Mechanical structures in an operating cryostat are continuously driven by the periodic cryocooler cycle rather than ringing down freely[@maisonobe2018]. For a single mode driven harmonically at angular frequency $\omega$, the steady-state equation of motion reads
 
