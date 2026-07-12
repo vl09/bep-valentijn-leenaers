@@ -105,3 +105,8 @@ body {
   font-size: 0.75em;
   line-height: 0;
 }
+
+/* Subfigure grids: keep the main caption full width beneath all panels */
+figure.fig-figure.grid > figcaption {
+  grid-column: 1 / -1;
+}
