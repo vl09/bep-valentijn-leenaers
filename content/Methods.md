@@ -33,3 +33,31 @@ where $V_i$ is the measured voltage on axis $i$. Equivalently, when a fixed data
 The second experiment uses a vertical mass-spring oscillator of the type described in [](#theory). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording.
 
 The ringdown trace is converted to acceleration using [](#eq-voltage-to-g) with the flip-test sensitivity and $V_0 = 0.9\,\mathrm{V}$. In parallel, the video is analysed to obtain two kinematic quantities: the oscillation frequency $f$, counted as the number of cycles per second in the early part of the motion, and the peak displacement amplitude $A$ of the mass relative to its equilibrium position, read from the ruler. Peak acceleration from kinematics is computed with [](#eq-shm-peak-accel) and compared to the accelerometer peak in the first few seconds of the recording; the outcome is reported in [](#results). The same trace is also analysed in the time domain: $f$ is read from a zoomed trace, and the amplitude envelope is fitted with [](#eq-envelope-fit) as described in [](#theory).
+
+## Cryostat vibration measurements
+The main measurements of this thesis use a DIY dry 4K cryostat at SteeleLab. The cold stage is cooled by a Gifford–McMahon (GM) cryocooler. Two operating conditions are recorded: cooler **off** (baseline) and cooler **on** (running). The ADXL354 is mounted on top of the final cold plate; the plate has no centre mounting holes, so the sensor cannot be placed at the geometric centre of the stage.
+
+The measurement chain matches benchtop validation: three-axis analog outputs into the Rigol scope, with flip-test calibration applied in post-processing via [](#eq-voltage-to-g). 
+
+For each operating condition, the procedure is:
+
+1. Configure the scope as in the measurement setup above and start acquisition with the GM cooler in the desired state (off or on).
+2. Allow the system to reach a steady operating state, then stop the scope after a continuous recording window.
+3. Read the full deep-memory waveforms for channels 1–3 and save each segment as a timestamped `.npz` file containing arrays `t`, `v_x`, `v_y`, and `v_z`.
+4. Repeat step 3 to obtain multiple contiguous segments per condition.
+
+Each segment contains $3 \times 10^6$ samples per channel over approximately $600\,\mathrm{s}$, giving a sample interval $\Delta t = 0.2\,\mathrm{ms}$ and sampling rate $f_s = 5\,\mathrm{kHz}$. The corresponding Nyquist frequency $f_N = f_s/2 = 2.5\,\mathrm{kHz}$ from [](#eq-nyquist) sets the upper limit of the frequency band that can be represented without aliasing in the recorded time series. For spectral analysis, three segments per condition are concatenated in time order to form a single trace of $9 \times 10^6$ samples and total duration $1800\,\mathrm{s}$ ($30\,\mathrm{min}$).
+
+## Signal processing and spectral analysis
+Offline analysis converts scope voltages to acceleration using the sensitivity and offset from the flip test, then estimates amplitude spectral density (ASD) spectra.
+
+### Welch ASD
+Power spectral densities are estimated with Welch's method (`scipy.signal.welch`) on mean-centred acceleration traces. The segment length sets the trade-off between frequency resolution and smearing of narrow-band lines, as discussed in [](#theory).
+
+Two segment lengths are used:
+
+- **Fine resolution (low-frequency band):** `nperseg = int(60 * fs)` with $f_s = 5\,\mathrm{kHz}$, i.e. $n_{\mathrm{perseg}} = 3 \times 10^5$ samples ($60\,\mathrm{s}$ segments) and $\Delta f \approx 1/60\,\mathrm{Hz} \approx 0.017\,\mathrm{Hz}$.
+- **Coarser resolution (extended frequency range):** `nperseg = int(2 * fs)`, i.e. $n_{\mathrm{perseg}} = 10^4$ samples ($2\,\mathrm{s}$ segments).
+
+The ASD is $\mathrm{ASD}(f) = \sqrt{S_{aa}(f)}$, with $S_{aa}$ the one-sided Welch estimate of acceleration PSD in $\mathrm{g}^2/\mathrm{Hz}$. Spectra are plotted in $\mathrm{g}/\sqrt{\mathrm{Hz}}$ on logarithmic axes. Frequency content above $f_N$ is not interpreted, consistent with the sampling limit discussed in [](#theory).
+
