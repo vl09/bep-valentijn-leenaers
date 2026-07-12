@@ -1,3 +1,4 @@
+(theory)=
 # Theory
 ## The undamped mass-spring oscillator
 Consider a mass $m$ attached to a spring with stiffness $k$. When the displacement $x$ from equilibrium is small, Hooke's law gives a restoring force $F = -kx$. Then Newton's second law can be used to yield the equation of motion
