@@ -12,7 +12,7 @@ The raw $z$-channel voltage from the flip recording is shown in [](#fig-flip-vol
 Caption: Raw $z$-channel scope voltage during the static flip test. The sensor rests at $+1\,\mathrm{g}$ for the first $\sim 6\,\mathrm{s}$, is flipped manually, and then rests at $-1\,\mathrm{g}$. Transients during the flip are excluded from the calibration windows.
 ```
 
-In the upright plateau ($4$–$5\,\mathrm{s}$), the mean voltage is $\bar{V}_{+1\mathrm{g}} = 1.289\,\mathrm{V}$. In the inverted plateau ($9$–$10\,\mathrm{s}$), $\bar{V}_{-1\mathrm{g}} = 0.505\,\mathrm{V}$. From [](#eq-flip-sensitivity), the sensitivity is $S = 0.391\,\mathrm{V/g}$ ($391\,\mathrm{mV/g}$). The estimated zero-$g$ offset is $\bar{V}_0 = 0.897\,\mathrm{V}$, close to the nominal $\mathrm{V_{1P8ANA}}/2 = 0.9\,\mathrm{V}$. The extracted value lies within $\sim 3\%$ of the datasheet typical of $400\,\mathrm{mV/g}$[@adxl354_datasheet].
+In the upright plateau ($4$–$5\,\mathrm{s}$), the mean voltage is $\bar{V}_{+1\mathrm{g}} = 1.289\,\mathrm{V}$. In the inverted plateau ($9$–$10\,\mathrm{s}$), $\bar{V}_{-1\mathrm{g}} = 0.505\,\mathrm{V}$. From [](#eq-flip-sensitivity), the sensitivity is $S = 0.392\,\mathrm{V/g}$ ($392\,\mathrm{mV/g}$). The estimated zero-$g$ offset is $\bar{V}_0 = 0.897\,\mathrm{V}$, close to the nominal $\mathrm{V_{1P8ANA}}/2 = 0.9\,\mathrm{V}$. The extracted value lies within $\sim 2\%$ of the datasheet typical of $400\,\mathrm{mV/g}$[@adxl354_datasheet].
 
 The same trace converted to acceleration with [](#eq-voltage-to-g) is shown in [](#fig-flip).
 
