@@ -84,13 +84,41 @@ Caption: Calibrated acceleration over the full ringdown recording ($600\,\mathrm
 
 Zooming out reveals the damping time scale. On $z$, the large $\sim 1\,\mathrm{Hz}$ oscillation about $1\,\mathrm{g}$ decays from an initial span of roughly $0.4$–$1.5\,\mathrm{g}$ to a near-constant $1\,\mathrm{g}$ by the end of the window. The $x$- and $y$-channels also show exponential decay of their wobble envelopes, from initial lateral amplitudes of order $0.1\,\mathrm{g}$ down to steady offsets near $-0.15\,\mathrm{g}$ and $+0.15\,\mathrm{g}$ respectively. Although the off-axis motion is much smaller than the vertical component, it follows the same qualitative pattern: a damped oscillation superposed on a constant bias.
 
-This behaviour matches the lightly damped ringdown model in [](#eq-ringdown-solution), where the envelope decays as $A_0 e^{-\Gamma_m t/2}$. To make the decay explicit, an exponential envelope is fitted to the $z$-channel amplitude and overlaid on the data in [](#fig-ringdown-envelope).
+This behaviour matches the lightly damped ringdown model in [](#eq-ringdown-solution), where the envelope decays as $A_0 e^{-\Gamma_m t/2}$. To illustrate the decay, the analytic envelope from [](#eq-envelope-fit) is overlaid on the $z$-channel trace in [](#fig-ringdown-envelope) with parameters chosen by eye to follow the decaying peaks from roughly $t = 100\,\mathrm{s}$ onward.
 
 ```{figure} figures/Ringdown_envelope_fit.png
 :label: fig-ringdown-envelope
-:alt: z-axis ringdown with exponential envelope fit
+:alt: z-axis ringdown with exponential envelope overlay
 
-Caption: $z$-axis ringdown acceleration with the analytic envelope $A_0 e^{-\Gamma_m t/2}$ from [](#eq-envelope-fit) overlaid. The fitted decay follows the slowly damped benchtop spring over the full recording ($\sim 10\,\mathrm{min}$).
+Caption: $z$-axis ringdown acceleration (blue) with the envelope $C \pm A_0 e^{-\Gamma_m t/2}$ overlaid (dashed). Parameters $C = 0.95\,\mathrm{g}$, $A_0 = 0.38\,\mathrm{g}$, and $\Gamma_m = 9.9\,\mathrm{mHz}$ ($\tau_A = 2/\Gamma_m \approx 200\,\mathrm{s}$) are set by eye.
 ```
 
-The overlay follows the decaying $z$-oscillation over the full $600\,\mathrm{s}$ window. A decay time of order $10\,\mathrm{min}$ is consistent with the slowly damped benchtop spring used here and confirms that the accelerometer tracks the envelope of a physical mass-spring ringdown rather than a stationary offset or an artefact of the readout chain. Quantitative extraction of $\Gamma_m$ is not required for the validation goal; the agreement between kinematics, frequency, amplitude, and envelope shape is sufficient to establish confidence in the measurement chain before applying it to cryostat data.
+In the first $\sim 50$–$100\,\mathrm{s}$, the oscillation peaks fall faster than the dashed envelope. This is consistent with amplitude-dependent damping on the benchtop spring: friction and air drag are stronger at the large initial displacement, so the effective decay rate is higher early on and approaches a slower rate once the motion has settled. A brief release transient when the mass is let go may contribute to the same interval. From roughly $t = 150\,\mathrm{s}$ onward, the envelope tracks the peaks well. A single exponential is therefore a qualitative guide rather than a full model of the ringdown. It is nevertheless sufficient for the validation goal: the accelerometer reproduces the frequency, amplitude, and decaying oscillation expected of a mass-spring system.
+
+#### Ringdown spectra
+After the time-domain checks, the ringdown recording is examined in the frequency domain. [](#fig-ringdown-asd-low) shows the Welch ASD for all three axes from $0$ to $5\,\mathrm{Hz}$.
+
+```{figure} figures/Ringdown_ASD_0-5Hz_3ch.png
+:label: fig-ringdown-asd-low
+:alt: Three-axis ringdown ASD from 0 to 5 Hz
+
+Caption: Welch ASD of the ringdown recording ($n_{\mathrm{perseg}} = 60\,\mathrm{s}$) from $0$ to $5\,\mathrm{Hz}$ on all three axes. The horizontal line marks the datasheet noise floor of $22.5\,\mu\mathrm{g}/\sqrt{\mathrm{Hz}}$[@adxl354_datasheet].
+```
+
+All three channels share a sharp peak near $1\,\mathrm{Hz}$, in line with the video count ($f = 0.995\,\mathrm{Hz}$) and the $\sim 1\,\mathrm{Hz}$ oscillation in [](#fig-ringdown-wobble). The $z$-peak is largest, as expected for a primarily vertical oscillation measured on the gravity-aligned axis. Additional structure appears above $1\,\mathrm{Hz}$: smaller peaks and shoulders between roughly $1.5\,\mathrm{Hz}$ and $5\,\mathrm{Hz}$ on one or more axes. These features are consistent with harmonics and weak off-axis modes excited alongside the fundamental, rather than with a single pure sinusoid.
+
+The red horizontal line in [](#fig-ringdown-asd-low) marks the typical ADXL354 noise floor of $22.5\,\mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ from the datasheet[@adxl354_datasheet]. Every ringdown peak sits orders of magnitude above this reference. For this validation dataset the mechanical signal therefore dominates the sensor intrinsic noise floor, as intended for a sanity check on a macroscopic oscillator.
+
+[](#fig-ringdown-asd-z) zooms the $z$-channel ASD out to $20\,\mathrm{Hz}$.
+
+```{figure} figures/Ringdown_ASD_Z_0-20Hz.png
+:label: fig-ringdown-asd-z
+:alt: z-axis ringdown ASD from 0 to 20 Hz
+
+Caption: Welch ASD of the $z$-channel ringdown from $0$ to $20\,\mathrm{Hz}$ ($n_{\mathrm{perseg}} = 60\,\mathrm{s}$). Harmonic lines above the $\sim 1\,\mathrm{Hz}$ fundamental are spaced by approximately integer multiples of the drive frequency. The datasheet noise floor is shown for comparison.
+```
+
+Above the fundamental, a comb of lines appears at approximately $2\,\mathrm{Hz}$, $3\,\mathrm{Hz}$, $4\,\mathrm{Hz}$, and higher frequencies up to the plotted band. The spacing follows the fundamental period: each additional line lies near an integer multiple of $\sim 1\,\mathrm{Hz}$. This harmonic content is expected when the motion is periodic but not perfectly sinusoidal, and it mirrors the richer structure already visible in the $x$- and $y$-wobbles of [](#fig-ringdown-wobble). The harmonics remain well above the datasheet noise floor across the $0$–$20\,\mathrm{Hz}$ band shown here.
+
+The datasheet noise floor is a useful reference, but it does not by itself set the lowest line observed in every configuration. In the cryostat baseline measurements discussed later, the measured broadband floor with the cooler off lies roughly a factor of five above $22.5\,\mu\mathrm{g}/\sqrt{\mathrm{Hz}}$, likely because the Rigol scope readout adds broadband noise on top of the sensor. That offset is not resolved here; for the ringdown validation the relevant point is that the $\sim 1\,\mathrm{Hz}$ fundamental and its harmonics stand clearly above both the datasheet floor and the expected readout contribution. Together, the flip test, ringdown time traces, envelope decay, and spectra confirm that the three-axis chain reproduces known static and dynamic accelerations before it is applied to the fridge-mounted recordings.
+
