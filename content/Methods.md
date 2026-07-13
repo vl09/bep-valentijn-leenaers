@@ -14,7 +14,9 @@ A Red Pitaya board with PyRPL was available as an alternative readout path. It o
 Three experiments are performed in sequence. First, sensor sensitivity is determined with a static gravity flip. Second, a mass-spring ringdown on the bench exercises the calibrated chain on a dynamic signal. Third, the same chain is applied to cryostat-mounted recordings for noise spectroscopy. The first two are described below; cryostat acquisition follows in a later section.
 
 ### Static flip test for sensitivity calibration
-The flip test uses gravity as a known, steady $1\,\mathrm{g}$ acceleration, as described in [](#theory). With the sensor at rest on the bench, the $z$-axis output corresponds to $+1\,\mathrm{g}$. After a manual $180^\circ$ rotation about the $z$-axis, the same axis reads $-1\,\mathrm{g}$. The voltage span between the two plateaus corresponds to $2\,\mathrm{g}$ and defines the sensitivity $S$ in $\mathrm{V/g}$. The two steady orientations are shown in [](#fig-flip-setup).
+The flip test uses gravity as a known, steady $1\,\mathrm{g}$ acceleration, as described in [](#theory). With the sensor at rest on the bench, the $z$-axis output corresponds to $+1\,\mathrm{g}$. After a manual $180^\circ$ rotation about the $z$-axis, the same axis reads $-1\,\mathrm{g}$. The voltage span between the two plateaus corresponds to $2\,\mathrm{g}$ and defines the sensitivity $S$ in $\mathrm{V/g}$.
+
+For the flip test, the ADXL354 breakout is screwed to a flat copper plate using two spacers so that the sensor package sits level. The plate can be pressed flat against a known-level surface, such as a laboratory desk, in each orientation so that the $z$-axis stays aligned with gravity during the upright and inverted plateaus. The two steady orientations are shown in [](#fig-flip-setup).
 
 ```{figure}
 :label: fig-flip-setup
@@ -24,7 +26,7 @@ The flip test uses gravity as a known, steady $1\,\mathrm{g}$ acceleration, as d
 
 ![ADXL354 breakout inverted ($-1g$ on $z$)](figures/flip_setup_inverted.jpg)
 
-Caption: Benchtop setup for the static flip calibration. The ADXL354 breakout is held steady on the bench in the upright orientation (left) and after a manual $180^\circ$ rotation about the $z$-axis (right). Scope leads connect the three analog outputs to the Rigol DS1054Z.
+Caption: Benchtop setup for the static flip calibration. The ADXL354 is mounted on a flat copper plate with two spacers (left: upright, $+1\,\mathrm{g}$ on $z$; right: inverted, $-1\,\mathrm{g}$ on $z$). Scope leads connect the three analog outputs to the Rigol DS1054Z.
 ```
 
 A $12\,\mathrm{s}$ trace is acquired with the scope settings above while the sensor is held steady upright, flipped, and held steady inverted. Transients during the flip are excluded. The waveform is saved as a timestamped `.npz` file and analysed offline. On the $z$-channel, mean voltages $\bar{V}_{+1\mathrm{g}}$ and $\bar{V}_{-1\mathrm{g}}$ are taken from $1\,\mathrm{s}$ windows in the upright and inverted plateaus ($4$–$5\,\mathrm{s}$ and $9$–$10\,\mathrm{s}$). The zero-$g$ offset is estimated as
