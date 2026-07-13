@@ -27,9 +27,11 @@ In the graph, the upright plateau sits at $+1.0\,\mathrm{g}$ and the inverted pl
 The second validation experiment records a benchtop mass-spring ringdown while a video camera captures the motion against a ruler, as described in [](#methods). The recording is shown in [](#vid-ringdown).
 
 ### Mass-spring ringdown
-The second validation experiment records a benchtop mass-spring ringdown while a video camera captures the motion against a ruler, as described in [](#methods). The recording is shown in [](#vid-ringdown).
+The second validation experiment records a benchtop mass-spring ringdown while a video camera captures the motion against a ruler, as described in [](#methods).
 
 +++{"no-pdf": true}
+
+The recording is shown in [](#vid-ringdown).
 
 ```{figure} figures/ringdown.mp4
 :label: vid-ringdown
