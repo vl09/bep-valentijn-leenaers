@@ -14,7 +14,18 @@ A Red Pitaya board with PyRPL was available as an alternative readout path. It o
 Three experiments are performed in sequence. First, sensor sensitivity is determined with a static gravity flip. Second, a mass-spring ringdown on the bench exercises the calibrated chain on a dynamic signal. Third, the same chain is applied to cryostat-mounted recordings for noise spectroscopy. The first two are described below; cryostat acquisition follows in a later section.
 
 ### Static flip test for sensitivity calibration
-The flip test uses gravity as a known, steady $1\,\mathrm{g}$ acceleration, as described in [](#theory). With the sensor at rest on the bench, the $z$-axis output corresponds to $+1\,\mathrm{g}$. After a manual $180^\circ$ rotation about the $z$-axis, the same axis reads $-1\,\mathrm{g}$. The voltage span between the two plateaus corresponds to $2\,\mathrm{g}$ and defines the sensitivity $S$ in $\mathrm{V/g}$.
+The flip test uses gravity as a known, steady $1\,\mathrm{g}$ acceleration, as described in [](#theory). With the sensor at rest on the bench, the $z$-axis output corresponds to $+1\,\mathrm{g}$. After a manual $180^\circ$ rotation about the $z$-axis, the same axis reads $-1\,\mathrm{g}$. The voltage span between the two plateaus corresponds to $2\,\mathrm{g}$ and defines the sensitivity $S$ in $\mathrm{V/g}$. The two steady orientations are shown in [](#fig-flip-setup).
+
+```{figure}
+:label: fig-flip-setup
+:class: grid grid-cols-2 gap-4
+
+![ADXL354 breakout in the upright orientation (+1g on $z$)](figures/flip_setup_upright.jpg)
+
+![ADXL354 breakout inverted ($-1g$ on $z$)](figures/flip_setup_inverted.jpg)
+
+Caption: Benchtop setup for the static flip calibration. The ADXL354 breakout is held steady on the bench in the upright orientation (left) and after a manual $180^\circ$ rotation about the $z$-axis (right). Scope leads connect the three analog outputs to the Rigol DS1054Z.
+```
 
 A $12\,\mathrm{s}$ trace is acquired with the scope settings above while the sensor is held steady upright, flipped, and held steady inverted. Transients during the flip are excluded. The waveform is saved as a timestamped `.npz` file and analysed offline. On the $z$-channel, mean voltages $\bar{V}_{+1\mathrm{g}}$ and $\bar{V}_{-1\mathrm{g}}$ are taken from $1\,\mathrm{s}$ windows in the upright and inverted plateaus ($4$–$5\,\mathrm{s}$ and $9$–$10\,\mathrm{s}$). The zero-$g$ offset is estimated as
 
@@ -25,10 +36,10 @@ $$
 and subtracted from all three channels. After subtraction, the plateau means on $z$ are equal in magnitude and opposite in sign. Because the upright plateau reads higher than the inverted plateau on the raw $z$-trace, the sensitivity is
 
 $$
-S = \frac{|\bar{V}_{+1\mathrm{g}}| + |\bar{V}_{-1\mathrm{g}}|}{2},
+S = \frac{\bar{V}_{+1\mathrm{g}} - \bar{V}_{-1\mathrm{g}}}{2},
 $$ (eq-flip-sensitivity)
 
-where the plateau symbols denote offset-corrected values on $z$. Acceleration in units of $g$ is then obtained from
+with $\bar{V}_{+1\mathrm{g}} > \bar{V}_{-1\mathrm{g}}$. Acceleration in units of $g$ is then obtained from
 
 $$
 a_i = \frac{V_i - \bar{V}_0}{S},
