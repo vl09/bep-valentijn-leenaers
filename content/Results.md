@@ -33,7 +33,8 @@ The second validation experiment records a benchtop mass-spring ringdown while a
 
 ```{figure} figures/ringdown.mp4
 :label: vid-ringdown
-:width: 100%
+:width: 50%
+:align: center
 
 Caption: Benchtop mass-spring ringdown recorded alongside the accelerometer trace. A ruler beside the apparatus provides the displacement scale.
 ```
