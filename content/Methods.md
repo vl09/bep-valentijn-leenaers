@@ -47,14 +47,13 @@ $$
 a_i = \frac{V_i - \bar{V}_0}{S},
 $$ (eq-voltage-to-g)
 
-where $V_i$ is the measured voltage on axis $i$. Equivalently, when a fixed datasheet offset $V_0 = \mathrm{V_{1P8ANA}}/2 = 0.9\,\mathrm{V}$ is used instead of the measured $\bar{V}_0$, the same sensitivity value applies to subsequent recordings taken with the same supply voltage. The extracted $S$ and offset are reported in [](#results) and used for all later conversions.
+where $V_i$ is the measured voltage on axis $i$. For all recordings after the flip test, the measured $\bar{V}_0$ from [](#results) is used as the fixed offset in [](#eq-voltage-to-g), together with the extracted $S$.
 
 ### Mass-spring ringdown
 The second experiment uses a vertical mass-spring oscillator of the type described in [](#theory). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording.
-
 During the initial oscillation, the mass travels between approximately $15\,\mathrm{cm}$ and $42\,\mathrm{cm}$ on the ruler. The peak-to-peak span is $27\,\mathrm{cm}$, so the displacement amplitude relative to the midpoint is $A = 13.5\,\mathrm{cm}$. The scope records a single continuous trace of $600\,\mathrm{s}$ at $f_s = 5\,\mathrm{kHz}$ using the settings in the measurement setup above.
 
-The ringdown trace is converted to acceleration using [](#eq-voltage-to-g) with the flip-test sensitivity and $V_0 = 0.9\,\mathrm{V}$. In parallel, the video is analysed in a chosen time window near the start of the motion. The oscillation frequency $f$ is obtained by counting complete cycles and dividing by the window duration. Peak acceleration from kinematics is computed with [](#eq-shm-peak-accel), using the ruler amplitude $A$ and angular frequency $\omega = 2\pi f$. Because the $z$-axis is aligned with gravity, the expected accelerometer range on $z$ is $1 \pm a_{\mathrm{peak}}/g$ in units of $g$. The kinematic values and the comparison with the accelerometer trace are reported in [](#results).
+The ringdown trace is converted to acceleration using [](#eq-voltage-to-g) with the flip-test sensitivity and $\bar{V}_0$. In parallel, the video is analysed in a chosen time window near the start of the motion. The oscillation frequency $f$ is obtained by counting complete cycles and dividing by the window duration. Peak acceleration from kinematics is computed with [](#eq-shm-peak-accel), using the ruler amplitude $A$ and angular frequency $\omega = 2\pi f$. Because the $z$-axis is aligned with gravity, the expected accelerometer range on $z$ is $1 \pm a_{\mathrm{peak}}/g$ in units of $g$. The kinematic values and the comparison with the accelerometer trace are reported in [](#results).
 
 ## Cryostat vibration measurements
 The main measurements of this thesis use a DIY dry 4K cryostat at SteeleLab. The cold stage is cooled by a Gifford–McMahon (GM) cryocooler. Two operating conditions are recorded: cooler **off** (baseline) and cooler **on** (running). The ADXL354 is mounted on top of the final cold plate; the plate has no centre mounting holes, so the sensor cannot be placed at the geometric centre of the stage.
