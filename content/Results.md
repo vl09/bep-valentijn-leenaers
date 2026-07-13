@@ -24,7 +24,6 @@ Caption: $z$-axis acceleration after applying the flip-test sensitivity and offs
 ```
 
 In the graph, the upright plateau sits at $+1.0\,\mathrm{g}$ and the inverted plateau at $-1.0\,\mathrm{g}$. Large excursions during the manual flip ($\sim 6$–$7\,\mathrm{s}$) reach roughly $+1.5\,\mathrm{g}$ and $-2.3\,\mathrm{g}$ and are not used for calibration.
-The second validation experiment records a benchtop mass-spring ringdown while a video camera captures the motion against a ruler, as described in [](#methods). The recording is shown in [](#vid-ringdown).
 
 ### Mass-spring ringdown
 The second validation experiment records a benchtop mass-spring ringdown while a video camera captures the motion against a ruler, as described in [](#methods).
