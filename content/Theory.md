@@ -94,7 +94,7 @@ Intuitively, a smaller $\Gamma_m$ implies a slower decay, whereas a larger $\Gam
 Cryostat vibration measurements are analysed in the frequency domain. For a stationary acceleration signal $a(t)$, the one-sided power spectral density $S_{aa}(f)$ describes how mean-square acceleration is distributed over frequency. The variance follows from integrating over all frequencies,
 
 $$
-\sigma_a^2 = \int_0^\infty S_{aa}(f)\,\mathrm{d}f.
+\sigma_a^2 = \int_0^\infty S_{aa}(f) \mathrm{d}f.
 $$ (eq-variance-psd)
 
 The Amplitude Spectral Density (ASD) is defined as
@@ -105,7 +105,7 @@ $$
 
 Manufacturers often quote accelerometer noise floors in ASD units, typically $\mu\mathrm{g}/\sqrt{\mathrm{Hz}}$, which allows direct comparison with measured vibration spectra.
 
-Welch's method estimates $S_{aa}(f)$ by averaging periodograms computed on overlapping time segments. The segment length sets a trade-off between frequency resolution and the smearing of narrow-band lines. A long segment resolves closely spaced peaks but leaves a sharp periodic drive, such as a cryocooler fundamental near $1.4\,\mathrm{Hz}$[@maisonobe2018], visible as a comb of lines. A shorter segment broadens those lines and exposes the broader mechanical structure underneath.
+Welch's method estimates $S_{aa}(f)$ by averaging periodograms computed on overlapping time segments. The segment length sets a trade-off between frequency resolution and the smearing of narrow-band lines. A long segment resolves closely spaced peaks but leaves a sharp periodic drive, such as a cryocooler fundamental near $1.4 \mathrm{Hz}$[@maisonobe2018], visible as a comb of lines. A shorter segment broadens those lines and exposes the broader mechanical structure underneath.
 
 ### Sampling and the Nyquist limit
 Digital acquisition records a continuous acceleration signal at discrete times separated by $\Delta t = 1/f_s$, where $f_s$ is the sampling rate. The highest frequency that can be represented unambiguously from such samples is the Nyquist frequency[@shannon1949communication]
@@ -133,7 +133,7 @@ $$
 X(\omega) = \frac{F_0}{k - m\omega^2 + ic\omega}.
 $$ (eq-transfer-function)
 
-The magnitude $|X(\omega)|$ exhibits a maximum near $\omega = \omega_0$. This single-mode picture is a building block for reading spectra from a more complicated structure: when many resonances are present, each can contribute a peak in $S_{aa}(f)$ at its own frequency. The peak width reflects damping: for small damping the full width at half maximum $\Delta f$ is related to $\Gamma_m$ by $\Gamma_m = 2\pi\,\Delta f$.
+The magnitude $|X(\omega)|$ exhibits a maximum near $\omega = \omega_0$. This single-mode picture is a building block for reading spectra from a more complicated structure: when many resonances are present, each can contribute a peak in $S_{aa}(f)$ at its own frequency. The peak width reflects damping: for small damping the full width at half maximum $\Delta f$ is related to $\Gamma_m$ by $\Gamma_m = 2\pi \Delta f$.
 
 The cryocooler drive is not a pure sinusoid. A periodic displacement or force that repeats once per cycle but has a pulse-like waveform contains energy at the fundamental frequency and at integer harmonics. A vibration spectrum therefore shows a comb of lines spaced by the drive frequency, together with additional peaks from structural resonances excited by that drive. Harmonics can extend to frequencies well above the fundamental.
 
@@ -142,14 +142,14 @@ Dry cryostats are commonly cooled by a Gifford–McMahon (GM) cryocooler. In thi
 
 In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
 
-Literature on dry cryostats reports a narrow-band mechanical component near $1.4\,\mathrm{Hz}$ from cryocooler operation, together with low-frequency harmonics[@maisonobe2018]. Wilkinson[@wilkinson2025] describes a related periodic ticking from helium-pump strokes in a pulse-tube system. The absolute drive frequency depends on the cooler motor speed and duty cycle. The important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. Mass-spring isolation at the experimental platform is typically designed so that $f_0$ of the isolator avoids this line[@wilkinson2025].
+Literature on dry cryostats reports a narrow-band mechanical component near $1.4 \mathrm{Hz}$ from cryocooler operation, together with low-frequency harmonics[@maisonobe2018]. Wilkinson[@wilkinson2025] describes a related periodic ticking from helium-pump strokes in a pulse-tube system. The absolute drive frequency depends on the cooler motor speed and duty cycle. The important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. Mass-spring isolation at the experimental platform is typically designed so that $f_0$ of the isolator avoids this line[@wilkinson2025].
 
 ## The ADXL354 accelerometer
-Low-frequency vibration measurements require an accelerometer with a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400\,\mathrm{mV/g}$ at the $\pm 2\,\mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8\,\mathrm{V}$ supply $\mathrm{V_{1P8ANA}}$, with a zero-$g$ bias nominally at $\mathrm{V_{1P8ANA}}/2$.
+Low-frequency vibration measurements require an accelerometer with a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400 \mathrm{mV/g}$ at the $\pm 2 \mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8 \mathrm{V}$ supply $\mathrm{V_{1P8ANA}}$, with a zero-$g$ bias nominally at $\mathrm{V_{1P8ANA}}/2$.
 
-At rest, the sensor measures the local gravitational field. For an axis aligned with gravity, one orientation gives $+1\,\mathrm{g}$ and a $180^\circ$ rotation about that axis gives $-1\,\mathrm{g}$. The output voltages at the two plateaus therefore differ by a span equivalent to $2\,\mathrm{g}$. Dividing that span by $2\,\mathrm{g}$ yields a sensitivity in $\mathrm{V/g}$ that can be compared with the datasheet value without a separate reference accelerometer. Because the outputs are ratiometric to $\mathrm{V_{1P8ANA}}$, the midpoint between the two plateaus estimates the zero-$g$ bias for that recording.
+At rest, the sensor measures the local gravitational field. For an axis aligned with gravity, one orientation gives $+1 \mathrm{g}$ and a $180^\circ$ rotation about that axis gives $-1 \mathrm{g}$. The output voltages at the two plateaus therefore differ by a span equivalent to $2 \mathrm{g}$. Dividing that span by $2 \mathrm{g}$ yields a sensitivity in $\mathrm{V/g}$ that can be compared with the datasheet value without a separate reference accelerometer. Because the outputs are ratiometric to $\mathrm{V_{1P8ANA}}$, the midpoint between the two plateaus estimates the zero-$g$ bias for that recording.
 
-The sensor does not respond uniformly at all frequencies. Analog Devices publishes measured transfer functions for each axis[@adxl354_datasheet], reproduced in [](#fig-adxl354-transfer). Each curve shows relative output in units of $g$ per $g$ of input acceleration as a function of frequency, including the effect of the on-chip anti-aliasing filter. Below roughly $1\,\mathrm{kHz}$ the response is flat near unity, so the nominal sensitivity applies across the low-frequency band of interest. Above this band an internal mechanical resonance appears near $2.5\,\mathrm{kHz}$ on all three axes. The peak height is axis-dependent: the $x$- and $y$-channels show the largest gain, whereas the $z$-channel resonance is weaker. Peaks in measured spectra near this resonance may therefore reflect the sensor transfer function as much as the cryostat structure, and should be interpreted accordingly.
+The sensor does not respond uniformly at all frequencies. Analog Devices publishes measured transfer functions for each axis[@adxl354_datasheet], reproduced in [](#fig-adxl354-transfer). Each curve shows relative output in units of $g$ per $g$ of input acceleration as a function of frequency, including the effect of the on-chip anti-aliasing filter. Below roughly $1 \mathrm{kHz}$ the response is flat near unity, so the nominal sensitivity applies across the low-frequency band of interest. Above this band an internal mechanical resonance appears near $2.5 \mathrm{kHz}$ on all three axes. The peak height is axis-dependent: the $x$- and $y$-channels show the largest gain, whereas the $z$-channel resonance is weaker. Peaks in measured spectra near this resonance may therefore reflect the sensor transfer function as much as the cryostat structure, and should be interpreted accordingly.
 
 ```{figure}
 :label: fig-adxl354-transfer
@@ -164,10 +164,10 @@ The sensor does not respond uniformly at all frequencies. Analog Devices publish
 (fig-adxl354-z-response)=
 ![ADXL354 z-axis frequency response from the datasheet](figures/ADXL354_transfer_fuction_z-axis.png)
 
-Caption: ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8–10)[@adxl354_datasheet]. Relative output is flat near $1\,\mathrm{g/g}$ below $\sim 1\,\mathrm{kHz}$ on all axes. A mechanical resonance near $2.5\,\mathrm{kHz}$ is present on each axis; peak gain is highest on $x$ and $y$ and lower on $z$.
+Caption: ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8–10)[@adxl354_datasheet]. Relative output is flat near $1 \mathrm{g/g}$ below $\sim 1 \mathrm{kHz}$ on all axes. A mechanical resonance near $2.5 \mathrm{kHz}$ is present on each axis; peak gain is highest on $x$ and $y$ and lower on $z$.
 ```
 
-The datasheet specifies a typical noise density of order $22.5\,\mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At the $\pm 2\,\mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\,\mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
+The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At the $\pm 2 \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8 \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
 
 ## Mechanical response of extended structures
 A cryostat plate or stage is not well described by a single mass-spring equation. Plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
@@ -179,7 +179,7 @@ The vibration spectrum at any mount point is the cryocooler drive spectrum filte
 ## Distinguishing electrical from mechanical vibration
 Not every feature in a vibration spectrum originates from mechanical motion of the structure under test. Electrical interference at the mains frequency and its harmonics, ground loops, and noise from the readout chain can all appear in the recorded voltage signals.
 
-A useful discrimination criterion is channel correlation. If a narrow-band feature appears at the same frequency on all three axes with similar shape and a comparable amplitude scale, it is likely dominated by electrical pickup common to the measurement chain. Examples include lines near $50\,\mathrm{Hz}$ (mains frequency) and its harmonics, and broad elevated regions that track the same spectral shape on every channel.
+A useful discrimination criterion is channel correlation. If a narrow-band feature appears at the same frequency on all three axes with similar shape and a comparable amplitude scale, it is likely dominated by electrical pickup common to the measurement chain. Examples include lines near $50 \mathrm{Hz}$ (mains frequency) and its harmonics, and broad elevated regions that track the same spectral shape on every channel.
 
 Mechanical motion of an extended structure, by contrast, generally produces axis-dependent spectra. Comparing measurements taken with the cryocooler off and on helps separate a common-mode electrical floor from additional lines and broadband elevation associated with cooler operation. Features that grow strongly when the drive is active and differ markedly between axes are more naturally attributed to mechanical response.
 
