@@ -5,7 +5,7 @@ project:
   exports:
     - id: thesis-pdf
       format: typst
-      template: https://github.com/TUD-JB-OS/typst_template.git 
+      template: ./typst_template
       output: ./exports/thesis.pdf
 
 # ==============================================================================
