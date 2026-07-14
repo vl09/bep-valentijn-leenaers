@@ -65,7 +65,7 @@ where $V_i$ is the scope voltage on axis $i$ ($i = x, y, z$; channels 1–3 in [
 
 (methods-mass-spring-ringdown)=
 ### Mass-spring ringdown
-The second experiment uses a vertical mass-spring oscillator of the type described in [](#mass-spring-oscillator). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording. The apparatus is shown in [](#fig-mass-spring-setup), photographed with the mass held in the extended position before release. The sensor breakout is screwed to the copper mass; adhesive tape between the board and the mass prevents electrical contact with the conductive surface. The package was not seated perfectly level on the block ([](#fig-mass-spring-mount)).
+The second experiment uses a vertical mass-spring oscillator of the type described in [](#mass-spring-oscillator). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording. The apparatus is shown in [](#fig-mass-spring-setup), photographed with the mass held in the extended position before release. The sensor breakout is screwed to the copper mass; adhesive tape between the board and the mass prevents electrical contact with the conductive surface. The breakout board was not seated perfectly level on the block ([](#fig-mass-spring-mount)).
 
 ```{figure}
 :class: grid grid-cols-2 gap-4
@@ -76,7 +76,7 @@ The second experiment uses a vertical mass-spring oscillator of the type describ
 (fig-mass-spring-mount)=
 ![ADXL354 mounting detail on the oscillating mass](figures/mass_spring_mount.jpg)
 
-Mass-spring ringdown setup (left), with the mass in the extended position before release, and detail of the ADXL354 mounting on the oscillating mass (right). A vertical ruler beside the apparatus provides the displacement scale used for kinematic checks in [](#results). The breakout is screwed to the top face; tape under the board electrically isolates it from the copper mass. The package sits at a slight angle to the surface.
+Mass-spring ringdown setup (left), with the mass in the extended position before release, and detail of the ADXL354 mounting on the oscillating mass (right). A vertical ruler beside the apparatus provides the displacement scale used for kinematic checks in [](#results). The breakout is screwed to the top face; tape under the board electrically isolates it from the copper mass. The breakout board sits at a slight angle to the surface.
 ```
 
 During the initial oscillation, the mass travels between approximately $15\ \mathrm{cm}$ and $42\ \mathrm{cm}$ on the ruler. The peak-to-peak span is $27\ \mathrm{cm}$, so the displacement amplitude relative to the midpoint is $A = 13.5\ \mathrm{cm}$. The scope records a single continuous trace of $600\ \mathrm{s}$ at $f_s = 5\ \mathrm{kHz}$ using the settings in the measurement setup above.
