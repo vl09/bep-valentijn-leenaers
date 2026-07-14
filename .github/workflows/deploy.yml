@@ -35,6 +35,13 @@ jobs:
           ref: main
           path: typst_template
 
+      - name: Patch Typst template for superscript citations
+        run: |
+          MAIN=typst_template/src/main.typ
+          if ! grep -q 'show cite:' "$MAIN"; then
+            sed -i '/show link: set text/a\  show cite: it => super(it)' "$MAIN"
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
