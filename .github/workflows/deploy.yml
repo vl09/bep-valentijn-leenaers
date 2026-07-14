@@ -68,9 +68,8 @@ jobs:
         uses: typst-community/setup-typst@v4
 
       - name: Build PDF
-        run: |
-          myst build --typst > build.log 2>&1 || true
-
+        run: myst build --typst
+        
       - name: Upload Output PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -79,18 +78,21 @@ jobs:
           compression-level: 0
 
       - name: Write build errors to errorlog.md
-        if: always()
+        if: failure()
         run: |
           echo "# PDF Build Error Log" > errorlog.md
           echo "" >> errorlog.md
           echo "**Build time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> errorlog.md
           echo "" >> errorlog.md
-          echo '```text' >> errorlog.md
-          grep -iE "error|warning" build.log >> errorlog.md || echo "No errors or warnings." >> errorlog.md
-          echo '```' >> errorlog.md
+          echo "Typst export failed. Re-run \`myst build --typst\` locally to inspect the full log." >> errorlog.md
 
       - name: Build HTML Assets
         run: myst build --html --execute
+
+      - name: Copy PDF exports into site
+        run: |
+          mkdir -p _build/html/exports
+          cp exports/*.pdf _build/html/exports/
 
       - name: Remove stale Pages artifact
         uses: geekyeggo/delete-artifact@v6
