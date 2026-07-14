@@ -13,8 +13,8 @@ project:
         - file: content/Appendix_A.md
         - file: content/Appendix_B.md
         - file: content/Results.ipynb
-    - title: Reference
-      children:
-        - file: content/Cheatsheet.md
-        - file: errorlog.md
-        - file: README.md
+#    - title: Reference
+#      children:
+#        - file: content/Cheatsheet.md
+#        - file: errorlog.md
+#        - file: README.md
