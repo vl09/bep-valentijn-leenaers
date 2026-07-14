@@ -11,7 +11,13 @@ In this chapter, the measurement chain and the procedures used to characterise v
 ## Measurement setup
 The three-axis accelerometer is an ADXL354 (Analog Devices), configured for the $\pm 2\ \mathrm{g}$ full-scale range. Each analog output is ratiometric to the on-chip $1.8\ \mathrm{V}$ analog supply $\mathrm{V_{1P8ANA}}$: the zero-$g$ bias is nominally $\mathrm{V_{1P8ANA}}/2 = 0.9\ \mathrm{V}$, and the datasheet quotes a typical sensitivity of $400\ \mathrm{mV/g}$ at this range[@adxl354_datasheet].
 
-For all measurements reported here, the $x$, $y$, and $z$ outputs are connected to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope. The scope is controlled over Ethernet via PyVISA, and waveforms are transferred to a Python analysis environment. The scope operates in high-resolution acquisition mode with DC coupling. Channel offsets of $-0.9\ \mathrm{V}$ on channels 1 and 2, and $-1.2\ \mathrm{V}$ on channel 3, place the zero-$g$ bias near the centre of the oscilloscope grid, matching the $\mathrm{V_{1P8ANA}}/2$ reference. A vertical scale of $0.1\ \mathrm{V/div}$ is used on all three channels. Deep-memory acquisitions store up to $3 \times 10^6$ points per channel. Recordings are saved as time series of voltage in `.npz` format for offline analysis; the acquisition and analysis notebooks are listed in [](#appendix-code).
+For all measurements reported here, the $x$, $y$, and $z$ outputs are connected to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope. The scope is controlled over Ethernet via PyVISA, and waveforms are transferred to a Python analysis environment. The scope operates in high-resolution acquisition mode with DC coupling. Channel offsets of $-0.9\ \mathrm{V}$ on channels 1 and 2, and $-1.2\ \mathrm{V}$ on channel 3, place the zero-$g$ bias near the centre of the oscilloscope grid, matching the $\mathrm{V_{1P8ANA}}/2$ reference. A vertical scale of $0.1\ \mathrm{V/div}$ is used on all three channels. Deep-memory acquisitions store up to $3 \times 10^6$ points per channel. Recordings are saved as time series of voltage in `.npz` format for offline analysis; the acquisition and analysis notebooks are listed in [](#appendix-code). A captured ringdown screen is shown in [](#fig-ringdown-scope).
+
+```{figure} figures/ringdown_scope.jpg
+:label: fig-ringdown-scope
+
+Rigol DS1054Z during a mass-spring ringdown acquisition. The three ADXL354 outputs on channels 1–3 show the initial damped oscillation after release.
+```
 
 ### Alternative readout hardware
 A Red Pitaya board with PyRPL was available as an alternative readout path. It offers a flexible lock-in style interface, but its on-board buffer is too small for the multi-minute deep-memory traces used here without continuous streaming to the host. The Rigol DS1054Z was used for the measurements reported in this thesis.
@@ -59,7 +65,19 @@ where $V_i$ is the scope voltage on axis $i$ ($i = x, y, z$; channels 1–3 in [
 
 (methods-mass-spring-ringdown)=
 ### Mass-spring ringdown
-The second experiment uses a vertical mass-spring oscillator of the type described in [](#mass-spring-oscillator). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording.
+The second experiment uses a vertical mass-spring oscillator of the type described in [](#mass-spring-oscillator). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording. The apparatus is shown in [](#fig-mass-spring-setup), photographed with the mass held in the extended position before release. The sensor breakout is screwed to the copper mass; adhesive tape between the board and the mass prevents electrical contact with the conductive surface. The package was not seated perfectly level on the block ([](#fig-mass-spring-mount)).
+
+```{figure}
+:class: grid grid-cols-2 gap-4
+
+(fig-mass-spring-setup)=
+![Benchtop mass-spring ringdown setup](figures/mass_spring_setup.jpg)
+
+(fig-mass-spring-mount)=
+![ADXL354 mounting detail on the oscillating mass](figures/mass_spring_mount.jpg)
+
+Mass-spring ringdown setup (left), with the mass in the extended position before release, and detail of the ADXL354 mounting on the oscillating mass (right). A vertical ruler beside the apparatus provides the displacement scale used for kinematic checks in [](#results). The breakout is screwed to the top face; tape under the board electrically isolates it from the copper mass. The package sits at a slight angle to the surface.
+```
 
 During the initial oscillation, the mass travels between approximately $15\ \mathrm{cm}$ and $42\ \mathrm{cm}$ on the ruler. The peak-to-peak span is $27\ \mathrm{cm}$, so the displacement amplitude relative to the midpoint is $A = 13.5\ \mathrm{cm}$. The scope records a single continuous trace of $600\ \mathrm{s}$ at $f_s = 5\ \mathrm{kHz}$ using the settings in the measurement setup above.
 
