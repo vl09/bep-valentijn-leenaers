@@ -12,7 +12,7 @@ $$
 m\ddot{x} = - kx
 $$ (eq-undamped-eom)
 
-which describes a simple harmonic oscillator. The general solution reads
+where $\ddot{x}$ denotes the second derivative of discplacement w.r.t. time. This describes a simple harmonic oscillator. The general solution reads
 
 $$
 x(t) = A\cos(\omega_0 t + \varphi),
@@ -31,11 +31,11 @@ $$
 k = \frac{mg}{\Delta L}.
 $$ 
 
-Measuring $\Delta L$ for a specific mass $m$ therefore provides an independent estimate of $k$, and equivalently 
+Measuring $\Delta L$ for a specific mass $m$ therefore provides an independent estimate of $k$, and hence of the natural frequency
 
 $$
-f_0 = \frac{1}{2\pi}\sqrt{\frac{g}{\Delta L}}
-$$.
+f_0 = \frac{1}{2\pi}\sqrt{\frac{g}{\Delta L}}.
+$$
 
 For simple harmonic motion at angular frequency $\omega_0$ with peak displacement amplitude $A$, the peak acceleration is $a_{\mathrm{peak}} = \omega_0^2 A$. In units of $g$,
 
@@ -45,13 +45,11 @@ $$ (eq-shm-peak-accel)
 
 where $A$ is in metres. The same relation links displacement and acceleration whenever motion is dominated by a single harmonic at $f_0$.
 
-A mass-spring degree of freedom also forms the basis of passive vibration isolation. A platform suspended on springs can be tuned so that its resonance lies away from a narrow-band disturbance, reducing motion transmitted to sensitive instrumentation[@wilkinson2025]. That isolator is a designed oscillator with known $f_0$ and $\Gamma_m$. An extended cryostat structure, by contrast, supports many modes simultaneously and is discussed in a later section.
-
-Real oscillators dissipate energy. The following section introduces viscous damping and the ringdown envelope.
+Passive vibration isolation exploits the same mass-spring picture. A platform suspended on springs can be tuned so that its resonance lies away from a narrow-band disturbance, reducing motion transmitted to sensitive instrumentation[@wilkinson2025]. Such an isolator is a designed oscillator with known $f_0$ and $\Gamma_m$. A cryostat structure, by contrast, supports many modes simultaneously; that richer frequency content is discussed in a later section.
 
 ## Damped motion and Ringdown
 ### Equation of motion
-To describe how the oscillation decays, a dissipative force proportional to velocity is added to the model. This viscous damping force points opposite to the motion and reads
+Because energy is lost during oscillation, a dissipative force proportional to velocity is added to the model. This viscous damping force points opposite to the motion and reads
 
 $$
 F_d = -c\dot{x},
@@ -175,14 +173,14 @@ ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8
 The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
 
 ## Mechanical response of extended structures
-A cryostat plate or stage is not well described by a single mass-spring equation. Plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
+The models above each describe a single degree of freedom. A cryostat plate or stage couples many such freedoms at once: plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
 
 When the structure is excited at or near a mode frequency, the acceleration at a particular point depends on how that mode shape couples to each sensitive axis. A mode that produces primarily vertical motion is seen most clearly on the axis aligned with that direction, whereas a mode that mixes several directions can appear on more than one channel with different relative amplitudes. Sensor placement relative to symmetry points of the structure therefore affects the relative strength of peaks on different axes.
 
 The vibration spectrum at any mount point is the cryocooler drive spectrum filtered by this mechanical response and by the sensor orientation. Cooler-induced harmonics and structural resonances need not appear with the same strength on all three channels. Individual spectral peaks generally cannot be assigned to specific components without further modal information. This distinction between a lumped mass-spring isolator and a distributed structure is essential: the former is characterised by $f_0$ and $\Gamma_m$, whereas the latter presents a dense or irregular set of modes driven by the same periodic source.
 
 ## Distinguishing electrical from mechanical vibration
-Not every feature in a vibration spectrum originates from mechanical motion of the structure under test. Electrical interference at the mains frequency and its harmonics, ground loops, and noise from the readout chain can all appear in the recorded voltage signals.
+Not every feature in a vibration spectrum originates from mechanical motion of the structure under test. Electrical interference at the mains frequency (Europe: $50\ \mathrm{Hz}$) and its harmonics, ground loops, and noise from the readout chain can all appear in the recorded voltage signals.
 
 A useful discrimination criterion is channel correlation. If a narrow-band feature appears at the same frequency on all three axes with similar shape and a comparable amplitude scale, it is likely dominated by electrical pickup common to the measurement chain. Examples include lines near $50\ \mathrm{Hz}$ (mains frequency) and its harmonics, and broad elevated regions that track the same spectral shape on every channel.
 
