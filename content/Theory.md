@@ -1,3 +1,8 @@
+---
+numbering:
+  equation:
+    enumerator: "2.%s"
+---
 (theory)=
 # Theory
 ## The undamped mass-spring oscillator
