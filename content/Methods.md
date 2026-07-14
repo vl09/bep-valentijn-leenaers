@@ -1,3 +1,8 @@
+---
+numbering:
+  equation:
+    enumerator: "3.%s"
+---
 (methods)=
 # Experimental Method
 In this chapter, the measurement chain and the procedures used to characterise vibrations are described. A static gravity-flip test first validates the ADXL354 accelerometer and the voltage-to-acceleration conversion. A mass-spring ringdown and cryostat-mounted noise spectroscopy then apply the calibrated chain to the systems introduced in the Introduction.
