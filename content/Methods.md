@@ -15,6 +15,8 @@ For all measurements reported here, the $x$, $y$, and $z$ outputs are connected 
 
 ```{figure} figures/ringdown_scope.jpg
 :label: fig-ringdown-scope
+:width: 50%
+:align: center
 
 Rigol DS1054Z during a mass-spring ringdown acquisition. The three ADXL354 outputs on channels 1–3 show the initial damped oscillation after release.
 ```
