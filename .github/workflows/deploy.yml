@@ -62,14 +62,27 @@ jobs:
           python -m ipykernel install --user --name=python3
 
       - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
+        timeout-minutes: 5
+        run: |
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            -o Acquire::Retries=5 \
+            -o Acquire::http::Timeout=60 \
+            imagemagick
 
       - name: Setup Typst
         uses: typst-community/setup-typst@v4
 
       - name: Build PDF
         run: myst build --typst
-        
+
+      - name: Verify PDF export
+        run: |
+          if ! compgen -G "exports/*.pdf" > /dev/null; then
+            echo "Typst export failed: no PDF found in exports/"
+            exit 1
+          fi
+
       - name: Upload Output PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -92,7 +105,11 @@ jobs:
       - name: Copy PDF exports into site
         run: |
           mkdir -p _build/html/exports
-          cp exports/*.pdf _build/html/exports/
+          if compgen -G "exports/*.pdf" > /dev/null; then
+            cp exports/*.pdf _build/html/exports/
+          else
+            echo "No PDF exports to copy; site will deploy without PDF downloads."
+          fi
 
       - name: Remove stale Pages artifact
         uses: geekyeggo/delete-artifact@v6
