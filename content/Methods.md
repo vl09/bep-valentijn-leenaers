@@ -27,11 +27,11 @@ For the flip test, the ADXL354 breakout is screwed to a flat copper plate using 
 :label: fig-flip-setup
 :class: grid grid-cols-2 gap-4
 
-![ADXL354 breakout in the upright orientation (+1g on $z$)](figures/flip_setup_upright.jpg)
+![ADXL354 breakout in the upright orientation (+1 g on $z$)](figures/flip_setup_upright.jpg)
 
-![ADXL354 breakout inverted ($-1g$ on $z$)](figures/flip_setup_inverted.jpg)
+![ADXL354 breakout inverted ($-1 g$ on $z$)](figures/flip_setup_inverted.jpg)
 
-Caption: Benchtop setup for the static flip calibration. The ADXL354 is mounted on a flat copper plate with two spacers (left: upright, $+1\ \mathrm{g}$ on $z$; right: inverted, $-1\ \mathrm{g}$ on $z$). Scope leads connect the three analog outputs to the Rigol DS1054Z.
+Benchtop setup for the static flip calibration. The ADXL354 is mounted on a flat copper plate with two spacers (left: upright, $+1\ \mathrm{g}$ on $z$; right: inverted, $-1\ \mathrm{g}$ on $z$). Scope leads connect the three analog outputs to the Rigol DS1054Z.
 ```
 
 A $12\ \mathrm{s}$ trace is acquired with the scope settings above while the sensor is held steady upright, flipped, and held steady inverted. Transients during the flip are excluded. The waveform is saved as a timestamped `.npz` file and analysed offline. On the $z$-channel, mean voltages $\bar{V}_{+1\mathrm{g}}$ and $\bar{V}_{-1\mathrm{g}}$ are taken from $1\ \mathrm{s}$ windows in the upright and inverted plateaus ($4$–$5\ \mathrm{s}$ and $9$–$10\ \mathrm{s}$). The zero-$g$ offset is estimated as
