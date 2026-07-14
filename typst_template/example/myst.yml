@@ -1,0 +1,51 @@
+version: 1
+extends:
+  - people.yml
+  - options.yml
+  - typst_export_config.yml
+project:
+  title: Typst Template Example for Student End Projects made with MyST 
+  subtitle: Shared Template for MyST and Typst for Thesis and Academic Writing Projects at TU Delft
+  date: 2026-02-22
+  parts:
+    # colophon: content/parts/colophon.md
+    acknowledgements: content/parts/acknowledgements.md
+    abstract: content/parts/abstract.md
+    # preface: content/parts/preface.md
+    # dedication: content/parts/dedication.md
+
+  keywords: [myst, typst, thesis template, front matter, metadata mapping, academic writing workflow, document automation]
+  #   - myst
+  #   - typst
+  #   - thesis
+  license: CC-BY-4.0
+  doi: doi:10.5181/typst.12345678/exampledoi
+  bibliography:
+    - reference.bib
+
+  toc:
+    - file: content/index.md
+    - file: content/chapters/01-introduction.md
+    - file: content/chapters/02-background.md
+    - file: content/chapters/03-methods.md
+    - file: content/chapters/04-results.md
+    - file: content/chapters/05-conclusion.md
+    # Appendices are currently handled like regular late chapters,
+    # so they stay in the same table-of-contents list.
+    - file: content/appendices/a-extra-data.md
+    - file: content/appendices/b-supplement.md
+
+site:
+  template: book-theme
+  options:
+    style: https://github.com/TUD-JB-Templates/JB2_plugins/releases/download/CSS/custom.css
+  #   favicon: favicon.ico
+    # logo: logo.svg
+
+  actions:
+    - title: GitHub Repo
+      url: https://github.com/mmtop/myst_typst_V1
+    - title: Feedback
+      url: https://github.com/mmtop/myst_typst_V1/issues
+    - title: Download PDF
+      url: ./exports/typst_template_example.pdf
