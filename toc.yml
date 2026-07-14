@@ -5,8 +5,8 @@ project:
     - file: content/Introduction.md
     - file: content/Theory.md
     - file: content/Methods.md
-    - file: content/Results.md
-    - file: content/Discussion.md
+    - file: content/Results_and_Discussion.md
+#    - file: content/Discussion.md
     - file: content/Conclusion.md
     - title: Appendices
       children:
