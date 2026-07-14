@@ -5,6 +5,7 @@ numbering:
 ---
 (theory)=
 # Theory
+(mass-spring-oscillator)=
 ## The undamped mass-spring oscillator
 Consider a mass $m$ attached to a spring with stiffness $k$. When the displacement $x$ from equilibrium is small, Hooke's law gives a restoring force $F = -kx$. Then Newton's second law can be used to yield the equation of motion
 
@@ -81,6 +82,7 @@ $$ (eq-ringdown-solution)
 
 with damped angular frequency $\tilde{\omega}_0 = \omega_0 \sqrt{1 - (\Gamma_m/2\omega_0)^2}$. The envelope $A(t) = A_0 e^{-\Gamma_m t/2}$ decays exponentially in time. The full derivation of [](#eq-ringdown-solution) can be found in [](#appendix-derivations).
 
+(ringdown-protocol)=
 ### Ringdown protocol
 A ringdown measurement probes the free evolution described by [](#eq-ringdown-solution). The system is displaced from equilibrium, released, and the acceleration or displacement is recorded as the motion decays in the absence of an external drive. Wilkinson[@wilkinson2025] used this protocol to extract $\Gamma_m$ from cryogenic mass-spring isolation prototypes.
 
@@ -92,6 +94,7 @@ $$ (eq-envelope-fit)
 
 Intuitively, a smaller $\Gamma_m$ implies a slower decay, whereas a larger $\Gamma_m$ implies faster energy dissipation. For a given $f_0$, the envelope sets the time scale on which stored mechanical energy is lost, independent of whether the oscillator is a laboratory spring or a cryogenic isolator.
 
+(spectral-analysis)=
 ## Spectral analysis and periodic forcing
 ### Power spectral density and amplitude spectral density
 Cryostat vibration measurements are analysed in the frequency domain. For a stationary acceleration signal $a(t)$, the one-sided power spectral density $S_{aa}(f)$ describes how mean-square acceleration is distributed over frequency. The variance follows from integrating over all frequencies,
@@ -110,6 +113,7 @@ Manufacturers often quote accelerometer noise floors in ASD units, typically $\m
 
 Welch's method estimates $S_{aa}(f)$ by averaging periodograms computed on overlapping time segments. The segment length sets a trade-off between frequency resolution and the smearing of narrow-band lines. A long segment resolves closely spaced peaks but leaves a sharp periodic drive, such as a cryocooler fundamental near $1.4\ \mathrm{Hz}$[@maisonobe2018], visible as a comb of lines. A shorter segment broadens those lines and exposes the broader mechanical structure underneath.
 
+(sampling-nyquist)=
 ### Sampling and the Nyquist limit
 Digital acquisition records a continuous acceleration signal at discrete times separated by $\Delta t = 1/f_s$, where $f_s$ is the sampling rate. The highest frequency that can be represented unambiguously from such samples is the Nyquist frequency[@shannon1949communication]
 
@@ -123,6 +127,7 @@ Aliasing is suppressed in practice by band-limiting the signal before digitisati
 
 For vibration measurements aimed at cryocooler fundamentals and low-order harmonics, $f_s$ is typically chosen well above the frequencies of interest so that $f_N$ leaves margin for higher harmonics and structural resonances. When $f_N$ lies near a sensor resonance or within the plotted frequency range, features close to that limit may reflect the acquisition and sensor transfer function as much as the structure under test.
 
+(driven-oscillator)=
 ### Driven oscillator and harmonic content
 Mechanical structures in an operating cryostat are continuously driven by the periodic cryocooler cycle rather than ringing down freely[@maisonobe2018]. For a single mode driven harmonically at angular frequency $\omega$, the steady-state equation of motion reads
 
@@ -147,6 +152,7 @@ In the time domain the disturbance appears as a repeated pattern of acceleration
 
 Literature on dry cryostats reports a narrow-band mechanical component near $1.4\ \mathrm{Hz}$ from cryocooler operation, together with low-frequency harmonics[@maisonobe2018]. Wilkinson[@wilkinson2025] describes a related periodic ticking from helium-pump strokes in a pulse-tube system. The absolute drive frequency depends on the cooler motor speed and duty cycle. The important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. Mass-spring isolation at the experimental platform is typically designed so that $f_0$ of the isolator avoids this line[@wilkinson2025].
 
+(adxl354-accelerometer)=
 ## The ADXL354 accelerometer
 Low-frequency vibration measurements require an accelerometer with a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400\ \mathrm{mV/g}$ at the $\pm 2\ \mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8\ \mathrm{V}$ supply $\mathrm{V_{1P8ANA}}$, with a zero-$g$ bias nominally at $\mathrm{V_{1P8ANA}}/2$.
 
