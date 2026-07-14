@@ -69,11 +69,15 @@ The ringdown trace is converted to acceleration using [](#eq-voltage-to-g) with 
 ## Cryostat vibration measurements
 The main measurements of this thesis use a DIY dry 4K cryostat at SteeleLab. The cold stage is cooled by a Gifford–McMahon (GM) cryocooler. Two operating conditions are recorded: cooler **off** (baseline) and cooler **on** (running). The ADXL354 is mounted near the edge of the final cold plate, as shown in [](#fig-cryostat-mount).
 
-```{figure} figures/cryostat_mount.jpg
+```{figure}
 :label: fig-cryostat-mount
-:alt: ADXL354 mounted near the edge of the DIY 4K cryostat cold plate
+:class: grid grid-cols-2 gap-4
 
-Experimental setup for cryostat vibration measurements. The ADXL354 is mounted near the edge of the final cold plate of the DIY dry 4K cryostat at SteeleLab.
+![DIY dry 4K cryostat with ADXL354 readout wiring](figures/cryostat_setup_overview.jpg)
+
+![ADXL354 mounted near the edge of the final cold plate](figures/cryostat_setup_mount.jpg)
+
+Experimental setup for cryostat vibration measurements. Left: the DIY dry 4K cryostat at SteeleLab with scope leads routed from the cold stage. Right: the ADXL354 breakout mounted near the edge of the final cold plate.
 ```
 
 The measurement chain matches benchtop validation: three-axis analog outputs into the Rigol scope, with flip-test calibration applied in post-processing via [](#eq-voltage-to-g). 
