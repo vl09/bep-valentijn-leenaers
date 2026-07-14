@@ -1,7 +1,7 @@
 (results)=
 # Results & Discussion
 ## Accelerometer validation
-
+(results-static-flip-test)=
 ### Static flip test
 The raw $z$-channel voltage from the flip recording is shown in [](#fig-flip-voltage).
 
@@ -25,8 +25,9 @@ $z$-axis acceleration after applying the flip-test sensitivity and offset from [
 
 In the graph, the upright plateau sits at $+1.0\ \mathrm{g}$ and the inverted plateau at $-1.0\ \mathrm{g}$. Large excursions during the manual flip ($\sim 6$–$7\ \mathrm{s}$) reach roughly $+1.5\ \mathrm{g}$ and $-2.3\ \mathrm{g}$ and are not used for calibration. Together, the flip test confirms that the voltage-to-$g$ conversion reproduces the known $\pm 1\ \mathrm{g}$ static levels and that the extracted sensitivity is consistent with the datasheet.
 
+(results-mass-spring-ringdown)=
 ### Mass-spring ringdown
-The second validation experiment records a benchtop mass-spring ringdown while a video camera captures the motion against a ruler, as described in [](#mass-spring-ringdown). This test is a sanity check on the calibrated chain: a simple oscillator with an independently measured frequency and amplitude should produce accelerations that agree with kinematics and decay as expected for a damped mass-spring system[@wilkinson2025].
+The second validation experiment records a benchtop mass-spring ringdown while a video camera captures the motion against a ruler, as described in [](#methods-mass-spring-ringdown). This test is a sanity check on the calibrated chain: a simple oscillator with an independently measured frequency and amplitude should produce accelerations that agree with kinematics and decay as expected for a damped mass-spring system[@wilkinson2025].
 
 +++{"no-pdf": true}
 
@@ -48,7 +49,7 @@ $$
 f = \frac{10}{\Delta t} = 0.995\ \mathrm{Hz}.
 $$
 
-With $\omega = 2\pi f$ and displacement amplitude $A = 13.5\ \mathrm{cm} = 0.135\ \mathrm{m}$ from the ruler span described in [](#mass-spring-ringdown), [](#eq-shm-peak-accel) gives a peak oscillatory acceleration of
+With $\omega = 2\pi f$ and displacement amplitude $A = 13.5\ \mathrm{cm} = 0.135\ \mathrm{m}$ from the ruler span described in [](#methods-mass-spring-ringdown), [](#eq-shm-peak-accel) gives a peak oscillatory acceleration of
 
 $$
 \frac{a_{\mathrm{peak}}}{g} = \frac{A\omega^2}{g} = 0.54\ \mathrm{g}.
