@@ -18,16 +18,7 @@ That deviation is small compared with the $\pm 16\%$ production spread quoted in
 
 For the scope of this thesis, however, which targets vibration frequencies and relative spectral structure rather than absolute $g$ metrology, these residual calibration uncertainties are acceptable: narrow-band peaks and harmonic spacing depend primarily on timing and shape, not on the few-percent difference between the extracted and nominal sensitivities.
 
-The same trace converted to acceleration with [](#eq-voltage-to-g) is shown in [](#fig-flip).
-
-```{figure} figures/Flip.png
-:label: fig-flip
-:alt: z-axis acceleration in g during a 180 degree gravity flip
-
-$z$-axis acceleration after applying the flip-test sensitivity and offset from [](#eq-voltage-to-g). Steady plateaus before and after the flip read $+1\ \mathrm{g}$ and $-1\ \mathrm{g}$ respectively.
-```
-
-In the graph, the upright plateau sits at $+1.0\ \mathrm{g}$ and the inverted plateau at $-1.0\ \mathrm{g}$, as required by the known $\pm 1\ \mathrm{g}$ gravity reference. Large excursions during the manual flip ($\sim 6$–$7\ \mathrm{s}$) reach roughly $+1.5\ \mathrm{g}$ and $-2.3\ \mathrm{g}$ and are not used for calibration. The $\pm 1\ \mathrm{g}$ plateaus are reproduced to within the resolution set by the $1\ \mathrm{s}$ averaging windows and the datasheet sensitivity tolerance ($368$–$432\ \mathrm{mV/g}$)[@adxl354_datasheet], well inside the needs of the subsequent vibration analysis. Together, the flip test confirms that the voltage-to-$g$ conversion reproduces the known static levels and that the extracted sensitivity is consistent with the datasheet.
+Applying [](#eq-voltage-to-g) with the extracted $S$ and $\bar{V}_0$ converts the plateaus to $+1.0\ \mathrm{g}$ and $-1.0\ \mathrm{g}$, as required by the known $\pm 1\ \mathrm{g}$ gravity reference. The $\pm 1\ \mathrm{g}$ levels are reproduced to within the resolution set by the $1\ \mathrm{s}$ averaging windows and the datasheet sensitivity tolerance ($368$–$432\ \mathrm{mV/g}$)[@adxl354_datasheet], well inside the needs of the subsequent vibration analysis. Together, the flip test confirms that the voltage-to-$g$ conversion reproduces the known static levels and that the extracted sensitivity is consistent with the datasheet.
 
 (results-mass-spring-ringdown)=
 ### Mass-spring ringdown
