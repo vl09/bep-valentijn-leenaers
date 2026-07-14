@@ -20,7 +20,7 @@ A Red Pitaya board with PyRPL was available as an alternative readout path. It o
 ## Accelerometer validation
 The preceding section defines the measurement chain: three-axis analog outputs from the ADXL354 into the Rigol scope, with offline conversion to acceleration in units of $g$. Before applying this chain to cryostat noise spectroscopy, two benchtop validation experiments confirm that it works as expected. First, a static gravity flip determines sensor sensitivity and zero-$g$ offset from known $\pm 1\ \mathrm{g}$ plateaus. Second, a mass-spring ringdown exercises the calibrated chain on a dynamic oscillation with independent checks from video and ruler measurements. Once validated, the same acquisition and processing pipeline is used for cryostat-mounted noise spectroscopy, described in a later section.
 
-(static-flip-test)=
+(methods-static-flip-test)=
 ### Static flip test for sensitivity calibration
 The flip test uses gravity as a known, steady $1\ \mathrm{g}$ acceleration, as described in [](#adxl354-accelerometer). With the sensor at rest on the bench and the $z$-axis aligned with Earth's gravitational field, the $z$-axis output corresponds to $+1\ \mathrm{g}$. After a manual $180^\circ$ rotation about the $z$-axis, the same axis reads $-1\ \mathrm{g}$. The voltage span between the two plateaus corresponds to a change of $2\ \mathrm{g}$; dividing that span by two yields the sensitivity $S$ in $\mathrm{V/g}$, as in [](#eq-flip-sensitivity).
 
@@ -57,7 +57,7 @@ $$ (eq-voltage-to-g)
 
 where $V_i$ is the scope voltage on axis $i$ ($i = x, y, z$; channels 1–3 in [](#measurement-setup)). The sensitivity $S$ is taken from the $z$-axis flip test in [](#eq-flip-sensitivity) and applied to all three axes. For all recordings after the flip test, the measured $\bar{V}_0$ from [](#results) is used as the fixed offset in [](#eq-voltage-to-g), together with the extracted $S$.
 
-(mass-spring-ringdown)=
+(methods-mass-spring-ringdown)=
 ### Mass-spring ringdown
 The second experiment uses a vertical mass-spring oscillator of the type described in [](#mass-spring-oscillator). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording.
 
