@@ -212,11 +212,15 @@
 // Table of contents.
 #let render_table_of_contents(depth: 1) = {
   pagebreak()
-  outline(
-    title: strong("Contents"),
-    depth: depth,
-    indent: auto,
-  )
+  {
+    show outline.entry.where(level: 1): set text(weight: "bold")
+    show outline.entry.where(level: 1): set block(above: 1em)
+    outline(
+      title: strong("Contents"),
+      depth: depth,
+      indent: auto,
+    )
+  }
 }
 
 // List of figures.
