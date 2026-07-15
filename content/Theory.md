@@ -2,6 +2,8 @@
 numbering:
   equation:
     enumerator: "2.%s"
+  figure:
+    enumerator: "2.%s"
 ---
 (theory)=
 # Theory
