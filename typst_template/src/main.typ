@@ -213,7 +213,6 @@
   show math.equation: set text(font: font_math)
   show math.equation: set block(spacing: 1em)
   show raw: set text(font: font_mono, size: font_size_pt - 1pt)
-  show link: set text(fill: blue.darken(30%))
   show cite: it => super(it)
 
   let setup-numbering(body) = {
@@ -227,24 +226,25 @@
       }
     })
 
-    // Reset counters at each new chapter. (I am not sure about that one!)
+    // Reset table counters at each new chapter. MyST resets figure and equation
+    // counters per chapter in the exported content; also reset tables here.
     show heading.where(level: 1): it => {
-      counter(figure).update(0)
       counter(figure.where(kind: table)).update(0)
-      counter(math.equation).update(0)
       it
     }
 
-    // Equation and figure numbering use the current chapter as a prefix. (I might want to add an option for tables too)
-    set math.equation(numbering: (..args) => {
-      let chapter = counter(heading).display((..nums) => nums.pos().at(0))
-      [(#chapter.#numbering("1)", ..args.pos())]
-    })
-
-    set figure(numbering: (..args) => {
-      let chapter = counter(heading).display((..nums) => nums.pos().at(0))
-      [#chapter.#numbering("1", ..args.pos())]
-    })
+    // MyST embeds chapter-prefixed numbers in #link(<fig-...>)[Figure~X.Y] bodies.
+    // Typst would otherwise replace that text with its own ref() output.
+    show link: it => {
+      let dest = it.dest
+      if dest != none and type(dest) == label and repr(dest).starts-with("<fig-") {
+        set text(fill: blue.darken(30%))
+        it.body
+      } else {
+        set text(fill: blue.darken(30%))
+        it
+      }
+    }
 
     body
   }
