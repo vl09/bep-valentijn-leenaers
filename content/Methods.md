@@ -11,9 +11,19 @@ In this chapter, the measurement chain and the procedures used to characterise v
 
 (measurement-setup)=
 ## Measurement setup
-The three-axis accelerometer is an ADXL354 (Analog Devices), configured for the $\pm 2\ \mathrm{g}$ full-scale range. Each analog output is ratiometric to the on-chip $1.8\ \mathrm{V}$ analog supply $\mathrm{V_{1P8ANA}}$: the zero-$g$ bias is nominally $\mathrm{V_{1P8ANA}}/2 = 0.9\ \mathrm{V}$, and the datasheet quotes a typical sensitivity of $400\ \mathrm{mV/g}$ at this range[@adxl354_datasheet].
+The three-axis accelerometer is an ADXL354 (Analog Devices) on the EVAL-ADXL354BZ evaluation board, configured for the $\pm 2\ \mathrm{g}$ full-scale range. Each analog output is ratiometric to the on-chip $1.8\ \mathrm{V}$ analog supply $\mathrm{V_{1P8ANA}}$: the zero-$g$ bias is nominally $\mathrm{V_{1P8ANA}}/2 = 0.9\ \mathrm{V}$, and the datasheet quotes a typical sensitivity of $400\ \mathrm{mV/g}$ at this range[@adxl354_datasheet].
 
-For all measurements reported here, the $x$, $y$, and $z$ outputs are connected to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope. The scope is controlled over Ethernet via PyVISA, and waveforms are transferred to a Python analysis environment. The scope operates in high-resolution acquisition mode with DC coupling. Channel offsets of $-0.9\ \mathrm{V}$ on channels 1 and 2, and $-1.2\ \mathrm{V}$ on channel 3, place the zero-$g$ bias near the centre of the oscilloscope grid, matching the $\mathrm{V_{1P8ANA}}/2$ reference. A vertical scale of $0.1\ \mathrm{V/div}$ is used on all three channels. Deep-memory acquisitions store up to $3 \times 10^6$ points per channel. Recordings are saved as time series of voltage in `.npz` format for offline analysis; the acquisition and analysis notebooks are listed in [](#appendix-code). A captured ringdown screen is shown in [](#fig-ringdown-scope).
+The supply pins $\mathrm{V_{DD}}$ and $\mathrm{V_{DDIO}}$ on header P1 are powered at $2.5\ \mathrm{V}$[@adxl354_eval_ug]. The $x$, $y$, and $z$ analog outputs on P1 ($X_{\mathrm{OUT}}$, $Y_{\mathrm{OUT}}$, and $Z_{\mathrm{OUT}}$ on pins 2, 4, and 6) are wired to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope, with ground on pin 5. Header P2 exposes auxiliary signals, including $\mathrm{V_{1P8ANA}}$ on pin 1. The pin assignments are summarised in [](#fig-adxl354-pinout).
+
+```{figure} figures/ADXL354_eval_pinout.jpg
+:label: fig-adxl354-pinout
+:width: 70%
+:align: center
+
+Pinout of headers P1 and P2 on the EVAL-ADXL354BZ evaluation board (user guide Figures 3–4)[@adxl354_eval_ug]. P1 carries the supply pins $\mathrm{V_{DDIO}}$ (pin 1), $\mathrm{V_{DD}}$ (pin 3), ground (pin 5), and the $x$-, $y$-, and $z$-axis analog outputs on pins 2, 4, and 6. P2 exposes $\mathrm{V_{1P8ANA}}$ (pin 1), $\mathrm{V_{1P8DIG}}$ (pin 3), and other auxiliary signals.
+```
+
+The scope is controlled over Ethernet via PyVISA, and waveforms are transferred to a Python analysis environment. The scope operates in high-resolution acquisition mode with DC coupling. Channel offsets of $-0.9\ \mathrm{V}$ on channels 1 and 2, and $-1.2\ \mathrm{V}$ on channel 3, place the zero-$g$ bias near the centre of the oscilloscope grid, matching the $\mathrm{V_{1P8ANA}}/2$ reference. A vertical scale of $0.1\ \mathrm{V/div}$ is used on all three channels. Deep-memory acquisitions store up to $3 \times 10^6$ points per channel. Recordings are saved as time series of voltage in `.npz` format for offline analysis; the acquisition and analysis notebooks are listed in [](#appendix-code). A captured ringdown screen is shown in [](#fig-ringdown-scope).
 
 ```{figure} figures/ringdown_scope.jpg
 :label: fig-ringdown-scope
