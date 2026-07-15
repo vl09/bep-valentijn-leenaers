@@ -170,9 +170,27 @@ Interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can open.
 Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. Characterising the periodic drive that reaches such a platform, and how it differs between cooler types, is therefore a prerequisite for designing vibration isolation, as introduced with the mass-spring models above and developed further for extended cryostat structures below.
 
 ## Gifford–McMahon cryocooler drive
-SteeleLab also maintains a DIY dry 4K platform cooled by a Gifford–McMahon (GM) cryocooler. In the GM cycle, a displacer moves helium gas between hot and cold volumes within the cold head. Compression and expansion steps transfer heat out of the cold stage on each cycle. Each stroke imposes a periodic mechanical disturbance on the surrounding structure.
+SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@cryocooler_wikipedia]. The compressor can run at mains frequency ($50$ or $60\ \mathrm{Hz}$) while the cold-head cycle typically repeats near $1\ \mathrm{Hz}$, so the periodic mechanical disturbance seen at the stage is set by the displacer and valve timing rather than by the compressor speed directly[@cryocooler_wikipedia]. [](#fig-gm-schematic) shows the layout.
 
-In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
+```{figure} figures/GM_cooler_schematic.jpg
+:label: fig-gm-schematic
+:width: 85%
+:align: center
+
+Schematic of a Gifford–McMahon cryocooler (Wikipedia Fig. 5)[@cryocooler_wikipedia]. Buffer volumes $V_h$ and $V_l$ on the compressor supply high- and low-pressure helium to the cold head through synchronised rotary valves. The displacer and regenerator shuttle gas between the warm and cold ends of the cold finger.
+```
+
+The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@cryocooler_wikipedia]. The cycle begins with the low-pressure valve closed, the high-pressure valve open, and the displacer in the cold region. First, from $a$ to $b$, the displacer moves toward the warm end while the cold head remains on the high-pressure side; helium passes through the regenerator from ambient temperature $T_a$ to the cold temperature $T_L$, releasing heat into the regenerator matrix. Second, from $b$ to $c$, the high-pressure valve closes, the low-pressure valve opens, and the displacer is held fixed; part of the gas expands through the regenerator and absorbs heat from the cold stage, providing the useful cooling power. Third, from $c$ to $d$, the displacer returns toward the cold end on the low-pressure side, forcing cold gas back through the regenerator. Fourth, from $d$ to $a$, the low-pressure valve closes, the high-pressure valve reopens, and the gas in the warm end is compressed, rejecting heat to the surroundings before the cycle repeats.
+
+```{figure} figures/GM_cooler_cycle.jpg
+:label: fig-gm-cycle
+:width: 85%
+:align: center
+
+The four stages of the Gifford–McMahon cooling cycle (Wikipedia Fig. 6)[@cryocooler_wikipedia]. The displacer position and valve states ($a$–$d$) repeat once per cold-head cycle. Steps $b$–$c$ produce the net cooling at the cold stage.
+```
+
+Each valve switch and displacer stroke imposes a periodic mechanical disturbance on the surrounding structure. In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
 
 The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. Regardless of the exact fundamental, the important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. Mass-spring isolation at the experimental platform is typically designed so that $f_0$ of the isolator avoids the dominant cooler line[@wilkinson2025].
 
