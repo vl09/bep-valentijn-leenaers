@@ -1,3 +1,10 @@
+---
+numbering:
+  figure:
+    enumerator: "4.%s"
+  equation:
+    enumerator: "4.%s"
+---
 (results)=
 # Results & Discussion
 ## Accelerometer validation
