@@ -44,6 +44,9 @@ jobs:
           
       - name: Patch Typst template TOC styling
         run: python3 .github/scripts/patch_typst_toc.py
+
+      - name: Patch Typst template figure numbering
+        run: cp .github/typst_patches/main.typ typst_template/src/main.typ
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -78,6 +81,9 @@ jobs:
 
       - name: Build PDF
         run: myst build --typst
+
+      - name: Recompile thesis PDF with chapter-prefixed subpar figures
+        run: python3 .github/scripts/recompile_thesis_pdf.py
 
       - name: Verify PDF export
         run: |
