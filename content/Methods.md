@@ -13,14 +13,14 @@ This chapter describes the measurement chain, acquisition procedures, and offlin
 ## Measurement setup
 The three-axis accelerometer is an ADXL354 (Analog Devices) on the EVAL-ADXL354BZ evaluation board, configured for the $\pm 2\ \mathrm{g}$ full-scale range. Each analog output is ratiometric to the on-chip $1.8\ \mathrm{V}$ analog supply $\mathrm{V_{1P8ANA}}$: the zero-$g$ bias is nominally $\mathrm{V_{1P8ANA}}/2 = 0.9\ \mathrm{V}$, and the datasheet quotes a typical sensitivity of $400\ \mathrm{mV/g}$ at this range[@adxl354_datasheet].
 
-A TENMA 72-2685 DC power supply provides $2.5\ \mathrm{V}$ to the supply pins $\mathrm{V_{DD}}$ and $\mathrm{V_{DDIO}}$ on header P1. The self-test pins $\mathrm{ST1}$ and $\mathrm{ST2}$ are shorted to ground so that the board does not enter self-test mode, as recommended in the evaluation board user guide[@adxl354_eval_ug]. The $x$, $y$, and $z$ analog outputs on P1 ($X_{\mathrm{OUT}}$, $Y_{\mathrm{OUT}}$, and $Z_{\mathrm{OUT}}$ on pins 2, 4, and 6) are wired to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope, with ground on pin 5. Header P2 exposes auxiliary signals, including $\mathrm{V_{1P8ANA}}$ on pin 1. The pin assignments are summarised in [](#fig-adxl354-pinout).
+A TENMA 72-2685 DC power supply provides $2.5\ \mathrm{V}$ to the supply pins $\mathrm{V_{DD}}$ and $\mathrm{V_{DDIO}}$ on header P1. The self-test pins $\mathrm{ST1}$ and $\mathrm{ST2}$ are shorted to ground so that the board does not enter self-test mode, as recommended in the evaluation board user guide[@adxl354_eval_ug]. The $x$, $y$, and $z$ analog outputs on P1 ($X_{\mathrm{OUT}}$, $Y_{\mathrm{OUT}}$, and $Z_{\mathrm{OUT}}$ on pins 2, 4, and 6) are wired to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope, with ground on pin 5. The wiring and pin assignments are shown in [](#fig-measurement-chain-setup).
 
-```{figure} figures/ADXL354_eval_pinout.jpg
-:label: fig-adxl354-pinout
-:width: 70%
+```{figure} figures/measurement_chain_setup.png
+:label: fig-measurement-chain-setup
+:width: 85%
 :align: center
 
-Pinout of headers P1 and P2 on the EVAL-ADXL354BZ evaluation board (user guide Figures 3–4)[@adxl354_eval_ug]. P1 carries the supply pins $\mathrm{V_{DDIO}}$ (pin 1), $\mathrm{V_{DD}}$ (pin 3), ground (pin 5), and the $x$-, $y$-, and $z$-axis analog outputs on pins 2, 4, and 6. P2 exposes $\mathrm{V_{1P8ANA}}$ (pin 1), $\mathrm{V_{1P8DIG}}$ (pin 3), and other auxiliary signals.
+Wiring diagram and pinout of the accelerometer measurement chain on the EVAL-ADXL354BZ evaluation board (user guide Figures 3–4)[@adxl354_eval_ug]. A TENMA 72-2685 DC power supply provides $2.5\ \mathrm{V}$ to $\mathrm{V_{DDIO}}$ (P1, pin 1) and $\mathrm{V_{DD}}$ (P1, pin 3). The self-test pins $\mathrm{ST1}$ and $\mathrm{ST2}$ on header P2 are shorted to ground. Header P1 carries ground (pin 5) and the $x$-, $y$-, and $z$-axis analog outputs on pins 2, 4, and 6, which connect to channels 1, 2, and 3 of the Rigol DS1054Z. Header P2 also exposes $\mathrm{V_{1P8ANA}}$ (pin 1), $\mathrm{V_{1P8DIG}}$ (pin 3), and other auxiliary signals.
 ```
 
 The scope is controlled over Ethernet via PyVISA, and waveforms are transferred to a Python analysis environment. The scope operates in high-resolution acquisition mode with DC coupling. Channel offsets of $-0.9\ \mathrm{V}$ on channels 1 and 2, and $-1.2\ \mathrm{V}$ on channel 3, place the zero-$g$ bias near the centre of the oscilloscope grid, matching the $\mathrm{V_{1P8ANA}}/2$ reference. A vertical scale of $0.1\ \mathrm{V/div}$ is used on all three channels. Deep-memory acquisitions store up to $3 \times 10^6$ points per channel. Recordings are saved as time series of voltage in `.npz` format for offline analysis; the acquisition and analysis notebooks are listed in [](#appendix-code). A captured ringdown screen is shown in [](#fig-ringdown-scope).
