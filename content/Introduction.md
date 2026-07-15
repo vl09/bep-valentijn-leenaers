@@ -1,6 +1,9 @@
 ---
 abstract: |
     To be written.
+numbering:
+  figure:
+    enumerator: "1.%s"
 ---
 
 # Introduction
