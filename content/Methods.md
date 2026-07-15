@@ -7,13 +7,13 @@ numbering:
 ---
 (methods)=
 # Experimental Method
-In this chapter, the measurement chain and the procedures used to characterise vibrations are described. A static gravity-flip test first validates the ADXL354 accelerometer and the voltage-to-acceleration conversion. A mass-spring ringdown and cryostat-mounted noise spectroscopy then apply the calibrated chain to the systems introduced in the Introduction.
+This chapter describes the measurement chain, acquisition procedures, and offline spectral analysis used to characterise vibrations. First, the ADXL354 readout hardware, power supply, scope settings, and Python data transfer are specified. Second, benchtop calibration procedures are outlined: a static gravity-flip test that extracts sensitivity and zero-$g$ offset, and a mass-spring ringdown with parallel video and ruler measurements. Third, cryostat-mounted recordings on the DIY dry 4K fridge with the GM cooler off and on are described. Finally, conversion from scope voltage to acceleration and Welch estimation of amplitude spectral density are presented.
 
 (measurement-setup)=
 ## Measurement setup
 The three-axis accelerometer is an ADXL354 (Analog Devices) on the EVAL-ADXL354BZ evaluation board, configured for the $\pm 2\ \mathrm{g}$ full-scale range. Each analog output is ratiometric to the on-chip $1.8\ \mathrm{V}$ analog supply $\mathrm{V_{1P8ANA}}$: the zero-$g$ bias is nominally $\mathrm{V_{1P8ANA}}/2 = 0.9\ \mathrm{V}$, and the datasheet quotes a typical sensitivity of $400\ \mathrm{mV/g}$ at this range[@adxl354_datasheet].
 
-The supply pins $\mathrm{V_{DD}}$ and $\mathrm{V_{DDIO}}$ on header P1 are powered at $2.5\ \mathrm{V}$[@adxl354_eval_ug]. The $x$, $y$, and $z$ analog outputs on P1 ($X_{\mathrm{OUT}}$, $Y_{\mathrm{OUT}}$, and $Z_{\mathrm{OUT}}$ on pins 2, 4, and 6) are wired to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope, with ground on pin 5. Header P2 exposes auxiliary signals, including $\mathrm{V_{1P8ANA}}$ on pin 1. The pin assignments are summarised in [](#fig-adxl354-pinout).
+A TENMA 72-2685 DC power supply provides $2.5\ \mathrm{V}$ to the supply pins $\mathrm{V_{DD}}$ and $\mathrm{V_{DDIO}}$ on header P1. The self-test pins $\mathrm{ST1}$ and $\mathrm{ST2}$ are shorted to ground so that the board does not enter self-test mode, as recommended in the evaluation board user guide[@adxl354_eval_ug]. The $x$, $y$, and $z$ analog outputs on P1 ($X_{\mathrm{OUT}}$, $Y_{\mathrm{OUT}}$, and $Z_{\mathrm{OUT}}$ on pins 2, 4, and 6) are wired to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope, with ground on pin 5. Header P2 exposes auxiliary signals, including $\mathrm{V_{1P8ANA}}$ on pin 1. The pin assignments are summarised in [](#fig-adxl354-pinout).
 
 ```{figure} figures/ADXL354_eval_pinout.jpg
 :label: fig-adxl354-pinout
