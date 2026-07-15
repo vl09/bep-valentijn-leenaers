@@ -15,7 +15,7 @@ The three-axis accelerometer is an ADXL354 (Analog Devices) on the EVAL-ADXL354B
 
 A TENMA 72-2685 DC power supply provides $2.5\ \mathrm{V}$ to the supply pins $\mathrm{V_{DD}}$ and $\mathrm{V_{DDIO}}$ on header P1. The self-test pins $\mathrm{ST1}$ and $\mathrm{ST2}$ are shorted to ground so that the board does not enter self-test mode, as recommended in the evaluation board user guide[@adxl354_eval_ug]. The $x$, $y$, and $z$ analog outputs on P1 ($X_{\mathrm{OUT}}$, $Y_{\mathrm{OUT}}$, and $Z_{\mathrm{OUT}}$ on pins 2, 4, and 6) are wired to channels 1, 2, and 3 of a Rigol DS1054Z digital oscilloscope, with ground on pin 5. The wiring and pin assignments are shown in [](#fig-measurement-chain-setup).
 
-```{figure} figures/measurement_chain_setup.png
+```{figure} figures/measurement_chain_setup.jpg
 :label: fig-measurement-chain-setup
 :width: 85%
 :align: center
