@@ -213,8 +213,10 @@
 #let render_table_of_contents(depth: 1) = {
   pagebreak()
   {
-    show outline.entry.where(level: 1): set text(weight: "bold")
-    show outline.entry.where(level: 1): set block(above: 1em)
+    show outline.entry.where(level: 1): it => {
+      v(1.2em, weak: true)
+      strong(it)
+    }
     outline(
       title: strong("Contents"),
       depth: depth,
