@@ -13,7 +13,7 @@ $$
 m\ddot{x} = - kx
 $$ (eq-undamped-eom)
 
-where $\ddot{x}$ denotes the second derivative of discplacement w.r.t. time. This describes a simple harmonic oscillator. The general solution reads
+where $\ddot{x}$ denotes the second derivative of displacement w.r.t. time. This describes a simple harmonic oscillator. The general solution reads
 
 $$
 x(t) = A\cos(\omega_0 t + \varphi),
@@ -26,7 +26,7 @@ $$ (eq-natural-frequency)
 
 is the natural angular frequency. Or equivalently, $f_0 = \frac{\omega_0}{2\pi}$. 
 
-When the mass hangs from a vertical spring, its weight stretches the spring until the upward spring force balances gravity. Let $\Delta L$ denote how much longer the spring is at this equilibrium position than when it is unloaded. Force balance then gives $k\Delta L = mg$, where $g$ is the gravitational acceleration. Then the spring constant can be obtained using
+When the mass is suspended from a spring vertically, its weight stretches the spring until the upward spring force balances gravity. Let $\Delta L$ denote how much longer the spring is at this equilibrium position than when it is unloaded. Force balance then gives $k\Delta L = mg$, where $g$ is the gravitational acceleration. Then the spring constant can be obtained using
 
 $$
 k = \frac{mg}{\Delta L}.
@@ -103,7 +103,7 @@ $$
 \sigma_a^2 = \int_0^\infty S_{aa}(f)\ \mathrm{d}f.
 $$ (eq-variance-psd)
 
-The Amplitude Spectral Density (ASD) is defined as
+The Amplitude Spectral Density (ASD) is then defined as
 
 $$
 \mathrm{ASD}(f) = \sqrt{S_{aa}(f)}.
@@ -154,7 +154,7 @@ Literature on dry cryostats reports a narrow-band mechanical component near $1.4
 
 (adxl354-accelerometer)=
 ## The ADXL354 accelerometer
-Low-frequency vibration measurements require an accelerometer with a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400\ \mathrm{mV/g}$ at the $\pm 2\ \mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8\ \mathrm{V}$ supply $\mathrm{V_{1P8ANA}}$, with a zero-$g$ bias nominally at $\mathrm{V_{1P8ANA}}/2$.
+Low-frequency vibration measurements can be done with an accelerometer with a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400\ \mathrm{mV/g}$ at the $\pm 2\ \mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8\ \mathrm{V}$ supply $\mathrm{V_{1P8ANA}}$, with a zero-$g$ bias nominally at $\mathrm{V_{1P8ANA}}/2$.
 
 At rest, the sensor measures the local gravitational field. For an axis aligned with gravity, one orientation gives $+1\ \mathrm{g}$ and a $180^\circ$ rotation about that axis gives $-1\ \mathrm{g}$. The output voltages at the two plateaus therefore differ by a span equivalent to $2\ \mathrm{g}$. Dividing that span by $2\ \mathrm{g}$ yields a sensitivity in $\mathrm{V/g}$ that can be compared with the datasheet value without a separate reference accelerometer. Because the outputs are ratiometric to $\mathrm{V_{1P8ANA}}$, the midpoint between the two plateaus estimates the zero-$g$ bias for that recording.
 
