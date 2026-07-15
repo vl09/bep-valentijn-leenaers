@@ -84,6 +84,10 @@ $$ (eq-ringdown-solution)
 
 with damped angular frequency $\tilde{\omega}_0 = \omega_0 \sqrt{1 - (\Gamma_m/2\omega_0)^2}$. The envelope $A(t) = A_0 e^{-\Gamma_m t/2}$ decays exponentially in time. The full derivation of [](#eq-ringdown-solution) can be found in [](#appendix-derivations).
 
+(amplitude-dependent-damping)=
+### Amplitude-dependent damping
+The viscous model above assumes a damping force linear in velocity with a constant coefficient $c$, so the envelope in [](#eq-ringdown-solution) decays at a fixed rate $\Gamma_m$. Real oscillators often deviate from this limit. On a benchtop mass-spring assembly, dry friction at the spring supports and velocity-dependent air drag both dissipate more energy at larger amplitude. The effective damping rate is then higher early in a ringdown, when the displacement is large, and falls as the motion decays. A single exponential fit to the peak envelope, as in [](#eq-envelope-fit), can therefore track the late-time decay while undershooting the initial interval. For validation purposes a constant-$\Gamma_m$ picture remains useful as a qualitative guide; extracting one $\Gamma_m$ from the full trace is meaningful only when the amplitude-dependent contribution is small.
+
 (ringdown-protocol)=
 ### Ringdown protocol
 A ringdown measurement probes the free evolution described by [](#eq-ringdown-solution). The system is displaced from equilibrium, released, and the acceleration or displacement is recorded as the motion decays in the absence of an external drive. Wilkinson[@wilkinson2025] used this protocol to extract $\Gamma_m$ from cryogenic mass-spring isolation prototypes.
