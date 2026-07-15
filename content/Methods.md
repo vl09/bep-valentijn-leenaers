@@ -2,6 +2,8 @@
 numbering:
   equation:
     enumerator: "3.%s"
+  figure:
+    enumerator: "3.%s"
 ---
 (methods)=
 # Experimental Method
