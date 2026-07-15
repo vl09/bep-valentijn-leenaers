@@ -172,7 +172,7 @@ Sensitive devices are mounted at the lowest accessible stage, on a final cold pl
 ## Gifford–McMahon cryocooler drive
 SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-schematic) shows the layout.
 
-```{figure} figures/GM_cooler_schematic.jpg
+```{figure} figures/GM_cooler_schematic.png
 :label: fig-gm-schematic
 :width: 85%
 :align: center
