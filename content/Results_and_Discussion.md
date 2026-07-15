@@ -30,6 +30,7 @@ The recording is shown in [](#vid-ringdown).
 
 ```{figure} figures/ringdown.mp4
 :label: vid-ringdown
+:enumerated: false
 :width: 50%
 :align: center
 
