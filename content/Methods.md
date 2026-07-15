@@ -43,7 +43,7 @@ For the flip test, the ADXL354 breakout is screwed to a flat copper plate using 
 
 ![ADXL354 breakout inverted ($-1 g$ on $z$)](figures/flip_setup_inverted.jpg)
 
-Benchtop setup for the static flip calibration. The ADXL354 is mounted on a flat copper plate with two spacers (left: upright, $+1\ \mathrm{g}$ on $z$; right: inverted, $-1\ \mathrm{g}$ on $z$). Scope leads connect the three analog outputs to the Rigol DS1054Z.
+Benchtop setup for the static flip calibration. a) Upright orientation: the ADXL354 is mounted on a flat copper plate with two spacers, with $+1\ \mathrm{g}$ on $z$. b) Inverted orientation: the same assembly reads $-1\ \mathrm{g}$ on $z$. Scope leads connect the three analog outputs to the Rigol DS1054Z.
 ```
 
 A $12\ \mathrm{s}$ trace is acquired with the scope settings above while the sensor is held steady upright, flipped, and held steady inverted. Transients during the flip are excluded. The waveform is saved as a timestamped `.npz` file and analysed offline. On the $z$-channel, mean voltages $\bar{V}_{+1\mathrm{g}}$ and $\bar{V}_{-1\mathrm{g}}$ are taken from $1\ \mathrm{s}$ windows in the upright and inverted plateaus ($4$–$5\ \mathrm{s}$ and $9$–$10\ \mathrm{s}$). The zero-$g$ offset is estimated as
@@ -79,7 +79,7 @@ The second experiment uses a vertical mass-spring oscillator of the type describ
 (fig-mass-spring-mount)=
 ![ADXL354 mounting detail on the oscillating mass](figures/mass_spring_mount.jpg)
 
-Mass-spring ringdown setup (left), with the mass in the extended position before release, and detail of the ADXL354 mounting on the oscillating mass (right). A vertical ruler beside the apparatus provides the displacement scale used for kinematic checks in [](#results). The breakout is screwed to the top face; tape under the board electrically isolates it from the copper mass. The breakout board sits at a slight angle to the surface.
+Mass-spring ringdown setup. a) Benchtop apparatus with the mass held in the extended position before release; a vertical ruler beside the apparatus provides the displacement scale used for kinematic checks in [](#results). b) Detail of the ADXL354 mounting on the oscillating mass: the breakout is screwed to the top face, with tape under the board to electrically isolate it from the copper mass; the board sits at a slight angle to the surface.
 ```
 
 During the initial oscillation, the mass travels between approximately $15\ \mathrm{cm}$ and $42\ \mathrm{cm}$ on the ruler. The peak-to-peak span is $27\ \mathrm{cm}$, so the displacement amplitude relative to the midpoint is $A = 13.5\ \mathrm{cm}$. The scope records a single continuous trace of $600\ \mathrm{s}$ at $f_s = 5\ \mathrm{kHz}$ using the settings in the measurement setup above.
@@ -98,7 +98,7 @@ The main measurements of this thesis use a DIY dry 4K cryostat at SteeleLab. The
 
 ![ADXL354 mounted near the edge of the final cold plate](figures/cryostat_setup_mount.jpg)
 
-Experimental setup for cryostat vibration measurements. Left: the DIY dry 4K cryostat at SteeleLab with scope leads routed from the cold stage. Right: the ADXL354 breakout mounted near the edge of the final cold plate.
+Experimental setup for cryostat vibration measurements. a) DIY dry 4K cryostat at SteeleLab with scope leads routed from the cold stage. b) ADXL354 breakout mounted near the edge of the final cold plate.
 ```
 
 The measurement chain matches benchtop validation: three-axis analog outputs into the Rigol scope, with flip-test calibration applied in post-processing via [](#eq-voltage-to-g). 
