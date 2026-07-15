@@ -26,6 +26,7 @@ const DEFAULTS = {
   "\\\\neq": "≠",
   "\\\\approx": "≈",
   "\\\\lesssim": "≲",
+  "\\\\gtrsim": "≳",
   "\\\\sim": "∼",
   "\\\\propto": "∝",
   "\\\\equiv": "≡",
