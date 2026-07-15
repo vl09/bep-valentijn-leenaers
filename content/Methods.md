@@ -79,7 +79,7 @@ The second experiment uses a vertical mass-spring oscillator of the type describ
 (fig-mass-spring-mount)=
 ![ADXL354 mounting detail on the oscillating mass](figures/mass_spring_mount.jpg)
 
-Mass-spring ringdown setup. a) Benchtop apparatus with the mass held in the extended position before release; a vertical ruler beside the apparatus provides the displacement scale used for kinematic checks in [](#results). b) Detail of the ADXL354 mounting on the oscillating mass: the breakout is screwed to the top face, with tape under the board to electrically isolate it from the copper mass; the board sits at a slight angle to the surface.
+Mass-spring ringdown setup. a) Freeze frame of mass-spring system with the mass in the extended position; a vertical ruler beside the apparatus provides the displacement scale used for kinematic checks in [](#results). b) Detail of the ADXL354 mounting on the oscillating mass: the breakout is screwed to the top face, with tape under the board to electrically isolate it from the copper mass; the board sits at a slight angle to the surface.
 ```
 
 During the initial oscillation, the mass travels between approximately $15\ \mathrm{cm}$ and $42\ \mathrm{cm}$ on the ruler. The peak-to-peak span is $27\ \mathrm{cm}$, so the displacement amplitude relative to the midpoint is $A = 13.5\ \mathrm{cm}$. The scope records a single continuous trace of $600\ \mathrm{s}$ at $f_s = 5\ \mathrm{kHz}$ using the settings in the measurement setup above.
