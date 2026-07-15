@@ -109,7 +109,7 @@ For each operating condition, the procedure is:
 
 1. Configure the scope as in the measurement setup above and start acquisition with the GM cooler in the desired state (off or on).
 2. Allow the system to reach a steady operating state, then stop the scope after a continuous recording window.
-3. Read the full deep-memory waveforms for channels 1–3 and save each segment as a timestamped `.npz` file containing arrays `t`, `v_x`, `v_y`, and `v_z`.
+3. Read the full deep-memory waveforms for channels 1–3 and save each segment as a timestamped `.npz` file containing arrays `t`, `v_x`, `v_y`, and `v_z` for time and the $x$, $y$, and $z$ axes, respectively.
 4. Repeat step 3 to obtain multiple contiguous segments per condition.
 
 Each segment contains $3 \times 10^6$ samples per channel over approximately $600\ \mathrm{s}$, giving a sample interval $\Delta t = 0.2\ \mathrm{ms}$ and sampling rate $f_s = 5\ \mathrm{kHz}$. The corresponding Nyquist frequency $f_N = f_s/2 = 2.5\ \mathrm{kHz}$ from [](#eq-nyquist) sets the upper limit of the frequency band that can be represented without aliasing in the recorded time series. For spectral analysis, three segments per condition are concatenated in time order to form a single trace of $9 \times 10^6$ samples and total duration $1800\ \mathrm{s}$ ($30\ \mathrm{min}$).
