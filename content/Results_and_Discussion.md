@@ -111,7 +111,7 @@ After the time-domain checks, the ringdown recording is examined in the frequenc
 Welch ASD of the $z$-channel ringdown ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$) from $0$ to $5\ \mathrm{Hz}$. The horizontal line marks the datasheet noise floor of $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$[@adxl354_datasheet].
 ```
 
-The $z$-channel shows a sharp peak near $1\ \mathrm{Hz}$, in line with the video count ($f = 0.995\ \mathrm{Hz}$) and the $\sim 1\ \mathrm{Hz}$ oscillation in [](#fig-ringdown-wobble). Harmonic lines appear at integer multiples of the fundamental ($2\ \mathrm{Hz}$, $3\ \mathrm{Hz}$ and $4\ \mathrm{Hz}$$ at the edge of the band). The comb confirms a coherent mechanical oscillation at the expected frequency rather than broadband readout noise.
+The $z$-channel shows a sharp peak near $1\ \mathrm{Hz}$, in line with the video count ($f = 0.995\ \mathrm{Hz}$) and the $\sim 1\ \mathrm{Hz}$ oscillation in [](#fig-ringdown-wobble). Harmonic lines appear at integer multiples of the fundamental ($2\ \mathrm{Hz}$, $3\ \mathrm{Hz}$, and $4\ \mathrm{Hz}$ at the edge of the band). The comb confirms a coherent mechanical oscillation at the expected frequency rather than broadband readout noise.
 
 The horizontal line in [](#fig-ringdown-asd-low) marks the typical ADXL354 noise floor of $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ from the datasheet[@adxl354_datasheet]. Every $z$-channel spectral line sits orders of magnitude above this reference. For this validation dataset the mechanical signal therefore dominates the sensor intrinsic noise floor, as intended for a sanity check on a macroscopic oscillator.
 
