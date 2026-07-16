@@ -169,6 +169,7 @@ Interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can open.
 
 Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. Characterising the periodic drive that reaches such a platform, and how it differs between cooler types, is therefore a prerequisite for designing vibration isolation, as introduced with the mass-spring models above and developed further for extended cryostat structures below.
 
+(gifford-mcmahon-cryocooler-drive)=
 ## Gifford–McMahon cryocooler drive
 SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-schematic) shows the layout.
 
@@ -220,6 +221,7 @@ ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8
 
 The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
 
+(mechanical-response-of-extended-structures)=
 ## Mechanical response of extended structures
 The models above each describe a single degree of freedom. A cryostat plate or stage couples many such freedoms at once: plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
 
