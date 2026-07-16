@@ -29,25 +29,22 @@ Sensitive devices are mounted at the lowest accessible stage, on a final cold pl
 
 (gifford-mcmahon-cryocooler-drive)=
 ## Gifford–McMahon cryocooler drive
-SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-schematic) shows the layout.
+SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-cooler) shows the layout and the four-step cooling cycle.
 
-```{figure} figures/GM_cooler_schematic.png
-:label: fig-gm-schematic
-:width: 85%
-:align: center
+```{figure}
+:label: fig-gm-cooler
+:class: grid grid-cols-2 gap-4
 
-Schematic of a Gifford–McMahon cryocooler (Atrey Fig. 1.6)[@atrey2020]. A compressor at the warm end drives helium through a rotary valve into the cold head, where a regenerator and expander shuttle gas between ambient temperature $T_0$ and the cold load at $T_c$. The inset shows the displacer with high- (HP) and low-pressure (LP) valve ports and expansion volumes $V_1$ and $V_2$.
+(fig-gm-schematic)=
+![Schematic of a Gifford–McMahon cryocooler](figures/GM_cooler_schematic.png)
+
+(fig-gm-cycle)=
+![Four stages of the Gifford–McMahon cooling cycle](figures/GM_cooler_cycle.jpg)
+
+Gifford–McMahon cryocooler (Atrey Figs. 1.6 and 1.7)[@atrey2020]. a) Schematic: a compressor at the warm end drives helium through a rotary valve into the cold head, where a regenerator and expander shuttle gas between ambient temperature $T_0$ and the cold load at $T_c$. The inset shows the displacer with high- (HP) and low-pressure (LP) valve ports and expansion volumes $V_1$ and $V_2$. b) Cooling cycle: the displacer position and valve states ($a$–$d$) repeat once per cold-head cycle; steps $b$–$c$ produce the net cooling at the cold stage.
 ```
 
 The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@atrey2020]. The cycle begins with the low-pressure valve closed, the high-pressure valve open, and the displacer in the cold region. First, from $a$ to $b$, the displacer moves toward the warm end while the cold head remains on the high-pressure side; helium passes through the regenerator from ambient temperature $T_a$ to the cold temperature $T_L$, releasing heat into the regenerator matrix. Second, from $b$ to $c$, the high-pressure valve closes, the low-pressure valve opens, and the displacer is held fixed; part of the gas expands through the regenerator and absorbs heat from the cold stage, providing the useful cooling power. Third, from $c$ to $d$, the displacer returns toward the cold end on the low-pressure side, forcing cold gas back through the regenerator. Fourth, from $d$ to $a$, the low-pressure valve closes, the high-pressure valve reopens, and the gas in the warm end is compressed, rejecting heat to the surroundings before the cycle repeats.
-
-```{figure} figures/GM_cooler_cycle.jpg
-:label: fig-gm-cycle
-:width: 85%
-:align: center
-
-The four stages of the Gifford–McMahon cooling cycle (Atrey Fig. 1.7)[@atrey2020]. The displacer position and valve states ($a$–$d$) repeat once per cold-head cycle. Steps $b$–$c$ produce the net cooling at the cold stage.
-```
 
 Each valve switch and displacer stroke imposes a periodic mechanical disturbance on the surrounding structure. In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
 
