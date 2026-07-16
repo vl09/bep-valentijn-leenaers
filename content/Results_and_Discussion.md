@@ -133,7 +133,7 @@ The datasheet noise floor is a useful reference, but it does not by itself set t
 (results-baseline)=
 ## Baseline with the GM cooler off
 
-With the measurement chain validated on the bench, the accelerometer is mounted on the DIY dry 4K cryostat as described in [](#cryostat-vibration-measurements). The first cryostat recording keeps the GM cryocooler **off**, so that electrical pickup and any residual environmental vibration define a reference spectrum before the periodic cooler drive is introduced. This baseline addresses the third research question: what acceleration spectral density is present on the fridge stage when the cooler is not running?
+With the measurement chain validated on the bench, the accelerometer is mounted on the final cold plate of the DIY dry 4K cryostat as described in [](#cryostat-vibration-measurements). The first cryostat recording keeps the GM cryocooler **off**, so that electrical pickup and any residual environmental vibration define a reference spectrum before the periodic cooler drive is introduced. This baseline addresses the third research question: what acceleration spectral density is present on the final stage when the cooler is not running?
 
 Three scope segments ($1800\ \mathrm{s}$ total) are concatenated and converted to acceleration using the flip-test calibration from [](#results-static-flip-test). Welch ASD estimates use $n_{\mathrm{perseg}} = 60\ \mathrm{s}$, as in [](#methods) and the ringdown spectra above. [](#fig-baseline-asd) shows the result from $0$ to $120\ \mathrm{Hz}$ on all three channels, with the typical ADXL354 noise floor marked for comparison[@adxl354_datasheet].
 
