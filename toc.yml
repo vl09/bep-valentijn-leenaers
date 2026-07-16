@@ -11,8 +11,8 @@ project:
     - title: Appendices
       children:
         - file: content/Appendix_A.md
-        - file: content/Appendix_B.md
-        - file: content/Results.ipynb
+#        - file: content/Appendix_B.md
+#        - file: content/Results.ipynb
 #    - title: Reference
 #      children:
 #        - file: content/Cheatsheet.md
