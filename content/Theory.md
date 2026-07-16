@@ -119,6 +119,8 @@ Manufacturers often quote accelerometer noise floors in ASD units, typically $\m
 
 Welch's method[@welch1967] estimates $S_{aa}(f)$ by averaging periodograms computed on overlapping time segments. The segment length sets a trade-off between frequency resolution and the smearing of narrow-band lines. A long segment resolves closely spaced peaks but leaves a sharp periodic drive, such as a cryocooler fundamental near $1.4\ \mathrm{Hz}$[@maisonobe2018], visible as a comb of lines. A shorter segment broadens those lines and exposes the broader mechanical structure underneath.
 
+When successive recordings are separated by gaps and later concatenated for analysis, the joins break phase continuity across the full time series. For a coherent, phase-locked tone this can matter. For an incoherent spectrum, where the quantities of interest are averaged power levels rather than a preserved phase relation between acquisitions, short breaks between recordings do not change the Welch estimate of $S_{aa}(f)$.
+
 (sampling-nyquist)=
 ### Sampling and the Nyquist limit
 Digital acquisition records a continuous acceleration signal at discrete times separated by $\Delta t = 1/f_s$, where $f_s$ is the sampling rate. The highest frequency that can be represented unambiguously from such samples is the Nyquist frequency[@shannon1949communication]
