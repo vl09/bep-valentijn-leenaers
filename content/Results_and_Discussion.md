@@ -149,3 +149,29 @@ These lines are consistent with mains-frequency electrical interference at $50\ 
 Between the harmonic lines, the spectrum shows a broad elevated region in the $15$–$25\ \mathrm{Hz}$ band on all channels, with local peaks near $24\ \mathrm{Hz}$ of order $0.3\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$. Because this structure tracks all three axes similarly, it is referred to as "noise mountain" and is likely dominated by electrical pickup rather than a single mechanical mode of the cold plate. Away from the narrow lines, the median ASD between $60$ and $90\ \mathrm{Hz}$ sits near $100$–$110\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ on each channel. This broadband level is roughly a factor of five above the datasheet noise floor of $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$, suggesting additional broadband noise from the scope readout chain on top of the sensor intrinsic floor. The origin of that offset is not resolved here; it is nevertheless small compared with the $50\ \mathrm{Hz}$ line and the cooler-on spectra presented in the next section.
 
 A few weaker peaks differ between axes. On $x$, a line near $38\ \mathrm{Hz}$ reaches $\sim 0.18\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$, slightly above the corresponding features on $y$ ($\sim 0.13\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ near $42\ \mathrm{Hz}$) and $z$ ($\sim 0.13\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ near $38\ \mathrm{Hz}$). That pattern is more axis-dependent than the $50\ \mathrm{Hz}$ family and may reflect a weak mechanical response of the extended plate, but individual modes are not assigned without further modal information. Overall, the cooler-off spectrum establishes an electrical and environmental reference floor: narrow $50\ \mathrm{Hz}$ harmonics and a broadband readout contribution well below the levels that appear once the GM cryocooler is switched on.
+
+(results-running-time)=
+## GM cooler on: time domain
+With the electrical and environmental floor established, the same three segments are recorded with the GM cryocooler running, addressing the fourth research question: what additional vibration appears once the cooler is switched on, relative to the baseline. [](#fig-running-time) shows the first $10\ \mathrm{s}$ of the calibrated three-axis trace, with dashed lines marking the $\pm 2\ \mathrm{g}$ sensor range from [](#adxl354-accelerometer).
+
+```{figure} figures/Running_time_10s_3ch.png
+:label: fig-running-time
+:alt: Three-axis accelerometer trace with GM cooler running, first 10 seconds, with plus/minus 2 g limit lines
+
+Calibrated acceleration during the first $10\ \mathrm{s}$ with the GM cooler running. Dashed lines mark the $\pm 2\ \mathrm{g}$ sensor range.
+```
+
+On $z$, sharp repeated bursts appear on top of the $\sim 1\ \mathrm{g}$ gravitational offset, roughly twice per second. The $x$- and $y$-channels show correlated bursts of the same timing, oscillating about a near-zero mean with excursions of order $\pm 0.5$–$0.6\ \mathrm{g}$ before decaying back to the quiet baseline within roughly $0.1\ \mathrm{s}$. All three channels stay within the dashed $\pm 2\ \mathrm{g}$ lines throughout this window.
+
+[](#fig-running-heartbeat) zooms into a single $z$-channel drive cycle, spanning $1.1\ \mathrm{s}$.
+
+```{figure} figures/Running_GM_heartbeat_zoom.png
+:label: fig-running-heartbeat
+:alt: Zoomed z-axis trace showing one GM cryocooler cycle with a strong and a weak tick-back-tick pair
+
+Calibrated $z$-axis acceleration over one GM drive cycle. Two double-spike (tick-back-tick) events appear per cycle: a strong pair near $t = 1.4\ \mathrm{s}$ and a weaker pair near $t = 1.86\ \mathrm{s}$.
+```
+
+Each cycle repeats with a period of $1.00\ \mathrm{s}$ and contains two double-spike events, consistent with the tick-back-tick signature predicted for the GM displacer and valve motion in [](#gifford-mcmahon-cryocooler-drive). The stronger pair reaches $1.86\ \mathrm{g}$ and $1.76\ \mathrm{g}$, separated by $\sim 54\ \mathrm{ms}$; the weaker pair, $\sim 0.47\ \mathrm{s}$ later in the same cycle, peaks near $1.47\ \mathrm{g}$. Between events, the $z$-channel settles back to the $\sim 1\ \mathrm{g}$ gravitational plateau within $\sim 0.1\ \mathrm{s}$.
+
+Across the full $1800\ \mathrm{s}$ recording, the $z$-channel briefly exceeds $+2\ \mathrm{g}$ in $93$ of $9 \times 10^6$ samples ($< 0.002\%$ of the trace), all coincident with the strongest tick events. The bulk of the periodic drive therefore stays comfortably inside the sensor's linear range, with only the extreme tail of the strongest bursts approaching the $\pm 2\ \mathrm{g}$ limit.
