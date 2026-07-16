@@ -217,18 +217,7 @@ Welch ASD on all three channels with the GM cooler running ($n_{\mathrm{perseg}}
 
 The strongest individual lines in this band sit near $99\ \mathrm{Hz}$ ($41.1\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$, $30.0\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$) and near $71\ \mathrm{Hz}$ ($19$–$20\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on all three channels), each several orders of magnitude above the $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ datasheet floor.
 
-[](#fig-running-asd-wide) coarsens the segment length to $n_{\mathrm{perseg}} = 2\ \mathrm{s}$ and extends the range to $200\ \mathrm{Hz}$.
-
-```{figure} figures/Running_ASD_0-200Hz_3ch.png
-:label: fig-running-asd-wide
-:alt: Three-axis ASD with GM cooler running from 0 to 200 Hz, coarser resolution
-
-Welch ASD on all three channels with the GM cooler running ($n_{\mathrm{perseg}} = 2\ \mathrm{s}$), $0$ to $200\ \mathrm{Hz}$.
-```
-
-The coarser segmentation trades frequency resolution for a smoother view, as discussed in [](#spectral-analysis): the narrow $1\ \mathrm{Hz}$-spaced comb broadens into overlapping humps of elevated broadband structure that extend up to $\sim 200\ \mathrm{Hz}$, distinct from the $\sim 25\ \mathrm{Hz}$ noise mountain identified in [](#results-baseline). The humps are axis-dependent: $x$ peaks near $99\ \mathrm{Hz}$ ($9.3\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$) and $171\ \mathrm{Hz}$ ($11.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$), while $y$ peaks near $82\ \mathrm{Hz}$ ($7.9\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$) and $z$ near $99\ \mathrm{Hz}$ ($12.7\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$), matching the axis-dependent mode picture of [](#mechanical-response-of-extended-structures).
-
-Finally, [](#fig-running-asd-full) extends the same $2\ \mathrm{s}$-segment spectrum to the full $0$–$2.5\ \mathrm{kHz}$ sensor bandwidth.
+[](#fig-running-asd-full) coarsens the segment length to $n_{\mathrm{perseg}} = 2\ \mathrm{s}$ and extends the spectrum to the full $0$–$2.5\ \mathrm{kHz}$ sensor bandwidth. As discussed in [](#spectral-analysis), the shorter segments trade frequency resolution for a smoother view: the narrow $1\ \mathrm{Hz}$-spaced comb of the $60\ \mathrm{s}$ spectra is smeared, which makes broader, axis-dependent structure at higher frequencies easier to read.
 
 ```{figure} figures/Running_ASD_0-2500Hz_3ch.png
 :label: fig-running-asd-full
@@ -239,4 +228,4 @@ Welch ASD on all three channels with the GM cooler running ($n_{\mathrm{perseg}}
 
 Distinct, axis-dependent peaks persist well above $200\ \mathrm{Hz}$. The $x$-channel shows peaks near $677\ \mathrm{Hz}$ ($3.7\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$) and $2209\ \mathrm{Hz}$ ($2.9\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$) that are not prominent on $y$ or $z$. Conversely, $y$ and $z$ share peaks near $488\ \mathrm{Hz}$ ($2.3$ and $10.9\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$, respectively) and near $1290\ \mathrm{Hz}$ ($3.2$ and $4.7\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$) that $x$ does not show at comparable strength. This pattern is consistent with the mode-shape picture of an extended structure from [](#mechanical-response-of-extended-structures): different resonances of the cold plate couple more strongly to some axes than others, rather than one lumped oscillator responding equally on every channel.
 
-It should be noted that the $\sim 2.2\ \mathrm{kHz}$ feature on $x$ lies close to the $\sim 2.5\ \mathrm{kHz}$ resonance of the ADXL354 transfer function itself ([](#fig-adxl354-transfer)), so this peak may partly reflect the sensor response rather than the cryostat structure alone. More generally, individual peaks in [](#fig-running-asd-wide) and [](#fig-running-asd-full) are not assigned to specific structural components without further modal information; the honest summary is that the GM cooler drives a rich, axis-dependent harmonic and broadband response that stands clearly above both the datasheet noise floor and the cooler-off baseline, while the mains-frequency line and its harmonics remain identifiable as a separate, cooler-independent electrical contribution throughout.
+It should be noted that the $\sim 2.2\ \mathrm{kHz}$ feature on $x$ lies close to the $\sim 2.5\ \mathrm{kHz}$ resonance of the ADXL354 transfer function itself ([](#fig-adxl354-transfer)), so this peak may partly reflect the sensor response rather than the cryostat structure alone. More generally, individual peaks in [](#fig-running-asd-full) are not assigned to specific structural components without further modal information; the honest summary is that the GM cooler drives a rich, axis-dependent harmonic and broadband response that stands clearly above both the datasheet noise floor and the cooler-off baseline, while the mains-frequency line and its harmonics remain identifiable as a separate, cooler-independent electrical contribution throughout.
