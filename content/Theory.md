@@ -7,7 +7,7 @@ numbering:
 ---
 (theory)=
 # Theory
-This chapter consists of eight sections. First, cryocoolers and cryostat cooling stages are introduced as a source of periodic mechanical vibration. Second, the Gifford–McMahon cryocooler cycle and its tick-back-tick drive are examined. Third, the mechanical response of extended cryostat structures is described. Fourth, the undamped mass-spring oscillator is constructed as the model underlying passive isolation. Fifth, damped motion and ringdown are derived. Sixth, spectral analysis and periodic forcing are developed. Seventh, the ADXL354 accelerometer response is examined. Lastly, criteria for distinguishing electrical from mechanical vibration are presented.
+This chapter consists of eight sections. First, cryocoolers and cryostat cooling stages are introduced as a source of periodic mechanical vibration. Second, the Gifford–McMahon cryocooler cycle and its tick-back-tick drive are examined. Third, the undamped mass-spring oscillator is constructed as the model underlying passive isolation. Fourth, damped motion and ringdown are derived. Fifth, spectral analysis and periodic forcing are developed. Sixth, the mechanical response of extended cryostat structures is contrasted with the lumped isolator. Seventh, the ADXL354 accelerometer response is examined. Lastly, criteria for distinguishing electrical from mechanical vibration are presented.
 
 (cryocoolers-and-cooling-stages)=
 ## Cryocoolers and cryostat cooling stages
@@ -25,7 +25,7 @@ Cooling proceeds through a cascade of thermal stages rather than at a single tem
 Interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can open. The stacked copper thermal stages, support rods, and cabling between stages are visible; sensitive experiments are mounted at the lowest stage.
 ```
 
-Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. Characterising the periodic drive that reaches such a platform, and how it differs between cooler types, is therefore a prerequisite for designing vibration isolation. The next section examines one such cooler in more detail: the Gifford–McMahon cycle used on SteeleLab's DIY dry 4 K platform.
+Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. Characterising the periodic drive that reaches such a platform is therefore a prerequisite for designing vibration isolation. The next section examines one such cooler in more detail: the Gifford–McMahon cycle used on SteeleLab's DIY dry 4 K platform.
 
 (gifford-mcmahon-cryocooler-drive)=
 ## Gifford–McMahon cryocooler drive
@@ -51,19 +51,11 @@ The four stages of the Gifford–McMahon cooling cycle (Atrey Fig. 1.7)[@atrey20
 
 Each valve switch and displacer stroke imposes a periodic mechanical disturbance on the surrounding structure. In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
 
-The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. Regardless of the exact fundamental, the important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. That periodic drive reaches cold stages through mechanical links; the next section describes how an extended cryostat structure reshapes it before it is recorded at a mount point.
-
-(mechanical-response-of-extended-structures)=
-## Mechanical response of extended structures
-A cryostat plate or stage is not a single degree of freedom. Plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
-
-When the structure is excited at or near a mode frequency, the acceleration at a particular point depends on how that mode shape couples to each sensitive axis. A mode that produces primarily vertical motion is seen most clearly on the axis aligned with that direction, whereas a mode that mixes several directions can appear on more than one channel with different relative amplitudes. Sensor placement relative to symmetry points of the structure therefore affects the relative strength of peaks on different axes.
-
-The vibration spectrum at any mount point is the cryocooler drive spectrum filtered by this mechanical response and by the sensor orientation. Cooler-induced harmonics and structural resonances need not appear with the same strength on all three channels. Individual spectral peaks generally cannot be assigned to specific components without further modal information. This distinction between a lumped mass-spring isolator and a distributed structure is essential: the former is characterised by $f_0$ and $\Gamma_m$, whereas the latter presents a dense or irregular set of modes driven by the same periodic source. Passive isolation stages exploit the lumped picture deliberately; the next section develops that mass-spring model.
+The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. Regardless of the exact fundamental, the important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. Passive isolation stages are designed to keep that narrow-band drive away from sensitive experiments. The next section develops the mass-spring model that underlies such isolation.
 
 (mass-spring-oscillator)=
 ## The undamped mass-spring oscillator
-Passive vibration isolation reduces motion transmitted from a narrow-band disturbance to sensitive instrumentation by suspending a platform on springs so that its resonance lies away from the drive[@wilkinson2025]. Such an isolator is a designed oscillator with known natural frequency $f_0$ and damping rate $\Gamma_m$. The cryostat structure discussed above supports many modes at once; a lumped mass-spring system, by contrast, is characterised by a single $f_0$. The remainder of this section constructs that undamped model.
+Passive vibration isolation reduces motion transmitted from a narrow-band disturbance to sensitive instrumentation by suspending a platform on springs so that its resonance lies away from the drive[@wilkinson2025]. Such an isolator is a designed oscillator with known natural frequency $f_0$ and damping rate $\Gamma_m$. Isolation therefore uses a lumped mass-spring picture; the cold plate of a cryostat itself is not that isolator and will be treated separately later. The remainder of this section constructs the undamped model.
 
 Consider a mass $m$ attached to a spring with stiffness $k$. When the displacement $x$ from equilibrium is small, Hooke's law gives a restoring force $F = -kx$. Then Newton's second law can be used to yield the equation of motion
 
@@ -209,7 +201,17 @@ The magnitude $|X(\omega)|$ exhibits a maximum near $\omega = \omega_0$. This si
 
 The cryocooler drive is not a pure sinusoid. A periodic displacement or force that repeats once per cycle but has a pulse-like waveform contains energy at the fundamental frequency and at integer harmonics. A vibration spectrum therefore shows a comb of lines spaced by the drive frequency, together with additional peaks from structural resonances excited by that drive. Harmonics can extend to frequencies well above the fundamental.
 
-Measured spectra are coloured not only by the mechanical drive and structure, but also by the accelerometer used to record them. The next section examines the ADXL354 response that sets that sensor contribution.
+The single-mode driven oscillator is the building block used above. A cryostat cold plate, however, is not a designed mass-spring isolator: it supports many modes at once. The next section develops that extended-structure picture.
+
+(mechanical-response-of-extended-structures)=
+## Mechanical response of extended structures
+The mass-spring and driven-oscillator models above each describe a single degree of freedom. A cryostat plate or stage couples many such freedoms at once: plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
+
+When the structure is excited at or near a mode frequency, the acceleration at a particular point depends on how that mode shape couples to each sensitive axis. A mode that produces primarily vertical motion is seen most clearly on the axis aligned with that direction, whereas a mode that mixes several directions can appear on more than one channel with different relative amplitudes. Sensor placement relative to symmetry points of the structure therefore affects the relative strength of peaks on different axes.
+
+The vibration spectrum at any mount point is the cryocooler drive spectrum filtered by this mechanical response and by the sensor orientation. Cooler-induced harmonics and structural resonances need not appear with the same strength on all three channels. Individual spectral peaks generally cannot be assigned to specific components without further modal information. This distinction between a lumped mass-spring isolator and a distributed structure is essential: the former is characterised by $f_0$ and $\Gamma_m$, whereas the latter presents a dense or irregular set of modes driven by the same periodic source.
+
+To characterise that drive at a mount point, acceleration must be measured. Spectra are only useful if the accelerometer response in the band of interest is known. The next section examines the ADXL354 transfer function and noise floor that set that sensor contribution.
 
 (adxl354-accelerometer)=
 ## The ADXL354 accelerometer
