@@ -34,8 +34,7 @@ Rigol DS1054Z during a mass-spring ringdown acquisition. The three ADXL354 outpu
 ```
 
 ### Alternative readout hardware
-A Red Pitaya board with PyRPL was available as an alternative readout path, but records only two analog inputs per unit. Because simultaneous capture of all three accelerometer axes was required, the Rigol DS1054Z was used for the measurements reported in this
-thesis.
+A Red Pitaya STEMlab 125-14 with PyRPL was available as an alternative readout path, but records only two analog inputs per unit. Because simultaneous capture of all three accelerometer axes was required, the Rigol DS1054Z was used for the measurements reported in this thesis.
 
 (accelerometer-validation)=
 ## Accelerometer validation
