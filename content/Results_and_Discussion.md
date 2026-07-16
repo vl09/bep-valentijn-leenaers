@@ -163,18 +163,18 @@ With the electrical and environmental floor established, the same three segments
 Calibrated acceleration during the first $10\ \mathrm{s}$ with the GM cooler running. Dashed lines mark the $\pm 2\ \mathrm{g}$ sensor range.
 ```
 
-On $z$, sharp repeated bursts appear on top of the $\sim 1\ \mathrm{g}$ gravitational offset, roughly twice per second. The $x$- and $y$-channels show correlated bursts of the same timing, oscillating about a near-zero mean with excursions of order $\pm 0.5$–$0.6\ \mathrm{g}$ before decaying back to the quiet baseline within roughly $0.1\ \mathrm{s}$. All three channels stay within the dashed $\pm 2\ \mathrm{g}$ lines throughout this window.
+On $z$, sharp repeated bursts appear on top of the $\sim 1\ \mathrm{g}$ gravitational offset, roughly twice per second. The $x$- and $y$-channels show correlated bursts of the same timing, oscillating about a near-zero mean with excursions of order $\pm 0.5$–$0.6\ \mathrm{g}$ before decaying back to the quiet baseline within roughly $0.1\ \mathrm{s}$. All three channels stay within the dashed $\pm 2\ \mathrm{g}$ lines throughout this window. The repeating pattern of strong and weak bursts each second is referred to here as the GM cooler heartbeat.
 
-[](#fig-running-heartbeat) zooms into a single $z$-channel drive cycle, spanning $1.1\ \mathrm{s}$.
+[](#fig-running-heartbeat) zooms into a single $z$-channel heartbeat cycle, spanning $1.1\ \mathrm{s}$.
 
 ```{figure} figures/Running_GM_heartbeat_zoom.png
 :label: fig-running-heartbeat
-:alt: Zoomed z-axis trace showing one GM cryocooler cycle with a strong and a weak tick-back-tick pair
+:alt: Zoomed z-axis trace showing one GM cryocooler heartbeat cycle with a strong and a weak tick-back-tick pair
 
-Calibrated $z$-axis acceleration over one GM drive cycle. Two double-spike (tick-back-tick) events appear per cycle: a strong pair near $t = 1.4\ \mathrm{s}$ and a weaker pair near $t = 1.86\ \mathrm{s}$.
+Calibrated $z$-axis acceleration over one GM heartbeat cycle. Two double-spike (tick-back-tick) events appear per cycle: a strong pair near $t = 1.4\ \mathrm{s}$ and a weaker pair near $t = 1.86\ \mathrm{s}$.
 ```
 
-Each cycle repeats with a period of $1.00\ \mathrm{s}$ and contains two double-spike events, consistent with the tick-back-tick signature predicted for the GM displacer and valve motion in [](#gifford-mcmahon-cryocooler-drive). The stronger pair reaches $1.86\ \mathrm{g}$ and $1.76\ \mathrm{g}$, separated by $\sim 54\ \mathrm{ms}$; the weaker pair, $\sim 0.47\ \mathrm{s}$ later in the same cycle, peaks near $1.47\ \mathrm{g}$. Between events, the $z$-channel settles back to the $\sim 1\ \mathrm{g}$ gravitational plateau within $\sim 0.1\ \mathrm{s}$.
+Each heartbeat repeats with a period of $1.00\ \mathrm{s}$ and contains two double-spike events, consistent with the tick-back-tick signature predicted for the GM displacer and valve motion in [](#gifford-mcmahon-cryocooler-drive). The stronger pair reaches $1.86\ \mathrm{g}$ and $1.76\ \mathrm{g}$, separated by $\sim 54\ \mathrm{ms}$; the weaker pair, $\sim 0.47\ \mathrm{s}$ later in the same cycle, peaks near $1.47\ \mathrm{g}$. Between events, the $z$-channel settles back to the $\sim 1\ \mathrm{g}$ gravitational plateau within $\sim 0.1\ \mathrm{s}$.
 
 Across the full $1800\ \mathrm{s}$ recording, the $z$-channel briefly exceeds $+2\ \mathrm{g}$ only during the strongest tick events. The bulk of the periodic drive therefore stays inside the sensor's linear range, with only the extreme tail of those bursts approaching the $\pm 2\ \mathrm{g}$ limit.
 
