@@ -7,8 +7,64 @@ numbering:
 ---
 (theory)=
 # Theory
+This chapter consists of eight sections. First, cryocoolers and cryostat cooling stages are introduced as a source of periodic mechanical vibration. Second, the Gifford–McMahon cryocooler cycle and its tick-back-tick drive are examined. Third, the mechanical response of extended cryostat structures is described. Fourth, the undamped mass-spring oscillator is constructed as the model underlying passive isolation. Fifth, damped motion and ringdown are derived. Sixth, spectral analysis and periodic forcing are developed. Seventh, the ADXL354 accelerometer response is examined. Lastly, criteria for distinguishing electrical from mechanical vibration are presented.
+
+(cryocoolers-and-cooling-stages)=
+## Cryocoolers and cryostat cooling stages
+Low-temperature experiments in quantum optomechanics rely on refrigerators that sustain millikelvin environments for long periods without a continuous liquid-helium supply[@steeleLabResearch]. Cryocoolers provide this capability by running a closed thermodynamic cycle: a working fluid, typically helium, is compressed and expanded in a repeating sequence that transports heat from a cold stage inside the cryostat to a warmer reject stage at ambient temperature. The cycle is inherently periodic. Displacers, valves, or remote motors move gas volumes and pistons on each stroke, and that motion couples mechanically into the surrounding frame, thermal links, and vibration-isolation stages.
+
+SteeleLab operates several independent refrigeration systems[@steeleLabResearch]. The main optomechanical experiments run on Bluefors dilution refrigerators, which precool the cryostat with a pulse-tube cryocooler before reaching the sub-kelvin base temperature. Pulse-tube systems separate the compressor from the cold stage and drive periodic gas oscillations along a transfer line. Because the cycle rate is set by the cooler motor and valve timing, the fundamental mechanical drive frequency depends on the installation. Literature on dry cryostats with pulse-tube precooling reports a narrow-band component near $1.4\ \mathrm{Hz}$[@maisonobe2018]. Wilkinson[@wilkinson2025] describes the related periodic ticking from helium-pump strokes in such a system.
+
+Cooling proceeds through a cascade of thermal stages rather than at a single temperature. At the outer end, the cryocooler cold head rejects heat to room temperature. Inside the cryostat, conduction through copper supports and flexible thermal links connects the 4 K plate, intermediate stages such as the 1 K still in dilution systems, and finally the mixing chamber or experimental platform at the lowest temperature. Each stage is a mechanical link through which cooler-induced motion can propagate. Flexible links and passive isolation stages attenuate high-frequency content, but the low-frequency periodic drive of the cryocooler remains a common disturbance across the chain[@wilkinson2025]. [](#fig-bluefors-cryostat) shows the interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can raised, revealing the tiered copper stages, thermal links, and wiring that connect the cold stages.
+
+```{figure} figures/bluefors_cryostat.jpg
+:label: fig-bluefors-cryostat
+:width: 55%
+:align: center
+
+Interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can open. The stacked copper thermal stages, support rods, and cabling between stages are visible; sensitive experiments are mounted at the lowest stage.
+```
+
+Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. Characterising the periodic drive that reaches such a platform, and how it differs between cooler types, is therefore a prerequisite for designing vibration isolation. The next section examines one such cooler in more detail: the Gifford–McMahon cycle used on SteeleLab's DIY dry 4 K platform.
+
+(gifford-mcmahon-cryocooler-drive)=
+## Gifford–McMahon cryocooler drive
+SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-schematic) shows the layout.
+
+```{figure} figures/GM_cooler_schematic.png
+:label: fig-gm-schematic
+:width: 85%
+:align: center
+
+Schematic of a Gifford–McMahon cryocooler (Atrey Fig. 1.6)[@atrey2020]. A compressor at the warm end drives helium through a rotary valve into the cold head, where a regenerator and expander shuttle gas between ambient temperature $T_0$ and the cold load at $T_c$. The inset shows the displacer with high- (HP) and low-pressure (LP) valve ports and expansion volumes $V_1$ and $V_2$.
+```
+
+The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@atrey2020]. The cycle begins with the low-pressure valve closed, the high-pressure valve open, and the displacer in the cold region. First, from $a$ to $b$, the displacer moves toward the warm end while the cold head remains on the high-pressure side; helium passes through the regenerator from ambient temperature $T_a$ to the cold temperature $T_L$, releasing heat into the regenerator matrix. Second, from $b$ to $c$, the high-pressure valve closes, the low-pressure valve opens, and the displacer is held fixed; part of the gas expands through the regenerator and absorbs heat from the cold stage, providing the useful cooling power. Third, from $c$ to $d$, the displacer returns toward the cold end on the low-pressure side, forcing cold gas back through the regenerator. Fourth, from $d$ to $a$, the low-pressure valve closes, the high-pressure valve reopens, and the gas in the warm end is compressed, rejecting heat to the surroundings before the cycle repeats.
+
+```{figure} figures/GM_cooler_cycle.jpg
+:label: fig-gm-cycle
+:width: 85%
+:align: center
+
+The four stages of the Gifford–McMahon cooling cycle (Atrey Fig. 1.7)[@atrey2020]. The displacer position and valve states ($a$–$d$) repeat once per cold-head cycle. Steps $b$–$c$ produce the net cooling at the cold stage.
+```
+
+Each valve switch and displacer stroke imposes a periodic mechanical disturbance on the surrounding structure. In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
+
+The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. Regardless of the exact fundamental, the important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. That periodic drive reaches cold stages through mechanical links; the next section describes how an extended cryostat structure reshapes it before it is recorded at a mount point.
+
+(mechanical-response-of-extended-structures)=
+## Mechanical response of extended structures
+A cryostat plate or stage is not a single degree of freedom. Plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
+
+When the structure is excited at or near a mode frequency, the acceleration at a particular point depends on how that mode shape couples to each sensitive axis. A mode that produces primarily vertical motion is seen most clearly on the axis aligned with that direction, whereas a mode that mixes several directions can appear on more than one channel with different relative amplitudes. Sensor placement relative to symmetry points of the structure therefore affects the relative strength of peaks on different axes.
+
+The vibration spectrum at any mount point is the cryocooler drive spectrum filtered by this mechanical response and by the sensor orientation. Cooler-induced harmonics and structural resonances need not appear with the same strength on all three channels. Individual spectral peaks generally cannot be assigned to specific components without further modal information. This distinction between a lumped mass-spring isolator and a distributed structure is essential: the former is characterised by $f_0$ and $\Gamma_m$, whereas the latter presents a dense or irregular set of modes driven by the same periodic source. Passive isolation stages exploit the lumped picture deliberately; the next section develops that mass-spring model.
+
 (mass-spring-oscillator)=
 ## The undamped mass-spring oscillator
+Passive vibration isolation reduces motion transmitted from a narrow-band disturbance to sensitive instrumentation by suspending a platform on springs so that its resonance lies away from the drive[@wilkinson2025]. Such an isolator is a designed oscillator with known natural frequency $f_0$ and damping rate $\Gamma_m$. The cryostat structure discussed above supports many modes at once; a lumped mass-spring system, by contrast, is characterised by a single $f_0$. The remainder of this section constructs that undamped model.
+
 Consider a mass $m$ attached to a spring with stiffness $k$. When the displacement $x$ from equilibrium is small, Hooke's law gives a restoring force $F = -kx$. Then Newton's second law can be used to yield the equation of motion
 
 $$
@@ -46,9 +102,7 @@ $$
 \frac{a_{\mathrm{peak}}}{g} = \frac{(2\pi f_0)^2 A}{g},
 $$ (eq-shm-peak-accel)
 
-where $A$ is in metres. The same relation links displacement and acceleration whenever motion is dominated by a single harmonic at $f_0$.
-
-Passive vibration isolation exploits the same mass-spring picture. A platform suspended on springs can be tuned so that its resonance lies away from a narrow-band disturbance, reducing motion transmitted to sensitive instrumentation[@wilkinson2025]. Such an isolator is a designed oscillator with known $f_0$ and $\Gamma_m$. A cryostat structure, by contrast, supports many modes simultaneously; that richer frequency content is discussed in a later section.
+where $A$ is in metres. The same relation links displacement and acceleration whenever motion is dominated by a single harmonic at $f_0$. Mass-spring isolation at an experimental platform is typically designed so that $f_0$ of the isolator avoids the dominant cooler line[@wilkinson2025]. Real oscillators also dissipate energy; the next section adds damping and the ringdown protocol used to extract $\Gamma_m$.
 
 ## Damped motion and Ringdown
 ### Equation of motion
@@ -99,6 +153,8 @@ A(t) = A_0 e^{-\Gamma_m t/2}.
 $$ (eq-envelope-fit)
 
 Intuitively, a smaller $\Gamma_m$ implies a slower decay, whereas a larger $\Gamma_m$ implies faster energy dissipation. For a given $f_0$, the envelope sets the time scale on which stored mechanical energy is lost, independent of whether the oscillator is a laboratory spring or a cryogenic isolator.
+
+Free ringdown characterises $\Gamma_m$ in the absence of an external drive. An operating cryostat, by contrast, is continuously driven by the cooler cycle. The next section develops the frequency-domain tools used to analyse that steady drive.
 
 (spectral-analysis)=
 ## Spectral analysis and periodic forcing
@@ -153,49 +209,7 @@ The magnitude $|X(\omega)|$ exhibits a maximum near $\omega = \omega_0$. This si
 
 The cryocooler drive is not a pure sinusoid. A periodic displacement or force that repeats once per cycle but has a pulse-like waveform contains energy at the fundamental frequency and at integer harmonics. A vibration spectrum therefore shows a comb of lines spaced by the drive frequency, together with additional peaks from structural resonances excited by that drive. Harmonics can extend to frequencies well above the fundamental.
 
-(cryocoolers-and-cooling-stages)=
-## Cryocoolers and cryostat cooling stages
-Low-temperature experiments in quantum optomechanics rely on refrigerators that sustain millikelvin environments for long periods without a continuous liquid-helium supply[@steeleLabResearch]. Cryocoolers provide this capability by running a closed thermodynamic cycle: a working fluid, typically helium, is compressed and expanded in a repeating sequence that transports heat from a cold stage inside the cryostat to a warmer reject stage at ambient temperature. The cycle is inherently periodic. Displacers, valves, or remote motors move gas volumes and pistons on each stroke, and that motion couples mechanically into the surrounding frame, thermal links, and vibration-isolation stages.
-
-SteeleLab operates several independent refrigeration systems[@steeleLabResearch]. The main optomechanical experiments run on Bluefors dilution refrigerators, which precool the cryostat with a pulse-tube cryocooler before reaching the sub-kelvin base temperature. Pulse-tube systems separate the compressor from the cold stage and drive periodic gas oscillations along a transfer line. Because the cycle rate is set by the cooler motor and valve timing, the fundamental mechanical drive frequency depends on the installation. Literature on dry cryostats with pulse-tube precooling reports a narrow-band component near $1.4\ \mathrm{Hz}$[@maisonobe2018]. Wilkinson[@wilkinson2025] describes the related periodic ticking from helium-pump strokes in such a system.
-
-Cooling proceeds through a cascade of thermal stages rather than at a single temperature. At the outer end, the cryocooler cold head rejects heat to room temperature. Inside the cryostat, conduction through copper supports and flexible thermal links connects the 4 K plate, intermediate stages such as the 1 K still in dilution systems, and finally the mixing chamber or experimental platform at the lowest temperature. Each stage is a mechanical link through which cooler-induced motion can propagate. Flexible links and passive isolation stages attenuate high-frequency content, but the low-frequency periodic drive of the cryocooler remains a common disturbance across the chain[@wilkinson2025]. [](#fig-bluefors-cryostat) shows the interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can raised, revealing the tiered copper stages, thermal links, and wiring that connect the cold stages.
-
-```{figure} figures/bluefors_cryostat.jpg
-:label: fig-bluefors-cryostat
-:width: 55%
-:align: center
-
-Interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can open. The stacked copper thermal stages, support rods, and cabling between stages are visible; sensitive experiments are mounted at the lowest stage.
-```
-
-Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. Characterising the periodic drive that reaches such a platform, and how it differs between cooler types, is therefore a prerequisite for designing vibration isolation, as introduced with the mass-spring models above and developed further for extended cryostat structures below.
-
-(gifford-mcmahon-cryocooler-drive)=
-## Gifford–McMahon cryocooler drive
-SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-schematic) shows the layout.
-
-```{figure} figures/GM_cooler_schematic.png
-:label: fig-gm-schematic
-:width: 85%
-:align: center
-
-Schematic of a Gifford–McMahon cryocooler (Atrey Fig. 1.6)[@atrey2020]. A compressor at the warm end drives helium through a rotary valve into the cold head, where a regenerator and expander shuttle gas between ambient temperature $T_0$ and the cold load at $T_c$. The inset shows the displacer with high- (HP) and low-pressure (LP) valve ports and expansion volumes $V_1$ and $V_2$.
-```
-
-The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@atrey2020]. The cycle begins with the low-pressure valve closed, the high-pressure valve open, and the displacer in the cold region. First, from $a$ to $b$, the displacer moves toward the warm end while the cold head remains on the high-pressure side; helium passes through the regenerator from ambient temperature $T_a$ to the cold temperature $T_L$, releasing heat into the regenerator matrix. Second, from $b$ to $c$, the high-pressure valve closes, the low-pressure valve opens, and the displacer is held fixed; part of the gas expands through the regenerator and absorbs heat from the cold stage, providing the useful cooling power. Third, from $c$ to $d$, the displacer returns toward the cold end on the low-pressure side, forcing cold gas back through the regenerator. Fourth, from $d$ to $a$, the low-pressure valve closes, the high-pressure valve reopens, and the gas in the warm end is compressed, rejecting heat to the surroundings before the cycle repeats.
-
-```{figure} figures/GM_cooler_cycle.jpg
-:label: fig-gm-cycle
-:width: 85%
-:align: center
-
-The four stages of the Gifford–McMahon cooling cycle (Atrey Fig. 1.7)[@atrey2020]. The displacer position and valve states ($a$–$d$) repeat once per cold-head cycle. Steps $b$–$c$ produce the net cooling at the cold stage.
-```
-
-Each valve switch and displacer stroke imposes a periodic mechanical disturbance on the surrounding structure. In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
-
-The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. Regardless of the exact fundamental, the important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. Mass-spring isolation at the experimental platform is typically designed so that $f_0$ of the isolator avoids the dominant cooler line[@wilkinson2025].
+Measured spectra are coloured not only by the mechanical drive and structure, but also by the accelerometer used to record them. The next section examines the ADXL354 response that sets that sensor contribution.
 
 (adxl354-accelerometer)=
 ## The ADXL354 accelerometer
@@ -203,7 +217,7 @@ Low-frequency vibration measurements can be done with an accelerometer with a st
 
 At rest, the sensor measures the local gravitational field. For an axis aligned with gravity, one orientation gives $+1\ \mathrm{g}$ and a $180^\circ$ rotation about that axis gives $-1\ \mathrm{g}$. The output voltages at the two plateaus therefore differ by a span equivalent to $2\ \mathrm{g}$. Dividing that span by $2\ \mathrm{g}$ yields a sensitivity in $\mathrm{V/g}$ that can be compared with the datasheet value without a separate reference accelerometer. Because the outputs are ratiometric to $\mathrm{V_{1P8ANA}}$, the midpoint between the two plateaus estimates the zero-$g$ bias for that recording.
 
-The sensor does not respond uniformly at all frequencies. Analog Devices publishes measured transfer functions for each axis[@adxl354_datasheet], reproduced in [](#fig-adxl354-transfer). Each curve shows relative output in units of $g$ per $g$ of input acceleration as a function of frequency, including the effect of the on-chip anti-aliasing filter. Below roughly $1\ \mathrm{kHz}$ the response is flat near unity, so the nominal sensitivity applies across the low-frequency band of interest. Above this band an internal mechanical resonance appears near $2.5\ \mathrm{kHz}$ on all three axes. The peak height is axis-dependent: the $x$- and $y$-channels show the largest gain, whereas the $z$-channel resonance is weaker. Peaks in measured spectra near this resonance may therefore reflect the sensor transfer function as much as the cryostat structure, and should be interpreted accordingly.
+The sensor does not respond uniformly at all frequencies. Analog Devices publishes measured transfer functions for each axis[@adxl354_datasheet], reproduced in [](#fig-adxl354-transfer). Each curve shows relative output in units of $g$ per $g$ of input acceleration as a function of frequency, including the effect of the on-chip anti-aliasing filter discussed in [](#sampling-nyquist). Below roughly $1\ \mathrm{kHz}$ the response is flat near unity, so the nominal sensitivity applies across the low-frequency band of interest. Above this band an internal mechanical resonance appears near $2.5\ \mathrm{kHz}$ on all three axes. The peak height is axis-dependent: the $x$- and $y$-channels show the largest gain, whereas the $z$-channel resonance is weaker. Peaks in measured spectra near this resonance may therefore reflect the sensor transfer function as much as the cryostat structure, and should be interpreted accordingly.
 
 ```{figure}
 :label: fig-adxl354-transfer
@@ -223,13 +237,7 @@ ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8
 
 The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
 
-(mechanical-response-of-extended-structures)=
-## Mechanical response of extended structures
-The models above each describe a single degree of freedom. A cryostat plate or stage couples many such freedoms at once: plates, copper supports, hoses, and internal components form an extended elastic structure with many normal modes. Each mode has a characteristic frequency and a mode shape: a pattern of displacement across the structure at which motion is amplified for a given drive frequency.
-
-When the structure is excited at or near a mode frequency, the acceleration at a particular point depends on how that mode shape couples to each sensitive axis. A mode that produces primarily vertical motion is seen most clearly on the axis aligned with that direction, whereas a mode that mixes several directions can appear on more than one channel with different relative amplitudes. Sensor placement relative to symmetry points of the structure therefore affects the relative strength of peaks on different axes.
-
-The vibration spectrum at any mount point is the cryocooler drive spectrum filtered by this mechanical response and by the sensor orientation. Cooler-induced harmonics and structural resonances need not appear with the same strength on all three channels. Individual spectral peaks generally cannot be assigned to specific components without further modal information. This distinction between a lumped mass-spring isolator and a distributed structure is essential: the former is characterised by $f_0$ and $\Gamma_m$, whereas the latter presents a dense or irregular set of modes driven by the same periodic source.
+Measured spectra therefore mix mechanical motion of the structure, the sensor transfer function, and electrical pickup in the readout chain. The final section gives criteria for separating electrical from mechanical contributions.
 
 (distinguishing-electrical-from-mechanical-vibration)=
 ## Distinguishing electrical from mechanical vibration
