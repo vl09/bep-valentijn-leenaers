@@ -34,7 +34,7 @@ project:
       show_toc: true
       
       # Maximum heading depth shown in the table of contents. Default: 2.
-      toc_depth: 2
+      toc_depth: 3
       
       # Render a list of figures in the front matter. Default: false.
       show_list_of_figures: false
