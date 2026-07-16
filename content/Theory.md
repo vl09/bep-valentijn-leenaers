@@ -232,7 +232,7 @@ The sensor does not respond uniformly at all frequencies. Analog Devices publish
 ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8–10)[@adxl354_datasheet]. Relative output is flat near $1\ \mathrm{g/g}$ below $\sim 1\ \mathrm{kHz}$ on all axes. A mechanical resonance near $2.5\ \mathrm{kHz}$ is present on each axis; peak gain is highest on $x$ and $y$ and lower on $z$.
 ```
 
-The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
+The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At low frequencies the ASD typically rises as $1/f$ (flicker), whether from the sensor or from other electronics in the chain, including the oscilloscope. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
 
 Measured spectra therefore mix mechanical motion of the structure, the sensor transfer function, and electrical pickup in the readout chain.
 
