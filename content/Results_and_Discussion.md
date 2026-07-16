@@ -175,3 +175,38 @@ Calibrated $z$-axis acceleration over one GM drive cycle. Two double-spike (tick
 Each cycle repeats with a period of $1.00\ \mathrm{s}$ and contains two double-spike events, consistent with the tick-back-tick signature predicted for the GM displacer and valve motion in [](#gifford-mcmahon-cryocooler-drive). The stronger pair reaches $1.86\ \mathrm{g}$ and $1.76\ \mathrm{g}$, separated by $\sim 54\ \mathrm{ms}$; the weaker pair, $\sim 0.47\ \mathrm{s}$ later in the same cycle, peaks near $1.47\ \mathrm{g}$. Between events, the $z$-channel settles back to the $\sim 1\ \mathrm{g}$ gravitational plateau within $\sim 0.1\ \mathrm{s}$.
 
 Across the full $1800\ \mathrm{s}$ recording, the $z$-channel briefly exceeds $+2\ \mathrm{g}$ in $93$ of $9 \times 10^6$ samples ($< 0.002\%$ of the trace), all coincident with the strongest tick events. The bulk of the periodic drive therefore stays comfortably inside the sensor's linear range, with only the extreme tail of the strongest bursts approaching the $\pm 2\ \mathrm{g}$ limit.
+
+(results-running-spectra)=
+## GM cooler on: spectral analysis
+The time-domain bursts in [](#fig-running-heartbeat) point to a periodic drive near $1\ \mathrm{Hz}$. [](#fig-running-overlay-low-z) compares the $z$-channel Welch ASD ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$) with the cooler on and off, from $0$ to $20\ \mathrm{Hz}$.
+
+```{figure} figures/Running_baseline_overlay_Z_0-20Hz.png
+:label: fig-running-overlay-low-z
+:alt: z-axis ASD comparison between GM cooler on and off from 0 to 20 Hz
+
+Welch ASD of the $z$-channel ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$) from $0$ to $20\ \mathrm{Hz}$, cooler off (grey) and cooler on (blue).
+```
+
+With the cooler on, a comb of lines spaced by $\approx 1\ \mathrm{Hz}$ appears, matching the $1.00\ \mathrm{s}$ cycle period read from the time trace. The strongest lines reach $1.77\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ at $5\ \mathrm{Hz}$, $1.67\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ at $7\ \mathrm{Hz}$, and $\sim 1.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ at $8$–$10\ \mathrm{Hz}$, roughly $15$–$18\times$ above the flat cooler-off floor at the same frequencies ($\sim 0.1\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$). The mechanical drive comb dominates the electrical baseline throughout this band.
+
+[](#fig-running-overlay-mid) widens the comparison to all three channels from $0$ to $120\ \mathrm{Hz}$.
+
+```{figure} figures/Running_baseline_overlay_0-120Hz.png
+:label: fig-running-overlay-mid
+:alt: Three-axis ASD comparison between GM cooler on and off from 0 to 120 Hz
+
+Welch ASD on all three channels ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$) from $0$ to $120\ \mathrm{Hz}$, cooler off (grey, all axes) and cooler on (coloured).
+```
+
+The $1\ \mathrm{Hz}$ comb continues across the full band. The $50\ \mathrm{Hz}$ mains line is visible at a comparable level with the cooler on and off ($16.0$ vs $13.6\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$; $4.9$ vs $6.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $y$; $16.8$ vs $12.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$), consistent with the electrical-pickup criterion of [](#distinguishing-electrical-from-mechanical-vibration): a feature unaffected by the cooler state is not driven by the cooler. Between $70$ and $90\ \mathrm{Hz}$, a broad elevated region appears on all channels (median $\sim 200$–$240\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ with the cooler on, roughly double the cooler-off floor there), with sharp peaks reaching $20$–$26\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ near $80$–$82\ \mathrm{Hz}$ on $x$ and $y$.
+
+[](#fig-running-asd-mid) shows the cooler-on spectrum alone on the same $0$–$120\ \mathrm{Hz}$ band, with the datasheet noise floor for reference.
+
+```{figure} figures/Running_ASD_0-120Hz_3ch.png
+:label: fig-running-asd-mid
+:alt: Three-axis ASD with GM cooler running from 0 to 120 Hz
+
+Welch ASD on all three channels with the GM cooler running ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$), $0$ to $120\ \mathrm{Hz}$. The horizontal line marks the datasheet noise floor of $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$[@adxl354_datasheet].
+```
+
+The strongest individual lines in this band sit near $99\ \mathrm{Hz}$ ($41.1\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$, $30.0\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$) and near $71\ \mathrm{Hz}$ ($19$–$20\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on all three channels), each several orders of magnitude above the $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ datasheet floor.
