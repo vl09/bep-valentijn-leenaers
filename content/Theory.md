@@ -25,7 +25,7 @@ Cooling proceeds through a cascade of thermal stages rather than at a single tem
 Interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can open. The stacked copper thermal stages, support rods, and cabling between stages are visible; sensitive experiments are mounted at the lowest stage.
 ```
 
-Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. Characterising the vibration that reaches this final stage is therefore central to understanding the mechanical noise environment of the experiment.
+Sensitive devices are mounted at the lowest accessible stage, on a final cold plate or experimental platform. In SteeleLab, this is where superconducting microwave circuits are combined with high-$Q$ mechanical resonators for optomechanical experiments[@steeleLabResearch]. Residual acceleration at this point sets a floor on how precisely phonon motion can be read out and controlled. The vibration that reaches this final stage is part of that mechanical noise floor.
 
 (gifford-mcmahon-cryocooler-drive)=
 ## Gifford–McMahon cryocooler drive
@@ -48,7 +48,7 @@ The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@
 
 Each valve switch and displacer stroke imposes a periodic mechanical disturbance on the surrounding structure. In the time domain the disturbance appears as a repeated pattern of accelerations rather than a smooth sinusoid. A fast displacement stroke followed by a slower return produces a characteristic tick-back-tick sequence, sometimes with a double peak within one half-cycle when the internal valve and displacer motion are offset in time.
 
-The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. Regardless of the exact fundamental, the important point for spectral interpretation is that the drive is narrow-band and periodic, so its signature is a fundamental plus harmonics rather than a flat broadband floor. Passive isolation stages are designed to keep that narrow-band drive away from sensitive experiments.
+The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. The drive is narrow-band and periodic, so its spectral signature is a fundamental plus harmonics rather than a flat broadband floor. Passive isolation stages are designed to keep that narrow-band drive away from sensitive experiments.
 
 (mass-spring-oscillator)=
 ## The undamped mass-spring oscillator
@@ -129,7 +129,7 @@ with damped angular frequency $\tilde{\omega}_0 = \omega_0 \sqrt{1 - (\Gamma_m/2
 
 (amplitude-dependent-damping)=
 ### Amplitude-dependent damping
-The viscous model above assumes a damping force linear in velocity with a constant coefficient $c$, so the envelope in [](#eq-ringdown-solution) decays at a fixed rate $\Gamma_m$. Real oscillators often deviate from this limit. On a benchtop mass-spring assembly, dry friction at the spring supports and velocity-dependent air drag both dissipate more energy at larger amplitude. The effective damping rate is then higher early in a ringdown, when the displacement is large, and falls as the motion decays. A single exponential fit to the peak envelope, as in [](#eq-envelope-fit), can therefore track the late-time decay while undershooting the initial interval. For validation purposes a constant-$\Gamma_m$ picture remains useful as a qualitative guide; extracting one $\Gamma_m$ from the full trace is meaningful only when the amplitude-dependent contribution is small.
+The viscous model above assumes a damping force linear in velocity with a constant coefficient $c$, so the envelope in [](#eq-ringdown-solution) decays at a fixed rate $\Gamma_m$. Real oscillators often deviate from this limit. On a benchtop mass-spring assembly, dry friction at the spring supports and velocity-dependent air drag both dissipate more energy at larger amplitude. The effective damping rate is then higher early in a ringdown, when the displacement is large, and falls as the motion decays. A single exponential fit to the peak envelope, as in [](#eq-envelope-fit), can therefore track the late-time decay while undershooting the initial interval. A constant-$\Gamma_m$ picture is only a qualitative guide for validation; extracting one $\Gamma_m$ from the full trace is meaningful only when the amplitude-dependent contribution is small.
 
 (ringdown-protocol)=
 ### Ringdown protocol
@@ -206,7 +206,7 @@ A cryostat plate or stage couples many degrees of freedom at once. Plates, coppe
 
 When the structure is excited at or near a mode frequency, the acceleration at a particular point depends on how that mode shape couples to each sensitive axis. A mode that produces primarily vertical motion is seen most clearly on the axis aligned with that direction, whereas a mode that mixes several directions can appear on more than one channel with different relative amplitudes. Sensor placement relative to symmetry points of the structure therefore affects the relative strength of peaks on different axes.
 
-The vibration spectrum at any mount point is the cryocooler drive spectrum filtered by this mechanical response and by the sensor orientation. Cooler-induced harmonics and structural resonances need not appear with the same strength on all three channels. Individual spectral peaks generally cannot be assigned to specific components without further modal information. This distinction between a lumped mass-spring isolator and a distributed structure is essential: the former is characterised by $f_0$ and $\Gamma_m$, whereas the latter presents a dense or irregular set of modes driven by the same periodic source. Spectra of that drive are only useful if the accelerometer response in the band of interest is known.
+The vibration spectrum at any mount point is the cryocooler drive spectrum filtered by this mechanical response and by the sensor orientation. Cooler-induced harmonics and structural resonances need not appear with the same strength on all three channels. Individual spectral peaks generally cannot be assigned to specific components without further modal information. A lumped mass-spring isolator is characterised by $f_0$ and $\Gamma_m$; a distributed cold plate presents a dense or irregular set of modes driven by the same periodic source. Spectra of that drive are only useful if the accelerometer response in the band of interest is known.
 
 (adxl354-accelerometer)=
 ## The ADXL354 accelerometer
@@ -232,9 +232,9 @@ The sensor does not respond uniformly at all frequencies. Analog Devices publish
 ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8–10)[@adxl354_datasheet]. Relative output is flat near $1\ \mathrm{g/g}$ below $\sim 1\ \mathrm{kHz}$ on all axes. A mechanical resonance near $2.5\ \mathrm{kHz}$ is present on each axis; peak gain is highest on $x$ and $y$ and lower on $z$.
 ```
 
-The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. The total noise floor seen in a measurement can exceed this value if the readout electronics contribute additional broadband noise. At low frequencies the ASD typically rises as $1/f$ (flicker), whether from the sensor or from other electronics in the chain, including the oscilloscope. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, defining the maximum acceleration that can be recorded without clipping.
+The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. Readout electronics can raise the measured broadband floor above that value. At low frequencies the ASD often rises as $1/f$ (flicker) from the sensor or from other electronics in the chain, including the oscilloscope. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, so larger accelerations clip.
 
-Measured spectra therefore mix mechanical motion of the structure, the sensor transfer function, and electrical pickup in the readout chain.
+Measured spectra mix mechanical motion of the structure, the sensor transfer function, and electrical pickup in the readout chain.
 
 (distinguishing-electrical-from-mechanical-vibration)=
 ## Distinguishing electrical from mechanical vibration
@@ -242,6 +242,6 @@ Not every feature in a vibration spectrum originates from mechanical motion of t
 
 A useful discrimination criterion is channel correlation. If a narrow-band feature appears at the same frequency on all three axes with similar shape and a comparable amplitude scale, it is likely dominated by electrical pickup common to the measurement chain. Examples include lines near $50\ \mathrm{Hz}$ (mains frequency) and its harmonics, and broad elevated regions that track the same spectral shape on every channel.
 
-Mechanical motion of an extended structure, by contrast, generally produces axis-dependent spectra. Comparing measurements taken with the cryocooler off and on helps separate a common-mode electrical floor from additional lines and broadband elevation associated with cooler operation. Features that grow strongly when the drive is active and differ markedly between axes are more naturally attributed to mechanical response.
+Mechanical motion of an extended structure, by contrast, generally produces axis-dependent spectra. Comparing measurements taken with the cryocooler off and on helps separate a common-mode electrical floor from additional lines and broadband elevation associated with cooler operation. Features that grow strongly when the drive is active and differ markedly between axes are more likely mechanical.
 
-It should be noted that this criterion identifies likely origin rather than proving a unique source. Residual mixing between mechanical and electrical paths, and harmonics generated by nonlinearities in the detection chain, can complicate the picture. Conservative interpretation classifies features as electrical or mechanical only when the channel pattern and comparison between operating conditions provide clear evidence.
+It should be noted that this criterion identifies a likely origin rather than a unique source. Residual mixing between mechanical and electrical paths, and harmonics from nonlinearities in the detection chain, can blur that assignment. Features are classified as electrical or mechanical only when the channel pattern and the cooler off/on comparison give clear evidence.
