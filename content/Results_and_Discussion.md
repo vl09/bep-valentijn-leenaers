@@ -176,7 +176,7 @@ Calibrated $z$-axis acceleration over one GM drive cycle. Two double-spike (tick
 
 Each cycle repeats with a period of $1.00\ \mathrm{s}$ and contains two double-spike events, consistent with the tick-back-tick signature predicted for the GM displacer and valve motion in [](#gifford-mcmahon-cryocooler-drive). The stronger pair reaches $1.86\ \mathrm{g}$ and $1.76\ \mathrm{g}$, separated by $\sim 54\ \mathrm{ms}$; the weaker pair, $\sim 0.47\ \mathrm{s}$ later in the same cycle, peaks near $1.47\ \mathrm{g}$. Between events, the $z$-channel settles back to the $\sim 1\ \mathrm{g}$ gravitational plateau within $\sim 0.1\ \mathrm{s}$.
 
-Across the full $1800\ \mathrm{s}$ recording, the $z$-channel briefly exceeds $+2\ \mathrm{g}$ in $93$ of $9 \times 10^6$ samples ($< 0.002\%$ of the trace), all coincident with the strongest tick events. The bulk of the periodic drive therefore stays comfortably inside the sensor's linear range, with only the extreme tail of the strongest bursts approaching the $\pm 2\ \mathrm{g}$ limit.
+Across the full $1800\ \mathrm{s}$ recording, the $z$-channel briefly exceeds $+2\ \mathrm{g}$ only during the strongest tick events. The bulk of the periodic drive therefore stays inside the sensor's linear range, with only the extreme tail of those bursts approaching the $\pm 2\ \mathrm{g}$ limit.
 
 (results-running-spectra)=
 ## GM cooler on: spectral analysis
