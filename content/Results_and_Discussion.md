@@ -7,6 +7,8 @@ numbering:
 ---
 (results)=
 # Results & Discussion
+This chapter consists of four sections. First, the ADXL354 chain is validated on the bench. Second, the cooler-off baseline ASD on the final cold stage is reported. Third, the cooler-on drive is examined in the time domain. Lastly, cooler-on spectra are compared with that baseline.
+
 ## Accelerometer validation
 (results-static-flip-test)=
 ### Static flip test
