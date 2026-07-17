@@ -193,22 +193,7 @@ Welch ASD of the $z$-channel ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$) from $0$ t
 
 With the cooler on, a comb of lines spaced by $\approx 1\ \mathrm{Hz}$ appears, matching the $1.00\ \mathrm{s}$ cycle period read from the time trace. The strongest lines reach $1.77\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ at $5\ \mathrm{Hz}$, $1.67\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ at $7\ \mathrm{Hz}$, and $\sim 1.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ at $8$–$10\ \mathrm{Hz}$, roughly $15$–$18\times$ above the flat cooler-off floor at the same frequencies ($\sim 0.1\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$). The mechanical drive comb dominates the electrical baseline throughout this band.
 
-[](#fig-running-overlay-mid) widens the comparison to all three channels from $0$ to $120\ \mathrm{Hz}$.
-
-```{figure} figures/Running_baseline_overlay_0-120Hz.png
-:label: fig-running-overlay-mid
-:alt: Three-axis ASD comparison between GM cooler on and off from 0 to 120 Hz
-
-Welch ASD on all three channels ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$) from $0$ to $120\ \mathrm{Hz}$, cooler off (grey, all axes) and cooler on (coloured).
-```
-
-The $1\ \mathrm{Hz}$ comb continues across the full band. The $50\ \mathrm{Hz}$ mains line is visible at a comparable level with the cooler on and off ($16.0$ vs $13.6\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$; $4.9$ vs $6.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $y$; $16.8$ vs $12.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$), consistent with the electrical-pickup criterion of [](#distinguishing-electrical-from-mechanical-vibration): a feature unaffected by the cooler state is not driven by the cooler.
-
-The baseline noise mountain from [](#results-baseline) is also visible in [](#fig-running-overlay-mid). In the grey cooler-off traces it appears as the same broad elevation centred near $25\ \mathrm{Hz}$. With the cooler on, a second broad elevation centred near $\sim 7\ \mathrm{Hz}$ appears on the coloured traces but not on the flat grey floor below $\sim 20\ \mathrm{Hz}$, resembling a lower copy of the noise mountain. The $1\ \mathrm{Hz}$ GM comb places a drive line at every integer frequency and superposes mechanical peaks on the cooler-independent bump near $25\ \mathrm{Hz}$. At crests near $26\ \mathrm{Hz}$, the coloured traces exceed the grey curves by factors of $\sim 3$–$11$ (e.g. $\sim 0.35$ vs $3.7\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$). Between those lines, the cooler-on and cooler-off floors stay close, so the noise mountain remains visible under the mechanical peaks.
-
-Between $70$ and $90\ \mathrm{Hz}$, a broad elevated region appears on all channels (median $\sim 200$–$240\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ with the cooler on, roughly double the cooler-off floor there), with sharp peaks reaching $20$–$26\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ near $80$–$82\ \mathrm{Hz}$ on $x$ and $y$.
-
-[](#fig-running-asd-mid) shows the cooler-on spectrum alone on the same $0$–$120\ \mathrm{Hz}$ band, with the datasheet noise floor for reference.
+[](#fig-running-asd-mid) widens the cooler-on spectrum to all three channels from $0$ to $120\ \mathrm{Hz}$, with the datasheet noise floor for reference.
 
 ```{figure} figures/Running_ASD_0-120Hz_3ch.png
 :label: fig-running-asd-mid
@@ -217,7 +202,20 @@ Between $70$ and $90\ \mathrm{Hz}$, a broad elevated region appears on all chann
 Welch ASD on all three channels with the GM cooler running ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$), $0$ to $120\ \mathrm{Hz}$. The horizontal line marks the datasheet noise floor of $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$[@adxl354_datasheet].
 ```
 
-The strongest individual lines in this band sit near $99\ \mathrm{Hz}$ ($41.1\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$, $30.0\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$) and near $71\ \mathrm{Hz}$ ($19$–$20\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on all three channels), each several orders of magnitude above the $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ datasheet floor.
+The $1\ \mathrm{Hz}$ comb continues across the full band. A broad elevation centred near $\sim 7\ \mathrm{Hz}$ appears on all three channels. The $50\ \mathrm{Hz}$ mains line is present on every axis ($16.0\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$, $4.9\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $y$, and $16.8\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$). Between $70$ and $90\ \mathrm{Hz}$, a broad elevated region appears on all channels (median $\sim 200$–$240\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$), with sharp peaks reaching $20$–$26\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ near $80$–$82\ \mathrm{Hz}$ on $x$ and $y$. The strongest individual lines in this band sit near $99\ \mathrm{Hz}$ ($41.1\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$, $30.0\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$) and near $71\ \mathrm{Hz}$ ($19$–$20\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on all three channels), each several orders of magnitude above the $22.5\ \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$ datasheet floor.
+
+[](#fig-running-overlay-mid) overlays the cooler-off baseline on the same $0$–$120\ \mathrm{Hz}$ band for comparison.
+
+```{figure} figures/Running_baseline_overlay_0-120Hz.png
+:label: fig-running-overlay-mid
+:alt: Three-axis ASD comparison between GM cooler on and off from 0 to 120 Hz
+
+Welch ASD on all three channels ($n_{\mathrm{perseg}} = 60\ \mathrm{s}$) from $0$ to $120\ \mathrm{Hz}$, cooler off (grey, all axes) and cooler on (coloured).
+```
+
+The $50\ \mathrm{Hz}$ mains line is visible at a comparable level with the cooler on and off ($16.0$ vs $13.6\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $x$; $4.9$ vs $6.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $y$; $16.8$ vs $12.4\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$), consistent with the electrical-pickup criterion of [](#distinguishing-electrical-from-mechanical-vibration): a feature unaffected by the cooler state is not driven by the cooler.
+
+The baseline noise mountain from [](#results-baseline) is also visible in [](#fig-running-overlay-mid). In the grey cooler-off traces it appears as the same broad elevation centred near $25\ \mathrm{Hz}$. The $\sim 7\ \mathrm{Hz}$ elevation on the coloured traces does not appear on the flat grey floor below $\sim 20\ \mathrm{Hz}$, resembling a lower copy of the noise mountain. The $1\ \mathrm{Hz}$ GM comb places a drive line at every integer frequency and superposes mechanical peaks on the cooler-independent bump near $25\ \mathrm{Hz}$. At crests near $26\ \mathrm{Hz}$, the coloured traces exceed the grey curves by factors of $\sim 3$–$11$ (e.g. $\sim 0.35$ vs $3.7\ \mathrm{mg}/\sqrt{\mathrm{Hz}}$ on $z$). Between those lines, the cooler-on and cooler-off floors stay close, so the noise mountain remains visible under the mechanical peaks. In the $70$–$90\ \mathrm{Hz}$ band, the cooler-on median is roughly double the cooler-off floor.
 
 [](#fig-running-asd-full) coarsens the segment length to $n_{\mathrm{perseg}} = 2\ \mathrm{s}$ and extends the spectrum to the full $0$–$2.5\ \mathrm{kHz}$ sensor bandwidth. As discussed in [](#spectral-analysis), the shorter segments trade frequency resolution for a smoother view: the narrow $1\ \mathrm{Hz}$-spaced comb of the $60\ \mathrm{s}$ spectra is smeared, which makes broader, axis-dependent structure at higher frequencies easier to read.
 
