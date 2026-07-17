@@ -112,7 +112,9 @@ The main measurements of this thesis use a DIY dry 4K cryostat at SteeleLab. The
 Experimental setup for cryostat vibration measurements. a) DIY dry 4K cryostat at SteeleLab with scope leads routed from the cold stage. b) ADXL354 breakout mounted near the edge of the final cold plate.
 ```
 
-The measurement chain matches benchtop validation: three-axis analog outputs into the Rigol scope, with flip-test calibration applied in post-processing via [](#eq-voltage-to-g). 
+The measurement chain matches benchtop validation: three-axis analog outputs into the Rigol scope, with flip-test calibration applied in post-processing via [](#eq-voltage-to-g). The flip-test sensitivity and zero-$g$ offset are extracted on the bench at room temperature before the sensor is mounted on the cold plate.
+
+These recordings are taken with the final cold plate at ambient (room) temperature. In normal operation the DIY dry 4K cryostat cools this stage to roughly $4\ \mathrm{K}$, but for these commissioning measurements the GM cooler is switched off long enough between scope segments, and between the cooler-off and cooler-on conditions, for the plate to warm up. Each scope segment lasts approximately $10\ \mathrm{min}$ ($600\ \mathrm{s}$). With the GM cooler **on**, the final cold plate does not cool significantly from room temperature during that window. No thermometer on the plate is logged.
 
 For each operating condition, the procedure is:
 
