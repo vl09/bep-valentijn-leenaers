@@ -50,13 +50,22 @@ Each displacer stroke transmits a brief impulse into the cold-head frame. Next t
 
 +++{"no-pdf": true}
 
-An audio recording of this pattern is included in [](#audio-gm-heartbeat). The clip has been slowed down by half so the thud–thud, pause, thud, pause sequence is easier to hear.
+A recording of the displacer motion ([](#fig-gm-cooler-action); excerpt from [@hyperspacePirate2026gm]) and an audio clip ([](#audio-gm-heartbeat)) illustrate the thud–thud, pause, thud, pause pattern below. The audio was recorded next to the running GM cooler during this project and has been slowed down by half so the sequence is easier to hear.
+
+```{figure} assets/awt886.gif
+:label: fig-gm-cooler-action
+:enumerated: false
+:width: 70%
+:align: center
+
+GM cooler displacer motion during operation[@hyperspacePirate2026gm]. Each reciprocating stroke matches one thud or thud pair in the audio below.
+```
 
 ```{figure} assets/IMG_3871.mp3
 :label: audio-gm-heartbeat
 :enumerated: false
 
-Recording of one GM cold-head cycle (thud–thud, pause, thud, pause), slowed down by half.
+Recording of one GM cold-head cycle (thud–thud, pause, thud, pause), recorded next to the running GM cooler and slowed down by half.
 ```
 
 +++
