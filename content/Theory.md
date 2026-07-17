@@ -48,6 +48,19 @@ The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@
 
 Each displacer stroke transmits a brief impulse into the cold-head frame. Next to a running GM cooler one cold-head cycle sounds like thud–thud, pause, thud, pause. The hiss that runs with each thud is high-pressure helium moving through the regenerator and cold-head volumes. Each thud, or thud pair, marks one stroke. On the first stroke the displacer shoots in two steps a few tens of milliseconds apart, which produces the opening thud–thud; a pause follows while the cooler holds or returns more slowly; the later single thud is the reverse stroke; the final pause completes the cycle before it repeats. On an accelerometer the thuds appear as sharp acceleration spikes rather than a smooth sinusoid.
 
++++{"no-pdf": true}
+
+An audio recording of this pattern is included in [](#audio-gm-heartbeat). The clip has been slowed down by half so the thud–thud, pause, thud, pause sequence is easier to hear.
+
+```{figure} assets/IMG_3871.mp3
+:label: audio-gm-heartbeat
+:enumerated: false
+
+Recording of one GM cold-head cycle (thud–thud, pause, thud, pause), slowed down by half.
+```
+
++++
+
 The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. The drive is narrow-band and periodic, so its spectral signature is a fundamental plus harmonics rather than a flat broadband floor. Passive isolation stages are designed to keep that narrow-band drive away from sensitive experiments.
 
 (mass-spring-oscillator)=
