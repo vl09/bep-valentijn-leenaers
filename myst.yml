@@ -3,7 +3,7 @@ version: 1
 project:
   title: Vibration characterisation for cryogenic optomechanics experiments
   # description:
-  keywords: [Jupyter Book, Open Science, TU Delft, Starterkit]
+  keywords: [cryogenics, vibration characterisation, optomechanics, Gifford–McMahon cryocooler, ADXL354, amplitude spectral density]
 
   github: https://github.com/vl09/bep-valentijn-leenaers # change this to your own repository
   date: 2026-06-01
