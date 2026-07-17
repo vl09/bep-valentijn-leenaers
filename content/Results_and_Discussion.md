@@ -172,14 +172,14 @@ On $z$, sharp repeated bursts appear on top of the $\sim 1\ \mathrm{g}$ gravitat
 
 ```{figure} figures/Running_GM_heartbeat_zoom.png
 :label: fig-running-heartbeat
-:alt: Zoomed z-axis trace showing one GM cryocooler heartbeat cycle with a strong and a weak tick-back-tick pair
+:alt: Zoomed z-axis trace showing one GM cryocooler heartbeat cycle: thud–thud burst, pause, weaker thud
 
-Calibrated $z$-axis acceleration over one GM heartbeat cycle. Two double-spike (tick-back-tick) events appear per cycle: a strong pair near $t = 1.4\ \mathrm{s}$ and a weaker pair near $t = 1.86\ \mathrm{s}$.
+Calibrated $z$-axis acceleration over one GM heartbeat cycle. A strong thud–thud double-spike appears near $t = 1.4\ \mathrm{s}$, a weaker thud near $t = 1.86\ \mathrm{s}$, with quiet intervals between.
 ```
 
-Each heartbeat repeats with a period of $1.00\ \mathrm{s}$ and contains two double-spike events, consistent with the tick-back-tick signature predicted for the GM displacer and valve motion in [](#gifford-mcmahon-cryocooler-drive). The stronger pair reaches $1.86\ \mathrm{g}$ and $1.76\ \mathrm{g}$, separated by $\sim 54\ \mathrm{ms}$; the weaker pair, $\sim 0.47\ \mathrm{s}$ later in the same cycle, peaks near $1.47\ \mathrm{g}$. Between events, the $z$-channel settles back to the $\sim 1\ \mathrm{g}$ gravitational plateau within $\sim 0.1\ \mathrm{s}$.
+Each heartbeat repeats with a period of $1.00\ \mathrm{s}$, matching the thud–thud, pause, thud, pause pattern from the GM displacer strokes in [](#gifford-mcmahon-cryocooler-drive). The first thud pair reaches $1.86\ \mathrm{g}$ and $1.76\ \mathrm{g}$, separated by $\sim 54\ \mathrm{ms}$; the weaker thud, $\sim 0.47\ \mathrm{s}$ later, peaks near $1.47\ \mathrm{g}$. Between events, the $z$-channel settles back to the $\sim 1\ \mathrm{g}$ gravitational plateau within $\sim 0.1\ \mathrm{s}$.
 
-Across the full $1800\ \mathrm{s}$ recording, the $z$-channel briefly exceeds $+2\ \mathrm{g}$ only during the strongest tick events. The bulk of the periodic drive therefore stays inside the sensor's linear range, with only the extreme tail of those bursts approaching the $\pm 2\ \mathrm{g}$ limit.
+Across the full $1800\ \mathrm{s}$ recording, the $z$-channel briefly exceeds $+2\ \mathrm{g}$ only during the strongest spikes. The bulk of the periodic drive therefore stays inside the sensor's linear range, with only the extreme tail of those bursts approaching the $\pm 2\ \mathrm{g}$ limit.
 
 (results-running-spectra)=
 ## GM cooler on: spectral analysis
