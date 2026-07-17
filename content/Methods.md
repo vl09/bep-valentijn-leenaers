@@ -134,7 +134,7 @@ Power spectral densities are estimated with Welch's method (`scipy.signal.welch`
 Two segment lengths are used:
 
 - **Fine resolution (low-frequency band):** `nperseg = int(60 * fs)` with $f_s = 5\ \mathrm{kHz}$, i.e. $n_{\mathrm{perseg}} = 3 \times 10^5$ samples ($60\ \mathrm{s}$ segments) and $\Delta f \approx 1/60\ \mathrm{Hz} \approx 0.017\ \mathrm{Hz}$.
-- **Coarser resolution (extended frequency range):** `nperseg = int(2 * fs)`, i.e. $n_{\mathrm{perseg}} = 10^4$ samples ($2\ \mathrm{s}$ segments).
+- **Coarser resolution (extended frequency range):** `nperseg = int(2 * fs)`, i.e. $n_{\mathrm{perseg}} = 10^4$ samples ($2\ \mathrm{s}$ segments) and $\Delta f = 1/2\ \mathrm{Hz} =0.5\ \mathrm{Hz}$.
 
 The ASD is $\mathrm{ASD}(f) = \sqrt{S_{aa}(f)}$, with $S_{aa}$ the one-sided Welch estimate of acceleration PSD in $\mathrm{g}^2/\mathrm{Hz}$. Spectra are plotted in $\mathrm{g}/\sqrt{\mathrm{Hz}}$ on logarithmic axes. Frequency content above $f_N$ is not interpreted, consistent with the sampling limit discussed in [](#sampling-nyquist).
 
