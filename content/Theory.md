@@ -39,7 +39,7 @@ SteeleLab also maintains a DIY dry 4K platform cooled by a Gifford–McMahon (GM
 ![Operating principle of a Gifford–McMahon cryocooler](figures/Gifford_McMahon_Cryocooler_diagram.png)
 
 (fig-gm-cycle)=
-![Four stages of the Gifford–McMahon cooling cycle](figures/GM_cooler_cycle.jpg)
+![Four stages of the Gifford–McMahon cooling cycle](figures/GM_cooler_cycle.png)
 
 Gifford–McMahon cryocooler. a) Operating principle[@bluefors2024gmpt]: a remote compressor drives helium through inlet and outlet valves into the cold head, where a displacer shuttles gas through a regenerator between the warm and cold ends. b) Cooling cycle[@deWaele2011cryocoolers]: panels $a$–$d$ show the displacer position and the open or closed $p_h$ and $p_l$ valves for one cold-head cycle; expansion in panel $c$ extracts heat at the cold stage.
 ```
