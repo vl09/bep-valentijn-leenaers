@@ -7,7 +7,7 @@ numbering:
 ---
 (theory)=
 # Theory
-This chapter consists of eight sections. First, cryocoolers and cryostat cooling stages are introduced as a source of periodic mechanical vibration. Second, the Gifford–McMahon cryocooler cycle and its drive are examined. Third, the undamped mass-spring oscillator is constructed as the model underlying passive isolation. Fourth, damped motion and ringdown are derived. Fifth, spectral analysis and periodic forcing are developed. Sixth, the mechanical response of extended cryostat structures is contrasted with the lumped isolator. Seventh, the ADXL354 accelerometer response is examined. Lastly, criteria for distinguishing electrical from mechanical vibration are presented.
+This chapter consists of eight sections. First, cryocoolers and cryostat cooling stages are introduced as a source of periodic mechanical vibration. Second, the Gifford–McMahon cryocooler cycle and its drive are examined. Third, the undamped mass-spring oscillator is constructed as the model underlying passive isolation. Fourth, damped motion and ringdown are derived. Fifth, spectral analysis and the response to a repeating drive are developed. Sixth, the mechanical response of extended cryostat structures is contrasted with the single-mode mass-spring isolator. Seventh, the ADXL354 accelerometer response is examined. Lastly, criteria for distinguishing electrical from mechanical vibration are presented.
 
 (cryocoolers-and-cooling-stages)=
 ## Cryocoolers and cryostat cooling stages
@@ -44,9 +44,9 @@ SteeleLab also maintains a DIY dry 4K platform cooled by a Gifford–McMahon (GM
 Gifford–McMahon cryocooler. a) Operating principle[@bluefors2024gmpt]: a remote compressor drives helium through inlet and outlet valves into the cold head, where a displacer shuttles gas through a regenerator between the warm and cold ends. b) Cooling cycle[@deWaele2011cryocoolers]: panels $a$–$d$ show the displacer position and the open or closed $p_h$ and $p_l$ valves for one cold-head cycle; expansion in panel $c$ extracts heat at the cold stage.
 ```
 
-The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@deWaele2011cryocoolers]. Each panel shows the displacer inside a cylinder with a cross-hatched regenerator; high- and low-pressure lines $p_h$ and $p_l$ connect at the warm (left) end, and a valve marked with an $\times$ is closed. The cycle starts in panel $a$ with $p_h$ open, $p_l$ closed, and the displacer at the cold (right) end while high-pressure gas fills the warm volume on the left. From $a$ to $b$, the displacer moves toward the warm end with both valves unchanged; helium is pushed through the regenerator into the volume on the right. From $b$ to $c$, $p_h$ closes, $p_l$ opens, and the displacer stays at the warm end; gas in the cold volume expands toward $p_l$ and absorbs heat from the cold stage. From $c$ to $d$, with $p_l$ still open, the displacer returns toward the cold end and forces the remaining gas back through the regenerator and out through $p_l$. From $d$ to $a$, $p_l$ closes, $p_h$ reopens, and the warm volume is repressurised before the cycle repeats.
+The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@deWaele2011cryocoolers]. Each panel shows the displacer inside a cylinder with a shaded regenerator; high- and low-pressure lines $p_h$ and $p_l$ connect at the warm (left) end, and a valve marked with an $\times$ is closed. The cycle starts in panel $a$ with $p_h$ open, $p_l$ closed, and the displacer at the cold (right) end while high-pressure gas fills the warm volume on the left. From $a$ to $b$, the displacer moves toward the warm end with both valves unchanged; helium is pushed through the regenerator into the volume on the right. From $b$ to $c$, $p_h$ closes, $p_l$ opens, and the displacer stays at the warm end; gas in the cold volume expands toward $p_l$ and absorbs heat from the cold stage. From $c$ to $d$, with $p_l$ still open, the displacer returns toward the cold end and forces the remaining gas back through the regenerator and out through $p_l$. From $d$ to $a$, $p_l$ closes, $p_h$ reopens, and the warm volume is repressurised before the cycle repeats.
 
-Each displacer stroke transmits a brief impulse into the cold-head frame. Next to a running GM cooler one cold-head cycle sounds like thud–thud, pause, thud, pause. The hiss that runs with each thud is high-pressure helium moving through the regenerator and cold-head volumes. Each thud, or thud pair, marks one stroke. On the first stroke the displacer shoots in two steps a few tens of milliseconds apart, which produces the opening thud–thud; a pause follows while the cooler holds or returns more slowly; the later single thud is the reverse stroke; the final pause completes the cycle before it repeats. On an accelerometer the thuds appear as sharp acceleration spikes rather than a smooth sinusoid.
+Each displacer stroke transmits a brief impulse into the cold-head frame. Next to a running GM cooler one cold-head cycle sounds like thud–thud, pause, thud, pause. The hiss that runs with each thud is high-pressure helium moving through the regenerator and cold-head volumes. Each thud, or thud pair, marks one stroke. On the first stroke the displacer shoots in two steps a few tens of milliseconds apart, which produces the opening thud–thud; a pause follows while the cooler holds or returns more slowly; the later single thud is the reverse stroke; the final pause completes the cycle before it repeats. When an accelerometer is used to measure these vibrations, each thud is recorded as a sharp acceleration spike rather than a smooth sinusoid.
 
 +++{"no-pdf": true}
 
@@ -70,11 +70,11 @@ Recording of one GM cold-head cycle (thud–thud, pause, thud, pause), recorded 
 
 +++
 
-The absolute drive frequency is set by the cooler motor speed and duty cycle and generally differs from the pulse-tube frequencies quoted for Bluefors dilution systems. The drive is narrow-band and periodic, so its spectral signature is a fundamental plus harmonics rather than a flat broadband floor. Passive isolation stages are designed to keep that narrow-band drive away from sensitive experiments.
+The GM cooler therefore presents a repeating mechanical disturbance at the cold stage. Reducing how much of that drive reaches a sensitive experiment is the role of passive vibration isolation, which is modelled with a mass-spring oscillator.
 
 (mass-spring-oscillator)=
 ## The undamped mass-spring oscillator
-Passive vibration isolation reduces motion transmitted from a narrow-band disturbance to sensitive instrumentation by suspending a platform on springs so that its resonance lies away from the drive[@wilkinson2025]. Such an isolator is a designed oscillator with known natural frequency $f_0$ and damping rate $\Gamma_m$. Isolation therefore uses a lumped mass-spring picture; the cold plate of a cryostat itself is not that isolator.
+Passive vibration isolation reduces motion transmitted from a narrow-band disturbance to sensitive instrumentation by suspending a platform on springs so that its resonance lies away from the drive[@wilkinson2025]. Such an isolator is a designed oscillator with known natural frequency $f_0$ and damping rate $\Gamma_m$. Isolation is therefore analysed with a single-mode mass-spring model.
 
 Consider a mass $m$ attached to a spring with stiffness $k$. When the displacement $x$ from equilibrium is small, Hooke's law gives a restoring force $F = -kx$. Then Newton's second law can be used to yield the equation of motion
 
@@ -149,10 +149,6 @@ $$ (eq-ringdown-solution)
 
 with damped angular frequency $\tilde{\omega}_0 = \omega_0 \sqrt{1 - (\Gamma_m/2\omega_0)^2}$. The envelope $A(t) = A_0 e^{-\Gamma_m t/2}$ decays exponentially in time. The full derivation of [](#eq-ringdown-solution) can be found in [](#appendix-derivations).
 
-(amplitude-dependent-damping)=
-### Amplitude-dependent damping
-The viscous model above assumes a damping force linear in velocity with a constant coefficient $c$, so the envelope in [](#eq-ringdown-solution) decays at a fixed rate $\Gamma_m$. Real oscillators often deviate from this limit. On a benchtop mass-spring assembly, dry friction at the spring supports and velocity-dependent air drag both dissipate more energy at larger amplitude. The effective damping rate is then higher early in a ringdown, when the displacement is large, and falls as the motion decays. A single exponential fit to the peak envelope, as in [](#eq-envelope-fit), can therefore track the late-time decay while undershooting the initial interval. A constant-$\Gamma_m$ picture is only a qualitative guide for validation; extracting one $\Gamma_m$ from the full trace is meaningful only when the amplitude-dependent contribution is small.
-
 (ringdown-protocol)=
 ### Ringdown protocol
 A ringdown measurement probes the free evolution described by [](#eq-ringdown-solution). The system is displaced from equilibrium, released, and the acceleration or displacement is recorded as the motion decays in the absence of an external drive. This protocol has been used to extract $\Gamma_m$ from cryogenic mass-spring isolation prototypes[@wilkinson2025].
@@ -164,6 +160,10 @@ A(t) = A_0 e^{-\Gamma_m t/2}.
 $$ (eq-envelope-fit)
 
 Intuitively, a smaller $\Gamma_m$ implies a slower decay, whereas a larger $\Gamma_m$ implies faster energy dissipation. For a given $f_0$, the envelope sets the time scale on which stored mechanical energy is lost, independent of whether the oscillator is a laboratory spring or a cryogenic isolator.
+
+(amplitude-dependent-damping)=
+### Amplitude-dependent damping
+The viscous model above assumes a damping force linear in velocity with a constant coefficient $c$, so the envelope in [](#eq-ringdown-solution) decays at a fixed rate $\Gamma_m$. Real oscillators often deviate from this limit. On a benchtop mass-spring assembly, dry friction at the spring supports and velocity-dependent air drag both dissipate more energy at larger amplitude. The effective damping rate is then higher early in a ringdown, when the displacement is large, and falls as the motion decays. A single exponential fit to the peak envelope, as in [](#eq-envelope-fit), can therefore track the late-time decay while undershooting the initial interval. A constant-$\Gamma_m$ picture is only a qualitative guide for validation; extracting one $\Gamma_m$ from the full trace is meaningful only when the amplitude-dependent contribution is small.
 
 Free ringdown characterises $\Gamma_m$ in the absence of an external drive. An operating cryostat, by contrast, is continuously driven by the cooler cycle, so the relevant description shifts from free decay to the frequency content of a steady drive.
 
@@ -196,7 +196,7 @@ $$
 f_N = \frac{f_s}{2}.
 $$ (eq-nyquist)
 
-According to the Nyquist–Shannon sampling theorem, all frequency content in a band-limited signal below $f_N$ can in principle be recovered from the sampled values. Conversely, spectral components above $f_N$ are not captured at their true frequency. They fold back into the interval $[0, f_N]$, a process known as aliasing, and can be mistaken for low-frequency vibration.
+According to the Nyquist–Shannon sampling theorem, all frequency content in a band-limited signal below $f_N$ can in principle be recovered from the sampled values. Spectral components above $f_N$ are not captured at their true frequency. They fold back into the interval $[0, f_N]$, a process known as aliasing, and can be mistaken for low-frequency vibration.
 
 Aliasing is suppressed in practice by band-limiting the signal before digitisation. The ADXL354 includes an on-chip anti-aliasing filter as part of its analogue front end[@adxl354_datasheet]. The oscilloscope and analysis chain impose a further upper limit set by $f_s$. Welch estimates of $S_{aa}(f)$ are therefore only meaningful for frequencies below $f_N$; at higher frequencies the discrete spectrum does not reflect the true mechanical content.
 
@@ -232,7 +232,7 @@ The vibration spectrum at any mount point is the cryocooler drive spectrum filte
 
 (adxl354-accelerometer)=
 ## The ADXL354 accelerometer
-Low-frequency vibration measurements require an accelerometer with a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400\ \mathrm{mV/g}$ at the $\pm 2\ \mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8\ \mathrm{V}$ supply $\mathrm{V_{1P8ANA}}$, with a zero-$g$ bias nominally at $\mathrm{V_{1P8ANA}}/2$.
+Low-frequency vibration measurements can be done with an accelerometer that has a stable bias, low noise density, and a flat response over the band of interest. The ADXL354 is a MEMS accelerometer with analog outputs and a typical sensitivity of $400\ \mathrm{mV/g}$ at the $\pm 2\ \mathrm{g}$ full-scale range[@adxl354_datasheet]. Each output is ratiometric to the on-chip $1.8\ \mathrm{V}$ supply $\mathrm{V_{1P8ANA}}$, with a zero-$g$ bias nominally at $\mathrm{V_{1P8ANA}}/2$.
 
 At rest, the sensor measures the local gravitational field. For an axis aligned with gravity, one orientation gives $+1\ \mathrm{g}$ and a $180^\circ$ rotation about that axis gives $-1\ \mathrm{g}$. The output voltages at the two plateaus therefore differ by a span equivalent to $2\ \mathrm{g}$. Dividing that span by $2\ \mathrm{g}$ yields a sensitivity in $\mathrm{V/g}$ that can be compared with the datasheet value without a separate reference accelerometer. Because the outputs are ratiometric to $\mathrm{V_{1P8ANA}}$, the midpoint between the two plateaus estimates the zero-$g$ bias for that recording.
 
@@ -254,7 +254,7 @@ The sensor does not respond uniformly at all frequencies. Analog Devices publish
 ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8–10)[@adxl354_datasheet]. Relative output is flat near $1\ \mathrm{g/g}$ below $\sim 1\ \mathrm{kHz}$ on all axes. A mechanical resonance near $2.5\ \mathrm{kHz}$ is present on each axis; peak gain is highest on $x$ and $y$ and lower on $z$.
 ```
 
-The datasheet specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$. Readout electronics can raise the measured broadband floor above that value. At low frequencies the ASD often rises as $1/f$ (flicker) from the sensor or from other electronics in the chain, including the oscilloscope. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, so larger accelerations clip.
+The datasheet also specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$[@adxl354_datasheet]. Readout electronics can raise the measured broadband floor above that value. At low frequencies the ASD often rises as $1/f$ (flicker) from the sensor or from other electronics in the chain, including the oscilloscope. At the $\pm 2\ \mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\ \mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, so accelerations beyond that range will clip.
 
 Measured spectra mix mechanical motion of the structure, the sensor transfer function, and electrical pickup in the readout chain.
 
@@ -264,6 +264,6 @@ Not every feature in a vibration spectrum originates from mechanical motion of t
 
 A useful discrimination criterion is channel correlation. If a narrow-band feature appears at the same frequency on all three axes with similar shape and a comparable amplitude scale, it is likely dominated by electrical pickup common to the measurement chain. Examples include lines near $50\ \mathrm{Hz}$ (mains frequency) and its harmonics, and broad elevated regions that track the same spectral shape on every channel.
 
-Mechanical motion of an extended structure, by contrast, generally produces axis-dependent spectra. Comparing measurements taken with the cryocooler off and on helps separate a common-mode electrical floor from additional lines and broadband elevation associated with cooler operation. Features that grow strongly when the drive is active and differ markedly between axes are more likely mechanical.
+Mechanical motion of an extended structure, by contrast, generally produces axis-dependent spectra. Comparing measurements taken with the cryocooler off and on helps separate a common-mode electrical floor from additional lines and broadband elevation associated with cooler operation. Features that grow strongly when the drive is active and differ markedly between axes are more likely to have a mechanical origin.
 
 It should be noted that this criterion identifies a likely origin rather than a unique source. Residual mixing between mechanical and electrical paths, and harmonics from nonlinearities in the detection chain, can blur that assignment. Features are classified as electrical or mechanical only when the channel pattern and the cooler off/on comparison give clear evidence.
