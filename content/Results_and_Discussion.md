@@ -30,7 +30,7 @@ The datasheet also lists uncertainties that can influence absolute amplitude and
 
 This thesis targets vibration frequencies and relative spectral structure, not absolute $g$ metrology. Narrow-band peaks and harmonic spacing depend primarily on timing and shape, so the few-percent difference between the extracted and nominal sensitivities is acceptable.
 
-From this point on, [](#eq-voltage-to-g) with the extracted $S$ and $\bar{V}_0$ is used to convert voltage to acceleration. The extracted sensitivity lies within the datasheet band ($368$–$432\ \mathrm{mV/g}$)[@adxl354_datasheet], so the calibrated chain is used for the subsequent vibration measurements.
+From this point on, [](#eq-voltage-to-g) with the extracted $S$ and $\bar{V}_0$ is used to convert voltage to acceleration for the subsequent vibration measurements.
 
 (results-mass-spring-ringdown)=
 ### Mass-spring ringdown
