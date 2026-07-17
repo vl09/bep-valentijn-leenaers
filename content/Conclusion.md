@@ -17,6 +17,8 @@ With the GM cooler off, the final-stage ASD is dominated by electrical pickup: a
 In conclusion, a reliable three-axis ADXL354 chain can characterise the acceleration spectral density on the final stage of a GM cryocooler relative to the cooler-off baseline. The cooler drive is a clear $\approx 1\ \mathrm{Hz}$ harmonic comb standing well above that baseline.
 
 ## Recommendations for further improvements
-It should be noted that the accelerometer was mounted near the plate edge, that many spectral peaks remain unassigned without modal information, and that the scope readout floor was not reduced to the datasheet noise density. The strongest cooler bursts briefly approach the $\pm 2\ \mathrm{g}$ sensor limit, and features near $\sim 2.2\ \mathrm{kHz}$ may partly reflect the ADXL354 transfer-function resonance. It might be worth exploring the same sensor on an experimental platform or on a cryogenic mass-spring isolation platform, and comparing centre versus edge placement. Further research could use a hammer impact with audio recording for modal hints.
+It should be noted that the accelerometer was mounted near the plate edge, that many spectral peaks remain unassigned without modal information, and that the scope readout floor was not reduced to the datasheet noise density. The strongest cooler bursts briefly approach the $\pm 2\ \mathrm{g}$ sensor limit, and features near $\sim 2.2\ \mathrm{kHz}$ may partly reflect the ADXL354 transfer-function resonance. 
+
+It might be worth exploring the same sensor on an experimental platform or on a cryogenic mass-spring isolation platform, and comparing centre versus edge placement. Further research could use a hammer impact with audio recording for modal hints.
 
 Practically assigning every peak to a structural component, and bringing the electrical floor down to the datasheet limit, remain significant challenges for future work.
