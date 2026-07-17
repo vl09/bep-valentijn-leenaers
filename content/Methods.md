@@ -79,7 +79,7 @@ where $V_i$ is the scope voltage on axis $i$ ($i = x, y, z$; channels 1–3 in [
 
 (methods-mass-spring-ringdown)=
 ### Mass-spring ringdown
-The second experiment uses a vertical mass-spring oscillator of the type described in [](#mass-spring-oscillator). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording. The apparatus is shown in [](#fig-mass-spring-setup), a freeze frame of the mass-spring system with the mass in the extended position. The sensor breakout is screwed to the copper mass; adhesive tape between the board and the mass prevents electrical contact with the conductive surface. The breakout board was not seated perfectly level on the block ([](#fig-mass-spring-mount)).
+The second experiment uses a vertical mass-spring oscillator of the type described in [](#mass-spring-oscillator). The ADXL354 is mounted on the oscillating mass. The mass is displaced from equilibrium, released, and the free ringdown is recorded on the Rigol scope while a video camera films the motion. A ruler placed alongside the system provides a length scale in the recording. The apparatus is shown in [](#fig-mass-spring-setup), showing the mass-spring system with the mass in the extended position. The sensor breakout is screwed to the copper mass; adhesive tape between the board and the mass prevents electrical contact with the conductive surface. The breakout board was not seated perfectly level on the block ([](#fig-mass-spring-mount)).
 
 ```{figure}
 :class: grid grid-cols-2 gap-4
