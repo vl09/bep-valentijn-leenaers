@@ -22,8 +22,20 @@ async function render({ el }) {
 
   // Scope to the article body so theme chrome (logos, icons) is excluded.
   const content = document.querySelector('article.article, main') || document.body;
+  content.querySelectorAll('img[src$=".mp3"]').forEach((img) => {
+    const audio = document.createElement('audio');
+    audio.controls = true;
+    audio.src = img.src;
+    audio.style.width = '100%';
+    audio.style.maxWidth = '32rem';
+    audio.style.display = 'block';
+    audio.style.margin = '0 auto';
+    if (img.alt) audio.setAttribute('aria-label', img.alt);
+    img.replaceWith(audio);
+  });
   content.querySelectorAll('img').forEach((img) => {
     if (img.closest('a[href]')) return;
+    if (img.src.endsWith('.mp3')) return;
     const caption = img.closest('figure')?.querySelector('figcaption')?.innerHTML?.trim() || '';
     const anchor = document.createElement('a');
     anchor.href = img.src;
