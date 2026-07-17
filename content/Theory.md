@@ -15,7 +15,7 @@ Low-temperature experiments in quantum optomechanics rely on refrigerators that 
 
 SteeleLab operates several independent refrigeration systems[@steeleLabResearch]. The main optomechanical experiments run on Bluefors dilution refrigerators, which precool the cryostat with a pulse-tube cryocooler before reaching the sub-kelvin base temperature. Pulse-tube systems separate the compressor from the cold stage and drive periodic gas oscillations along a transfer line. Because the cycle rate is set by the cooler motor and valve timing, the fundamental mechanical drive frequency depends on the installation. Literature on dry cryostats with pulse-tube precooling reports a narrow-band component near $1.4\ \mathrm{Hz}$[@maisonobe2018], and related periodic ticking from helium-pump strokes is described for such systems[@wilkinson2025].
 
-Cooling proceeds through a cascade of thermal stages rather than at a single temperature. At the outer end, the cryocooler cold head rejects heat to room temperature. Inside the cryostat, conduction through copper supports and flexible thermal links connects the 4 K plate, intermediate stages such as the 1 K still in dilution systems, and finally the mixing chamber or experimental platform at the lowest temperature. Each stage is a mechanical link through which cooler-induced motion can propagate. Flexible links and passive isolation stages attenuate high-frequency content, but the low-frequency periodic drive of the cryocooler remains a common disturbance across the chain[@wilkinson2025]. [](#fig-bluefors-cryostat) shows the interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can raised, revealing the tiered copper stages, thermal links, and wiring that connect the cold stages.
+Cooling proceeds through a cascade of thermal stages rather than at a single temperature. At the outer end, the cryocooler cold head rejects heat to room temperature. Inside the cryostat, conduction through copper supports and flexible thermal links connects the 4K plate, intermediate stages such as the 1 K still in dilution systems, and finally the mixing chamber or experimental platform at the lowest temperature. Each stage is a mechanical link through which cooler-induced motion can propagate. Flexible links and passive isolation stages attenuate high-frequency content, but the low-frequency periodic drive of the cryocooler remains a common disturbance across the chain[@wilkinson2025]. [](#fig-bluefors-cryostat) shows the interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can raised, revealing the tiered copper stages, thermal links, and wiring that connect the cold stages.
 
 ```{figure} figures/bluefors_cryostat.jpg
 :label: fig-bluefors-cryostat
@@ -29,7 +29,7 @@ Sensitive devices are mounted at the lowest accessible stage, on a final cold pl
 
 (gifford-mcmahon-cryocooler-drive)=
 ## Gifford–McMahon cryocooler drive
-SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-cooler) shows the layout and the four-step cooling cycle.
+SteeleLab also maintains a DIY dry 4K platform cooled by a Gifford–McMahon (GM) cryocooler. In this cycle, helium is the working fluid. The cold head contains compression and expansion volumes, a regenerator, and a displacer that shuttles gas between the warm and cold ends. A remote compressor maintains high- and low-pressure buffer volumes; rotating valves connect the cold head alternately to each side, synchronised with the displacer motion[@atrey2020; @radebaugh2009]. The cold-head cycle typically repeats at $1$--$2\ \mathrm{Hz}$[@atrey2020], and the periodic mechanical disturbance seen at the stage follows that displacer and valve timing. [](#fig-gm-cooler) shows the layout and the four-step cooling cycle.
 
 ```{figure}
 :label: fig-gm-cooler
@@ -115,7 +115,7 @@ $$ (eq-shm-peak-accel)
 
 where $A$ is in metres. The same relation links displacement and acceleration whenever motion is dominated by a single harmonic at $f_0$. Mass-spring isolation at an experimental platform is typically designed so that $f_0$ of the isolator avoids the dominant cooler line[@wilkinson2025]. Real oscillators also dissipate energy.
 
-## Damped motion and Ringdown
+## Damped motion and ringdown
 ### Equation of motion
 Because energy is lost during oscillation, a dissipative force proportional to velocity is added to the model. This viscous damping force points opposite to the motion and reads
 
@@ -184,7 +184,7 @@ $$
 
 Manufacturers often quote accelerometer noise floors in ASD units, typically $\mu\mathrm{g}/\sqrt{\mathrm{Hz}}$, which allows direct comparison with measured vibration spectra.
 
-Welch's method[@welch1967] estimates $S_{aa}(f)$ by averaging periodograms computed on overlapping time segments. The segment length sets a trade-off between frequency resolution and the smearing of narrow-band lines. A long segment resolves closely spaced peaks but leaves a sharp periodic drive, such as a cryocooler fundamental near $1.4\ \mathrm{Hz}$[@maisonobe2018], visible as a comb of lines. A shorter segment broadens those lines and exposes the broader mechanical structure underneath.
+Welch's method[@welch1967] estimates $S_{aa}(f)$ by averaging periodograms computed on overlapping time segments. The segment length sets a trade-off between frequency resolution and the smearing of narrow-band lines. A long segment resolves closely spaced peaks but leaves a sharp periodic drive, such as a pulse-tube cryocooler fundamental near $1.4\ \mathrm{Hz}$[@maisonobe2018], visible as a comb of lines. A shorter segment broadens those lines and exposes the broader mechanical structure underneath.
 
 When successive recordings are separated by gaps and later concatenated for analysis, the joins break phase continuity across the full time series. For a coherent, phase-locked tone this can matter. For an incoherent spectrum, where the quantities of interest are averaged power levels rather than a preserved phase relation between acquisitions, short breaks between recordings do not change the Welch estimate of $S_{aa}(f)$.
 
@@ -204,7 +204,7 @@ For vibration measurements aimed at cryocooler fundamentals and low-order harmon
 
 (driven-oscillator)=
 ### Driven oscillator and harmonic content
-Mechanical structures in an operating cryostat are continuously driven by the periodic cryocooler cycle rather than ringing down freely[@maisonobe2018]. For a single mode driven harmonically at angular frequency $\omega$, the steady-state equation of motion reads
+Mechanical structures in an operating cryostat are continuously driven by the periodic cryocooler cycle rather than ringing down freely[@atrey2020; @radebaugh2009]. For a single mode driven harmonically at angular frequency $\omega$, the steady-state equation of motion reads
 
 $$
 m\ddot{x} + c\dot{x} + kx = F_0 \cos(\omega t).
