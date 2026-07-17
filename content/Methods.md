@@ -7,7 +7,7 @@ numbering:
 ---
 (methods)=
 # Experimental Method
-This chapter describes the reliable three-axis ADXL354 measurement chain, the acquisition procedures, and the offline spectral analysis used to characterise vibrations on the final cold stage. First, the ADXL354 readout hardware, power supply, scope settings, and Python data transfer are specified. Second, benchtop calibration procedures are outlined: a static gravity-flip test that extracts sensitivity and zero-$g$ offset, and a mass-spring ringdown with parallel video and ruler measurements. Third, cryostat-mounted recordings on the DIY dry 4K fridge with the GM cooler off and on are described. Finally, conversion from scope voltage to acceleration and Welch estimation of amplitude spectral density are presented.
+This chapter describes the three-axis ADXL354 measurement chain, the acquisition procedures, and the offline spectral analysis used to characterise vibrations on the final cold stage. First, the ADXL354 readout hardware, power supply, scope settings, and Python data transfer are specified. Second, benchtop calibration procedures are outlined: a static gravity-flip test that extracts sensitivity and zero-$g$ offset, and a mass-spring ringdown with parallel video and ruler measurements. Third, cryostat-mounted recordings on the DIY dry 4K fridge with the GM cooler off and on are described. Finally, conversion from scope voltage to acceleration and Welch estimation of amplitude spectral density are presented.
 
 (measurement-setup)=
 ## Measurement setup
