@@ -8,7 +8,7 @@ numbering:
 
 ## Summary and key findings
 
-In this thesis, a reliable three-axis ADXL354 measurement chain was designed and validated, then used to characterise vibrations on the final cold stage of a DIY dry 4 K fridge cooled by a Gifford–McMahon cryocooler.
+In this thesis, a reliable three-axis ADXL354 measurement chain was designed and validated, then used to characterise vibrations on the final cold stage of a DIY dry 4K fridge cooled by a Gifford–McMahon cryocooler.
 
 The calibrated chain reproduces known static and dynamic accelerations. A gravity-flip test yields a sensitivity of $S = 392\ \mathrm{mV/g}$ and a zero-$g$ offset of $\bar{V}_0 = 0.897\ \mathrm{V}$, within the datasheet band of $368$–$432\ \mathrm{mV/g}$ and within $\sim 2\%$ of the typical $400\ \mathrm{mV/g}$[@adxl354_datasheet]. A benchtop mass-spring ringdown oscillates at $f = 0.995\ \mathrm{Hz}$ with $z$-channel extrema consistent with the kinematic estimate of $0.46$–$1.54\ \mathrm{g}$.
 
