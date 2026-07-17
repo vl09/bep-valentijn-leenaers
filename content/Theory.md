@@ -36,12 +36,12 @@ SteeleLab also maintains a DIY dry 4 K platform cooled by a Gifford–McMahon (G
 :class: grid grid-cols-2 gap-4
 
 (fig-gm-schematic)=
-![Schematic of a Gifford–McMahon cryocooler](figures/GM_cooler_schematic.png)
+![Operating principle of a Gifford–McMahon cryocooler](figures/Gifford_McMahon_Cryocooler_diagram.png)
 
 (fig-gm-cycle)=
 ![Four stages of the Gifford–McMahon cooling cycle](figures/GM_cooler_cycle.jpg)
 
-Gifford–McMahon cryocooler (Atrey Figs. 1.6 and 1.7)[@atrey2020]. a) Schematic: a compressor at the warm end drives helium through a rotary valve into the cold head, where a regenerator and expander shuttle gas between ambient temperature $T_0$ and the cold load at $T_c$. The inset shows the displacer with high- (HP) and low-pressure (LP) valve ports and expansion volumes $V_1$ and $V_2$. b) Cooling cycle: the displacer position and valve states ($a$–$d$) repeat once per cold-head cycle; steps $b$–$c$ produce the net cooling at the cold stage.
+Gifford–McMahon cryocooler. a) Operating principle[@bluefors2024gmpt]: a remote compressor drives helium through inlet and outlet valves into the cold head, where a displacer shuttles gas through a regenerator between the warm and cold ends. b) Cooling cycle (Atrey Fig. 1.7)[@atrey2020]: the displacer position and valve states ($a$–$d$) repeat once per cold-head cycle; steps $b$–$c$ produce the net cooling at the cold stage.
 ```
 
 The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@atrey2020]. The cycle begins with the low-pressure valve closed, the high-pressure valve open, and the displacer in the cold region. First, from $a$ to $b$, the displacer moves toward the warm end while the cold head remains on the high-pressure side; helium passes through the regenerator from ambient temperature $T_a$ to the cold temperature $T_L$, releasing heat into the regenerator matrix. Second, from $b$ to $c$, the high-pressure valve closes, the low-pressure valve opens, and the displacer is held fixed; part of the gas expands through the regenerator and absorbs heat from the cold stage, providing the useful cooling power. Third, from $c$ to $d$, the displacer returns toward the cold end on the low-pressure side, forcing cold gas back through the regenerator. Fourth, from $d$ to $a$, the low-pressure valve closes, the high-pressure valve reopens, and the gas in the warm end is compressed, rejecting heat to the surroundings before the cycle repeats.
