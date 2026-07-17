@@ -26,6 +26,3 @@ x(t) = e^{-\Gamma_m t/2}\left(C_1 \cos\tilde{\omega}_0 t + C_2 \sin\tilde{\omega
 $$
 
 with $\tilde{\omega}_0 = \sqrt{\omega_0^2 - (\Gamma_m/2)^2}$. Equivalently, this is written as $x(t) = A e^{-\Gamma_m t/2}\cos(\tilde{\omega}_0 t + \varphi)$ with constants $A$ and $\varphi$ fixed by the initial displacement and velocity.
-
-## Linewidth and damping rate
-The susceptibility of a damped harmonic oscillator relates displacement to a harmonic drive. In cyclic frequency $f$, the magnitude of the displacement response near resonance has a Lorentzian lineshape. The full width at half maximum $\Delta f$ satisfies $\Gamma_m = 2\pi \Delta f$ when $\Gamma_m$ is expressed in $Hz$, as stated in [](#driven-oscillator).
