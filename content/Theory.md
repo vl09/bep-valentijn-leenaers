@@ -33,7 +33,7 @@ SteeleLab also maintains a DIY dry 4K platform cooled by a Gifford–McMahon (GM
 
 ```{figure}
 :label: fig-gm-cooler
-:class: grid grid-cols-2 gap-4
+:class: grid grid-cols-2 gap-4 grid-gm-cooler
 
 (fig-gm-schematic)=
 ![Operating principle of a Gifford–McMahon cryocooler](figures/Gifford_McMahon_Cryocooler_diagram.png)
@@ -41,7 +41,7 @@ SteeleLab also maintains a DIY dry 4K platform cooled by a Gifford–McMahon (GM
 (fig-gm-cycle)=
 ![Four stages of the Gifford–McMahon cooling cycle](figures/GM_cooler_cycle.png)
 
-Gifford–McMahon cryocooler. a) Operating principle[@bluefors2024gmpt]: a remote compressor drives helium through inlet and outlet valves into the cold head, where a displacer shuttles gas through a regenerator between the warm and cold ends. b) Cooling cycle[@deWaele2011cryocoolers]: panels $a$–$d$ show the displacer position and the open or closed $p_h$ and $p_l$ valves for one cold-head cycle; expansion in panel $c$ extracts heat at the cold stage.
+Gifford–McMahon cryocooler. a) Operating principle, reproduced from [@bluefors2024gmpt]: a remote compressor drives helium through inlet and outlet valves into the cold head, where a displacer shuttles gas through a regenerator between the warm and cold ends. b) Cooling cycle, reproduced from Figure 14 of [@deWaele2011cryocoolers]: panels $a$–$d$ show the displacer position and the open or closed $p_h$ and $p_l$ valves for one cold-head cycle; expansion in panel $c$ extracts heat at the cold stage.
 ```
 
 The GM cooling cycle divides into four steps, illustrated in [](#fig-gm-cycle)[@deWaele2011cryocoolers]. Each panel shows the displacer inside a cylinder with a shaded regenerator; high- and low-pressure lines $p_h$ and $p_l$ connect at the warm (left) end, and a valve marked with an $\times$ is closed. The cycle starts in panel $a$ with $p_h$ open, $p_l$ closed, and the displacer at the cold (right) end while high-pressure gas fills the warm volume on the left. From $a$ to $b$, the displacer moves toward the warm end with both valves unchanged; helium is pushed through the regenerator into the volume on the right. From $b$ to $c$, $p_h$ closes, $p_l$ opens, and the displacer stays at the warm end; gas in the cold volume expands toward $p_l$ and absorbs heat from the cold stage. From $c$ to $d$, with $p_l$ still open, the displacer returns toward the cold end and forces the remaining gas back through the regenerator and out through $p_l$. From $d$ to $a$, $p_l$ closes, $p_h$ reopens, and the warm volume is repressurised before the cycle repeats.
