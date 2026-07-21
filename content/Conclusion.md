@@ -33,6 +33,7 @@ The most direct test of passive isolation is to measure on a cryogenic mass-spri
 
 ```{figure} figures/cryogenic_isolator_mount.png
 :label: fig-isolator-mount
+:width: 50%
 :align: center
 
 Cryogenic mass-spring isolation chain in a SteeleLab dilution refrigerator. From top to bottom: an eye bolt on a cold plate; a carabiner; a spring passing through the next plate; a fishing line through a lower plate; a second eye bolt on a cylindrical copper mass; and the experimental platform inside a magnetic shield suspended below the mass.
