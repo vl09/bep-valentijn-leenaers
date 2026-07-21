@@ -277,7 +277,7 @@ project:
       
       # Show the optional cover description row in the colophon publication table. Default: false.
       show_colophon_cover_description: True
-      colophon_cover_description: The cover image is a template demonstration background.
+      colophon_cover_description: The cover image shows a close-up of the printed circuit board and wiring used in the accelerometer setup.
       
       # Show the optional confidentiality statement above the colophon publication table. Default: false.
       show_colophon_confidentiality_statement: true
