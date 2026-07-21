@@ -19,7 +19,7 @@ A cryocooler runs a repeating thermodynamic cycle: a working fluid, typically he
 
 ```{figure} figures/bluefors_cryostat.jpg
 :label: fig-bluefors-cryostat
-:width: 55%
+:width: 50%
 :align: center
 
 Interior of a SteeleLab Bluefors dilution refrigerator with the vacuum can open. The stacked copper thermal stages, support rods, and cabling between stages are visible; sensitive experiments are mounted at the lowest stage.
