@@ -27,7 +27,7 @@ A light hammer impact with simultaneous phone audio could assign unidentified pe
 
 SteeleLab's main experiments run on Bluefors dilution refrigerators precooled by pulse-tube cryocoolers[@steeleLabResearch], where literature reports a component near $1.4\,\mathrm{Hz}$ and its harmonics[@maisonobe2018], distinct from the $\approx 1\,\mathrm{Hz}$ GM comb measured here. The same ADXL354 chain on a Bluefors stage would test whether that difference persists; measuring at the pulse-tube stage itself would characterise the precooler drive and allow comparison with spectra at lower mounting spots.
 
-On a cryogenic mass-spring platform of the type in [](#fig-isolator-mount)[@wilkinson2025], cooler-on spectra at the spring attachment interface and on the isolated copper mass would quantify how much of the $\approx 1\,\mathrm{Hz}$ comb survives the isolation and whether the isolator resonance $f_0$ sits where theory expects relative to the cooler line.
+The cryogenic mass-spring platform in [](#fig-isolator-mount)[@wilkinson2025] offers the most direct test of passive isolation. Cooler-on spectra recorded at the spring attachment and on the isolated copper mass would show how much of the cooler drive passes through the mass-spring system before it reaches the experiment.
 
 ```{figure} figures/cryogenic_isolator_mount.png
 :label: fig-isolator-mount
