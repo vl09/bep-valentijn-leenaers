@@ -251,7 +251,7 @@ The sensor does not respond uniformly at all frequencies. Analog Devices publish
 (fig-adxl354-z-response)=
 ![ADXL354 z-axis frequency response from the datasheet](figures/ADXL354_transfer_fuction_z-axis.png)
 
-ADXL354 frequency response for the $x$-, $y$-, and $z$-axes (datasheet Figures 8–10)[@adxl354_datasheet]. Relative output is flat near $1\,\mathrm{g/g}$ below $\sim 1\,\mathrm{kHz}$ on all axes. A mechanical resonance near $2.5\,\mathrm{kHz}$ is present on each axis; peak gain is highest on $x$ and $y$ and lower on $z$.
+ADXL354 frequency response for the $x$-, $y$-, and $z$-axes, reproduced from datasheet Figures 8–10 of [@adxl354_datasheet]. Relative output is flat near $1\,\mathrm{g/g}$ below $\sim 1\,\mathrm{kHz}$ on all axes. A mechanical resonance near $2.5\,\mathrm{kHz}$ is present on each axis; peak gain is highest on $x$ and $y$ and lower on $z$.
 ```
 
 The datasheet also specifies a typical noise density of order $22.5 \mu\mathrm{g}/\sqrt{\mathrm{Hz}}$[@adxl354_datasheet]. Readout electronics can raise the measured broadband floor above that value. At low frequencies the ASD often rises as $1/f$ (flicker) from the sensor or from other electronics in the chain, including the oscilloscope. At the $\pm 2\,\mathrm{g}$ range, the linear output swing is limited to roughly $\pm 0.8\,\mathrm{V}$ about the zero-$g$ bias for the typical sensitivity, so accelerations beyond that range will clip.
