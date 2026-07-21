@@ -110,3 +110,7 @@ body {
 figure.fig-figure.grid > figcaption {
   grid-column: 1 / -1;
 }
+
+figure.fig-figure.grid.grid-gm-cooler {
+  grid-template-columns: 7fr 5fr;
+}
