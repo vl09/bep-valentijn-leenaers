@@ -27,6 +27,6 @@ The main research question addressed in this thesis is:
 
 > Can a reliable three-axis ADXL354 measurement chain characterise the acceleration spectral density on the final stage of a GM cryocooler, relative to the baseline with the cooler off?
 
-This thesis begins by establishing the theoretical background relevant to cryogenic vibration characterisation. The experimental approach is then described. Results and discussion follow, before a conclusion summarises the findings.
+This thesis begins by establishing the theoretical background relevant to cryogenic vibration characterisation. The experimental approach is then described. Results and discussion follow, before a summary and outlook closes the thesis.
 
 This thesis has been written as part of the Bachelor End Project of Applied Physics at Delft University of Technology, in the SteeleLab group under supervision of prof. dr. Gary Steele and daily supervision of Postdoc Thomas Clark.
