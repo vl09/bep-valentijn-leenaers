@@ -289,12 +289,11 @@ project:
       # Optional fields shown in the colophon publication table:
       # colophon_printer: Printer name
       # colophon_publisher: Publisher name
-      colophon_copyright: © 2026 Student Name
+      colophon_copyright: © 2026 Valentijn Leenaers
 
       
       # Optional custom text shown below the colophon publication table and above the template watermark.
-      colophon_custom_text: |
-         Optional custom colophon text below the publication table.
+      colophon_custom_text: 
       
       # Show the MyST/Typst/JBOS template watermark note at the bottom of the colophon. Default: true.
       show_colophon_watermark: true
