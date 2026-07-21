@@ -6,7 +6,7 @@ project:
   keywords: [cryogenics, vibration characterisation, optomechanics, Gifford–McMahon cryocooler, ADXL354, amplitude spectral density]
 
   github: https://github.com/vl09/bep-valentijn-leenaers # change this to your own repository
-  date: 2026-06-01
+  date: 2026-07-21
   thumbnail: style/thumbnail.jpg
   numbering: 
     title: true
