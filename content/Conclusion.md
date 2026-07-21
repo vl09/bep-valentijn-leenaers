@@ -34,7 +34,7 @@ The cryogenic mass-spring platform in [](#fig-isolator-mount)[@wilkinson2025] of
 :width: 50%
 :align: center
 
-Cryogenic mass-spring isolation chain in a SteeleLab dilution refrigerator. From top to bottom: an eye bolt on a cold plate; a carabiner; a spring passing through the next plate; a fishing line through a lower plate; a second eye bolt on a cylindrical copper mass; and the experimental platform inside a magnetic shield suspended below the mass.
+Cryogenic mass-spring isolation chain in a SteeleLab dilution refrigerator. From top to bottom: an eye bolt on a cold plate; a carabiner; a spring passing through the next plate; a fishing line through a lower plate; a second eye bolt on a cylindrical copper mass; and the experimental platform inside a radiation shield suspended below the mass.
 ```
 
 In conclusion, cryostat vibration limits how precisely phonon motion can be read out in microwave optomechanics, and the cooler cycle is a periodic part of that disturbance. This thesis showed that a calibrated ADXL354 chain can measure acceleration on a GM-cooled final stage relative to a cooler-off baseline. The spectra recorded here are room-temperature commissioning data on one fridge at one mount point, enough to justify carrying the same chain forward to colder plate temperatures, other cryostats, and the cryogenic mass-spring platforms SteeleLab uses to shield sensitive devices from this drive.
