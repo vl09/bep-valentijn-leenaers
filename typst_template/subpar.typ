@@ -6,6 +6,11 @@
   let kind = named.remove("kind", default: "figure")
   let numbering-pattern = named.remove("numbering", default: auto)
   let numbering-sub-ref = named.remove("numbering-sub-ref", default: auto)
+  let label = named.at("label", default: none)
+  if label == <fig-gm-cooler> {
+    named.insert("columns", (7fr, 5fr))
+    named.insert("gutter", 8pt)
+  }
   context {
     let super-numbering = if numbering-pattern != auto {
       numbering-pattern
