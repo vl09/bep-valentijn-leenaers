@@ -21,6 +21,6 @@ Bachelor End Project, Applied Physics
 
 *Valentijn Leenaers*
 
-![](assets/cover.jpeg)
+![](assets/cover.png)
 
 +++
