@@ -8,7 +8,7 @@ project:
     - file: content/Results_and_Discussion.md
 #    - file: content/Discussion.md
     - file: content/Conclusion.md
-    - title: Appendices
+    - title: Appendix
       children:
         - file: content/Appendix_A.md
 #        - file: content/Appendix_B.md
