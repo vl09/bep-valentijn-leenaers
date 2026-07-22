@@ -1,3 +1,10 @@
+---
+numbering:
+  figure:
+    enumerator: "6.%s"
+  equation:
+    enumerator: "6.%s"
+---
 (appendix-derivations)=
 # Derivations
 ## Damped harmonic oscillator
