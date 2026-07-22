@@ -280,7 +280,7 @@ project:
       colophon_cover_description: The cover image shows a close-up of the printed circuit board and wiring used in the accelerometer setup.
       
       # Show the optional confidentiality statement above the colophon publication table. Default: false.
-      show_colophon_confidentiality_statement: true
+      show_colophon_confidentiality_statement: false
       colophon_confidentiality_statement: This thesis is confidential and cannot be made public.
       
       # Optional secondary logo (e.g. company or research group) shown in the colophon when provided.

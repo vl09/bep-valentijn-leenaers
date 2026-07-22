@@ -115,7 +115,7 @@ $$
 F_d = -c\dot{x},
 $$ 
 
-with damping coefficient $c$ in $[Ns/m]$. Combining the spring and damping forces with Newton's second law gives
+with damping coefficient $c$ in $[\mathrm{Ns/m}]$. Combining the spring and damping forces with Newton's second law gives
 
 $$
 m\ddot{x} + c\dot{x} + kx = 0.
